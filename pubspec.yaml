@@ -77,15 +77,14 @@ flutter:
   fonts:
     - family: Open Sans
       fonts:
-        - asset: assets/fonts/OpenSans-Italic.ttf
         - asset: assets/fonts/OpenSans.ttf
-          weight: 700
+         # weight: 700
   #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-    - family: Sevillana
+  #         
+    - family: Righteous
       fonts:
-        - asset: assets/fonts/Sevillana-Regular.ttf
-          weight: 700
+        - asset: assets/fonts/Righteous_Regular.ttf
+          weight: 400
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
