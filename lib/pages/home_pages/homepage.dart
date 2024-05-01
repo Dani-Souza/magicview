@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:magicview/pages/home_pages/mySearch.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,15 +34,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              Row(
+              const SizedBox(height: 10,),
+              const Row(
                 children: [
-                  Text(
-                    "Aqui está usando a fonte padrão OpenSans",
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w200),
-                  )
+                 MySearch()
                 ],
               )
             ],
