@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magicview/pages/home_pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,40 +12,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'MAGICVIEW',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        fontFamily: 'Open Sans',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          background: const Color(0xff21005D),
+          secondary: Color(0xFFD0BCFF),
+        ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("novo projeto"),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      home: const HomePage(),
     );
   }
 }
