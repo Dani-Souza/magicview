@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10,),
               const Row(
                 children: [
+                  //executando a função da pagina mysearch
                  MySearch()
                 ],
               )
