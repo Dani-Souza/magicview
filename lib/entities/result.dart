@@ -1,6 +1,6 @@
 import 'package:magicview/entities/genres.dart';
 
-class MovieResult{
+class Result{
 final int id;
 final String adult;
 final String backdrop_path;
@@ -16,7 +16,7 @@ final double vote_average;
 final int vote_count;
 final List<Genres> genres;
 
-MovieResult({
+Result({
 required this.id,
 required this.adult,
 required this.backdrop_path,
