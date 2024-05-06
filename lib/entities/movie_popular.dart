@@ -2,22 +2,22 @@ import 'package:magicview/entities/results.dart';
 
 class MoviePopular {
   final int page;
-  final int total_pages;
-  final int total_results;
+  final int totalPages;
+  final int totalResults;
   List<Results> result;
 
   MoviePopular({
     required this.page,
-    required this.total_pages,
-    required this.total_results,
+    required this.totalPages,
+    required this.totalResults,
     required this.result,
   });
 
   factory MoviePopular.fromJson(Map<String, dynamic> data) {
     return MoviePopular(
         page: data["page"],
-        total_pages: data["total_pages"],
-        total_results: data["total_results"],
+        totalPages: data["total_pages"],
+        totalResults: data["total_results"],
         result: data["result"]);
   }
 }

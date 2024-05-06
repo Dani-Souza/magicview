@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                                         Theme.of(context).colorScheme.secondary,
                                     image: DecorationImage(
                                         image: NetworkImage(
-                                            "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultado[index].poster_path}")),
+                                            "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultado[index].posterPath}")),
                                     borderRadius: BorderRadius.circular(5)),
                               );
                             },
@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                                         Theme.of(context).colorScheme.secondary,
                                     image: DecorationImage(
                                         image: NetworkImage(
-                                            "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultado[index].poster_path}")),
+                                            "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultado[index].posterPath}")),
                                     borderRadius: BorderRadius.circular(5)),
                               );
                             },
@@ -241,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                                       Theme.of(context).colorScheme.secondary,
                                   image: DecorationImage(
                                       image: NetworkImage(
-                                          "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultSearch[index].poster_path}")),
+                                          "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultSearch[index].posterPath}")),
                                   borderRadius: BorderRadius.circular(5)),
                             );
                           },

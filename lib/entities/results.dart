@@ -7,34 +7,34 @@ import '../entities/genres.dart';
 class Results {
   final int id;
   final bool adult;
-  final String backdrop_path;
+  final String backdropPath;
   final List<Genres> genres;
-  final String original_language;
-  final String original_title;
+  final String originalLanguage;
+  final String originalTitle;
   final String overview;
   final double popularity;
-  final String poster_path;
-  final String release_date;
+  final String posterPath;
+  final String releaseDate;
   final String title;
   final bool video;
-  final double vote_average;
-  final int vote_count;
+  final double voteAverage;
+  final int voteCount;
 
   Results({
     required this.id,
     required this.adult,
-    required this.backdrop_path,
+    required this.backdropPath,
     required this.genres,
-    required this.original_language,
-    required this.original_title,
+    required this.originalLanguage,
+    required this.originalTitle,
     required this.overview,
     required this.popularity,
-    required this.poster_path,
-    required this.release_date,
+    required this.posterPath,
+    required this.releaseDate,
     required this.title,
     required this.video,
-    required this.vote_average,
-    required this.vote_count,
+    required this.voteAverage,
+    required this.voteCount,
   });
 
   factory Results.fromJson(Map<String, dynamic> data) {
@@ -52,17 +52,17 @@ class Results {
     return Results(
         id: data['id'],
         adult: data['adult'],
-        backdrop_path: data['backdrop_path'],
+        backdropPath: data['backdrop_path'],
         genres: genresList,
-        original_language: data['original_language'],
-        original_title: data['original_title'],
+        originalLanguage: data['original_language'],
+        originalTitle: data['original_title'],
         overview: data['overview'],
         popularity: data['popularity'],
-        poster_path: data['poster_path'],
-        release_date: data['release_date'],
+        posterPath: data['poster_path'],
+        releaseDate: data['release_date'],
         title: data['title'],
         video: data['video'],
-        vote_average: voteAverage,
-        vote_count: data['vote_count']);
+        voteAverage: voteAverage,
+        voteCount: data['vote_count']);
   }
 }
