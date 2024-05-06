@@ -1,0 +1,408 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/kYgQzzjNis5jJalYtIHgrom0gOx.jpg",
+      "genre_ids": [
+        16,
+        28,
+        10751,
+        35,
+        14
+      ],
+      "id": 1011985,
+      "original_language": "en",
+      "original_title": "Kung Fu Panda 4",
+      "overview": "Po está prestes a se tornar o novo líder espiritual do Vale da Paz, mas antes que possa fazer isso, ele deve encontrar um sucessor para se tornar o novo Dragão Guerreiro.  Ele parece encontrar uma em Zhen, uma raposa com muitas habilidades promissoras, mas que não gosta muito da ideia de Po treiná-la.",
+      "popularity": 1230.013,
+      "poster_path": "/aNK6MA5EApIo0UJE7ZWSYcZBJKy.jpg",
+      "release_date": "2024-03-02",
+      "title": "Kung Fu Panda 4",
+      "video": false,
+      "vote_average": 7.133,
+      "vote_count": 1475
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2KGxQFV9Wp1MshPBf8BuqWUgVAz.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        35,
+        10751
+      ],
+      "id": 940551,
+      "original_language": "en",
+      "original_title": "Migration",
+      "overview": "A família Mallard está um pouco refém da rotina. Enquanto Mack, o pai, se contenta em manter sua família segura nos arredores de um lago da Nova Inglaterra para sempre, Pam, a mãe, está ansiosa para agitar as coisas e mostrar a seus filhos – o adolescente Dax e a patinha Gwen – o mundo inteiro. Quando uma família de patos migratórios aterrissa em seu lago com histórias emocionantes de lugares distantes, Pam convence Mack a embarcar em uma viagem em família, via Nova York, para a Jamaica tropical.",
+      "popularity": 607.748,
+      "poster_path": "/wXWnUhdnSuADRp9w7aAZNHx682v.jpg",
+      "release_date": "2023-12-06",
+      "title": "Patos!",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 1273
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/v5XyXZe8FADw8iHupB4L7QOAwH9.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751
+      ],
+      "id": 748783,
+      "original_language": "en",
+      "original_title": "The Garfield Movie",
+      "overview": "Garfield, o mundialmente famoso gato de interior que odeia segundas-feiras e adora lasanha, está prestes a ter uma aventura selvagem ao ar livre! Depois de um reencontro inesperado com seu pai há muito perdido – o desalinhado gato de rua Vic – Garfield e seu amigo canino Odie são forçados a deixar sua vida perfeitamente mimada para se juntarem a Vic em um assalto hilariante e de alto risco.",
+      "popularity": 757.742,
+      "poster_path": "/rC5RqXtFoTkBhNWE1dczwi4dZrX.jpg",
+      "release_date": "2024-04-30",
+      "title": "Garfield - Fora de Casa",
+      "video": false,
+      "vote_average": 6.893,
+      "vote_count": 15
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dcnSWFCtk4b2aIzkhq6IDbzoIf1.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 942047,
+      "original_language": "en",
+      "original_title": "Outsource",
+      "overview": "Para capturar um perigoso suspeito, um chefe da polícia pede ajuda a um espião internacional que é um antigo amigo seu. Após a morte do policial, todas as suspeitas recaem em cima do misterioso espião, que precisará recorrer a medidas extremas para defender sua própria vida.",
+      "popularity": 401.813,
+      "poster_path": "/xQbqD0CYQ7fuaeCRwJ5FUluoiIQ.jpg",
+      "release_date": "2022-01-18",
+      "title": "Medidas Extremas",
+      "video": false,
+      "vote_average": 2.3,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg",
+      "genre_ids": [
+        35,
+        12
+      ],
+      "id": 346698,
+      "original_language": "en",
+      "original_title": "Barbie",
+      "overview": "No mundo mágico das Barbies, \"Barbieland\", uma das bonecas começa a perceber que não se encaixa como as outras. Depois de ser expulsa, ela parte para uma aventura no \"mundo real\", onde descobre que a beleza está no interior de cada um.",
+      "popularity": 454.815,
+      "poster_path": "/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg",
+      "release_date": "2023-07-19",
+      "title": "Barbie",
+      "video": false,
+      "vote_average": 7.07,
+      "vote_count": 8148
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/en971MEXui9diirXlogOrPKmsEn.jpg",
+      "genre_ids": [
+        28,
+        12,
+        35
+      ],
+      "id": 293660,
+      "original_language": "en",
+      "original_title": "Deadpool",
+      "overview": "Baseado no anti-herói não convencional da Marvel Comics, Deadpool conta a história da origem do ex-agente das Forças Especiais que se tornou o mercenário Wade Wilson. Depois de ser submetido a um desonesto experimento que o deixa com poderes de cura acelerada, Wade adota o alter ego de Deadpool. Armado com suas novas habilidades e um senso de humor negro e distorcido, Deadpool persegue o homem que quase destruiu sua vida.",
+      "popularity": 423.367,
+      "poster_path": "/fSRb7vyIP8rQpL0I47P3qUsEKX3.jpg",
+      "release_date": "2016-02-09",
+      "title": "Deadpool",
+      "video": false,
+      "vote_average": 7.612,
+      "vote_count": 29818
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3RWsSQlqzRjsuqSRmoyggy74UA7.jpg",
+      "genre_ids": [
+        28,
+        14,
+        35
+      ],
+      "id": 43074,
+      "original_language": "en",
+      "original_title": "Ghostbusters",
+      "overview": "Atualmente uma respeitada professora da Universidade de Columbia, Erin Gilbert escreveu anos atrás um livro sobre a existência de fantasmas em parceria com a colega Abby Yates. A obra, que nunca foi levada a sério, é descoberta por seus pares acadêmicos e Erin perde o emprego. Quando Patty Tolan, funcionária do metrô de Nova York, presencia estranhos eventos no subterrâneo, Erin, Abby e Jillian Holtzmann se unem e partem para a ação pela salvação da cidade e do mundo.",
+      "popularity": 443.698,
+      "poster_path": "/qcpfGdYahW1NkqPAz2MHLPHas8O.jpg",
+      "release_date": "2016-07-14",
+      "title": "Caça-Fantasmas",
+      "video": false,
+      "vote_average": 5.36,
+      "vote_count": 6190
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cIztAxDn3H8JylRaJwiHHpkGe53.jpg",
+      "genre_ids": [
+        10751,
+        35,
+        16
+      ],
+      "id": 1239146,
+      "original_language": "en",
+      "original_title": "Woody Woodpecker Goes to Camp",
+      "overview": "Após ser expulso da floresta, o Pica-Pau acha que encontrou seu novo lar no Acampamento Woo Hoo. Até que um inspetor ameaça fechar tudo!",
+      "popularity": 391.439,
+      "poster_path": "/dtZcntP9YCOi04iga6tR6UnZqAO.jpg",
+      "release_date": "2024-04-12",
+      "title": "Pica-Pau: As Férias no Acampamento",
+      "video": false,
+      "vote_average": 6.826,
+      "vote_count": 112
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yyFc8Iclt2jxPmLztbP617xXllT.jpg",
+      "genre_ids": [
+        35,
+        10751,
+        14
+      ],
+      "id": 787699,
+      "original_language": "en",
+      "original_title": "Wonka",
+      "overview": "Antes de se tornar a mente brilhante por trás da maior fábrica de chocolate do mundo, Willy precisou enfrentar vários obstáculos. Cheio de ideias e determinado a mudar o mundo, o jovem Wonka embarca em uma aventura para espalhar alegria através de seu delecioso chocolate.",
+      "popularity": 384.515,
+      "poster_path": "/uQWEomz2wLoijrvoFaJt2gUMXRu.jpg",
+      "release_date": "2023-12-06",
+      "title": "Wonka",
+      "video": false,
+      "vote_average": 7.188,
+      "vote_count": 2917
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fOy2Jurz9k6RnJnMUMRDAgBwru2.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        14
+      ],
+      "id": 508947,
+      "original_language": "en",
+      "original_title": "Turning Red",
+      "overview": "Mei, de treze anos, está experimentando a estranheza de ser uma adolescente com uma reviravolta – quando ela fica muito animada, ela se transforma em um panda vermelho gigante.",
+      "popularity": 372.639,
+      "poster_path": "/p1W2ZfQKExZVZSG7ldUPzVwGKpr.jpg",
+      "release_date": "2022-03-10",
+      "title": "Red: Crescer é Uma Fera",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 4922
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/H5HjE7Xb9N09rbWn1zBfxgI8uz.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 746036,
+      "original_language": "en",
+      "original_title": "The Fall Guy",
+      "overview": "Colt é um dublê que tem uma tremenda queda pela diretora do filme que está filmando. As coisas começam a dar errado quando o ator principal do filme desaparece.",
+      "popularity": 358.15,
+      "poster_path": "/7AkiDy6DVlfhJusglf6tvifX6dB.jpg",
+      "release_date": "2024-04-24",
+      "title": "O Dublê",
+      "video": false,
+      "vote_average": 7.533,
+      "vote_count": 138
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bQS43HSLZzMjZkcHJz4fGc7fNdz.jpg",
+      "genre_ids": [
+        878,
+        10749,
+        35
+      ],
+      "id": 792307,
+      "original_language": "en",
+      "original_title": "Poor Things",
+      "overview": "A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.",
+      "popularity": 315.868,
+      "poster_path": "/pkmZO2Y93AH82PvdQ0ScEpuF08h.jpg",
+      "release_date": "2023-12-07",
+      "title": "Pobres Criaturas",
+      "video": false,
+      "vote_average": 7.787,
+      "vote_count": 3257
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6MmYsaK6poR8f4R8jsBnJBU5tfd.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 400928,
+      "original_language": "en",
+      "original_title": "Gifted",
+      "overview": "Frank, um homem solteiro, cria sozinho sua sobrinha Mary, uma criança-prodígio. Quando a garota se destaca na escola por causa de suas habilidades com a matemática, a avó dela planeja um futuro que pode separá-la do tio.",
+      "popularity": 319.157,
+      "poster_path": "/21uwPrntyCV9Z0LW7pZcVfbrqWo.jpg",
+      "release_date": "2017-04-07",
+      "title": "Um Laço de Amor",
+      "video": false,
+      "vote_average": 8.036,
+      "vote_count": 5206
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/t6TL7V9IsT4Ktx6YO8b1UYj3agd.jpg",
+      "genre_ids": [
+        35,
+        28,
+        80
+      ],
+      "id": 339846,
+      "original_language": "en",
+      "original_title": "Baywatch",
+      "overview": "Quando uma perigosa onda de crime atinge o local, o lendário tenente Mitch Buchannon aciona seu esquadrão de elite de salva-vidas durões, para provar que não é preciso usar um distintivo para cumprir sua missão. Junto com um trio de fortes recrutas, incluindo o ex-olímpico Matt Brody, eles vão deixar o surfe de lado e fazer de tudo para derrotar uma cruel empresária, cujos planos infames ameaçam o futuro da praia.",
+      "popularity": 314.003,
+      "poster_path": "/7178I9T3a27Td5kyjrT207F3hwP.jpg",
+      "release_date": "2017-05-25",
+      "title": "Baywatch: S.O.S. Malibu",
+      "video": false,
+      "vote_average": 6.091,
+      "vote_count": 7790
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sI6uCeF8mUlZx22mFfHSi9W3XQ9.jpg",
+      "genre_ids": [
+        10749,
+        35,
+        10402
+      ],
+      "id": 843527,
+      "original_language": "en",
+      "original_title": "The Idea of You",
+      "overview": "Solène, leva a filha, para assistir ao show de seu grupo favorito, August Moon. Lá, Solène se relaciona com um dos membros do grupo. Hayes Campbell é inteligente, atraente e confiante. A atração é imediata. O problema? É porque ele é vinte anos mais novo que Solène.",
+      "popularity": 313.468,
+      "poster_path": "/5rIKVegF7XMPB02RaFaxtFwTPR0.jpg",
+      "release_date": "2024-05-02",
+      "title": "Uma Ideia de Você",
+      "video": false,
+      "vote_average": 7.561,
+      "vote_count": 139
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oCKZAdUROqdlTcUOstqJ1gM8JQt.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 615777,
+      "original_language": "en",
+      "original_title": "Babylon",
+      "overview": "Durante a era de ouro de Hollywood, em Los Angeles da década de 1920, um jovem latino está determinado a conseguir uma carreira enquanto o cinema entra em fase de transição dos filmes mudos para produções com falas.",
+      "popularity": 328.69,
+      "poster_path": "/qZUmMxJbGmkIYwnS7qRfSOREmvC.jpg",
+      "release_date": "2022-12-22",
+      "title": "Babilônia",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 2774
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cEcG1Z32NWJrRKmhmEh13VyPRfk.jpg",
+      "genre_ids": [
+        35,
+        18,
+        10749,
+        53
+      ],
+      "id": 79474,
+      "original_language": "es",
+      "original_title": "Más que amor, frenesí",
+      "overview": "",
+      "popularity": 184.222,
+      "poster_path": "/e843ZAdn3f5R7SFTRIqoV7Ttk91.jpg",
+      "release_date": "1996-11-15",
+      "title": "Más que amor, frenesí",
+      "video": false,
+      "vote_average": 5.5,
+      "vote_count": 17
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3P52oz9HPQWxcwHOwxtyrVV1LKi.jpg",
+      "genre_ids": [
+        28,
+        35,
+        12
+      ],
+      "id": 383498,
+      "original_language": "en",
+      "original_title": "Deadpool 2",
+      "overview": "Quando o super soldado Cable chega em uma missão para assassinar o jovem mutante Russel, o mercenário Deadpool precisa aprender o que é ser herói de verdade para salvá-lo. Para isso, ele recruta seu velho amigo Colossus e forma o novo grupo X-Force, sempre com o apoio do fiel escudeiro Dopinder.",
+      "popularity": 306.996,
+      "poster_path": "/6CABdPx68rYoLdvXhIJkilOj6XZ.jpg",
+      "release_date": "2018-05-10",
+      "title": "Deadpool 2",
+      "video": false,
+      "vote_average": 7.487,
+      "vote_count": 17023
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5cCfqeUH2f5Gnu7Lh9xepY9TB6x.jpg",
+      "genre_ids": [
+        14,
+        12,
+        35
+      ],
+      "id": 967847,
+      "original_language": "en",
+      "original_title": "Ghostbusters: Frozen Empire",
+      "overview": "Nesta sequência da franquia Ghostbusters, a família Spengler retorna para onde tudo começou: a famosa estação de bombeiros em Nova York. Eles pretendem se unir com os caça-fantasmas originais que desenvolveram um laboratório ultra secreto de pesquisa para levar a caça aos fantasmas a outro nível, mas quando a descoberta de um artefato antigo libera uma grande força do mal, os Ghostbusters das duas gerações precisam juntar as forças para proteger suas casas e salvar o mundo de uma segunda Era do Gelo.",
+      "popularity": 256.112,
+      "poster_path": "/boObGdocQS07Nu7IrettgA5oRTp.jpg",
+      "release_date": "2024-03-20",
+      "title": "Ghostbusters: Apocalipse de Gelo",
+      "video": false,
+      "vote_average": 6.385,
+      "vote_count": 366
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3Kzc6V4MWs3RXCmE5DhAYnfWL8F.jpg",
+      "genre_ids": [
+        16,
+        35,
+        878
+      ],
+      "id": 1239251,
+      "original_language": "en",
+      "original_title": "Megamind vs. the Doom Syndicate",
+      "overview": "A antiga equipe de vilões de Megamente retorna para Metro City. Para evitar que eles mandem a cidade para a lua, o herói azul vai ter que fingir ainda ser um vilão para conseguir derrotá-los.",
+      "popularity": 280.271,
+      "poster_path": "/60x76Yb6nMPFwEZ3um5yhUwCga.jpg",
+      "release_date": "2024-03-29",
+      "title": "Megamente Vs. O Sindicato da Perdição",
+      "video": false,
+      "vote_average": 5,
+      "vote_count": 69
+    }
+  ],
+  "total_pages": 6565,
+  "total_results": 131296
+}

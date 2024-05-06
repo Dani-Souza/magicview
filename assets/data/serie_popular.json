@@ -1,0 +1,429 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/hib8MpBPU7GdluS38htXCF4uw0c.jpg",
+      "genre_ids": [
+        80,
+        18,
+        9648
+      ],
+      "id": 2734,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Law & Order: Special Victims Unit",
+      "overview": "Law & Order: Special Victims Unit é a mais badalada série da franquia Law & Order. Nos roteiros instigantes e baseados em fatos reais, os protagonistas são os detetives Elliot Stabler e Olivia Benson. Membros de uma equipe de investigadores de elite, eles estão à frente em histórias que retratam o dia-a-dia de um departamento de polícia especializado em investigar casos que exigem tratamento diferenciado.",
+      "popularity": 5150.994,
+      "poster_path": "/gUMArcGnsNmsJgQky7vE0cdnf4Y.jpg",
+      "first_air_date": "1999-09-20",
+      "name": "Lei & Ordem: Unidade Especial",
+      "vote_average": 7.942,
+      "vote_count": 3633
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yUOFocKDW7MCC5isx4FK8A68QFp.jpg",
+      "genre_ids": [
+        9648,
+        10759,
+        18
+      ],
+      "id": 4607,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Lost",
+      "overview": "Quando o voo 815 da Oceanic Air cai numa ilha do Pacífico, os sobreviventes lutam pelas suas vidas. Eles descobrem os segredos da ilha, encontram sinais de quem lá esteve antes deles e descobrem bunkers misteriosos. Os sobreviventes são diversos: um médico, um fugitivo, um vigarista, um interrogador iraquiano, um casal coreano, um vencedor da lotaria obeso e um homem que foi curado da sua paraplegia pela ilha. Todos têm de trabalhar juntos se quiserem permanecer vivos. Mas o perigo e o mistério espreitam em cada canto da ilha e quem pensaram ser de confiança ​​pode voltar-se contra eles. Até os heróis têm segredos.",
+      "popularity": 4330.141,
+      "poster_path": "/29qdZsx68Oakn1Kirkxob2Qn8w9.jpg",
+      "first_air_date": "2004-09-22",
+      "name": "Perdidos",
+      "vote_average": 7.952,
+      "vote_count": 3985
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nmg2lY4QuyXQrAnrC2lRblK5rT6.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 1416,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Grey's Anatomy",
+      "overview": "Os médicos do Grey Sloan Memorial Hospital lidam com consequências de vida ou morte todos os dias - é uns nos outros que encontram conforto, amizade e, por vezes, mais do que amizade. Juntos, descobrem que nem a medicina nem as relações humanas são a preto e branco. A vida real tem vários tons de cinzento.",
+      "popularity": 4042.077,
+      "poster_path": "/nDkcmSOgQTp7cDrMczPKCNa8SZQ.jpg",
+      "first_air_date": "2005-03-27",
+      "name": "Anatomia de Grey",
+      "vote_average": 8.242,
+      "vote_count": 9923
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nVRyd8hlg0ZLxBn9RaI7mUMQLnz.jpg",
+      "genre_ids": [
+        18,
+        9648,
+        10765
+      ],
+      "id": 1622,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Supernatural",
+      "overview": "Há 20 anos, Sam e Dean Winchester perderam sua mãe em um trágico e misterioso acidente, no qual as forças sobrenaturais — muito obscuras — estiveram envolvidas. Por esta razão, seu pai decidiu ensiná-los a lidar com a vida sobrenatural, ensinando-lhes técnicas de defesa contra as forças do mal; chegando até a ensinar a maneira ideal para matar os diferentes tipos de demônios. Agora, os irmãos Winchester percorrem os Estados Unidos em seu velho Chevy Impala 1967 travando uma verdadeira batalha contra a obscuridade e a maldade. Objetos amaldiçoados, vampiros, bruxas e entidades maléficas — incluindo um Papai Noel não tão bonzinho — são só alguns dos desafios que estes dois irmãos têm de superar.",
+      "popularity": 3967.09,
+      "poster_path": "/eK4gEBWNGJoxCD67KFKzaKfSzWU.jpg",
+      "first_air_date": "2005-09-13",
+      "name": "Sobrenatural",
+      "vote_average": 8.296,
+      "vote_count": 7249
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/layPSOJGckJv3PXZDIVluMq69mn.jpg",
+      "genre_ids": [
+        80,
+        18
+      ],
+      "id": 1438,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Wire",
+      "overview": "Esta série realista segue uma investigação única sobre o crime e o mundo da droga nas ruas de Baltimore. \"The Wire\" capta um universo onde as diferenças entre o bem e o mal, crime e punição são questionadas a cada momento.",
+      "popularity": 3874.38,
+      "poster_path": "/taMUpRAnpZzi5yEaDQ45KhKGRyu.jpg",
+      "first_air_date": "2002-06-02",
+      "name": "The Wire",
+      "vote_average": 8.557,
+      "vote_count": 2073
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oS3nip9GGsx5A7vWp8A1cazqJlF.jpg",
+      "genre_ids": [
+        18,
+        9648,
+        10765
+      ],
+      "id": 39351,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Grimm",
+      "overview": "O que aconteceria se você descobrisse que aquelas histórias que seus pais contavam antes de dormir não são contos de fadas, mas sim avisos? É justamente esse o dilema que o detetive de homicídios Nick Burkhardt precisa de enfrentar após a sua tia voltar à cidade, ele começa a ver coisas realmente estranhas, algo como ver as pessoas como elas realmente são. Sua tia acaba por revelar que eles são na verdade os últimos descendentes de um clã de caçadores, os Grimm.",
+      "popularity": 3754.336,
+      "poster_path": "/5hC8CertBqHbXNPcfm1LZ18VcjD.jpg",
+      "first_air_date": "2011-10-28",
+      "name": "Grimm",
+      "vote_average": 8.28,
+      "vote_count": 3061
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2sjy8Tu8PJGFQI4Foz4682qk8Mw.jpg",
+      "genre_ids": [
+        18,
+        9648,
+        80
+      ],
+      "id": 1620,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "CSI: Miami",
+      "overview": "CSI: Miami, primeira franquia que surgiu após o sucesso de CSI: Crime Scene Investigation, mostra o trabalho da equipe de investigadores do sul da Flórida que soluciona crimes através da mistura de métodos científicos, técnicas tradicionais, tecnologia de ponta e instinto apurado para descobrir pistas. Horatio Caine, um ex-detetive de homicídios, lidera um grupo de investigação que trabalha para desvendar crimes na região de Miami. Sua equipe inclui Calleigh Duquesne, uma bonita sulista bilíngüe com especialização em balística; Tim Speedle, um arrogante, mas competente, investigador com ótima conexão nas ruas da cidade; e Eric Delko, um dos maiores experts em bombas e explosivos da Flórida. Essa equipe conta ainda com Alexx Woods, a \"sabe tudo\" das investigações de homicídios.",
+      "popularity": 3522.375,
+      "poster_path": "/pNW64pjaHvf6purNaFhq4SHYRfl.jpg",
+      "first_air_date": "2002-09-23",
+      "name": "CSI: Miami",
+      "vote_average": 7.733,
+      "vote_count": 1529
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 1421,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Modern Family",
+      "overview": "Uma Família Muito Moderna é uma série de comédia que acompanha três famílias diferentes ao estilo docu-série. Jay Pritchett é o patricarca desta família complicada, confusa e adorável.",
+      "popularity": 2698.424,
+      "poster_path": "/gGOZeGx3ggP5O9qvswRPN7PRVWn.jpg",
+      "first_air_date": "2009-09-23",
+      "name": "Uma Família Muito Moderna",
+      "vote_average": 7.85,
+      "vote_count": 2582
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6UvUlyxNrLStWARart544iFXTWF.jpg",
+      "genre_ids": [
+        80,
+        18,
+        10759
+      ],
+      "id": 1412,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Arrow",
+      "overview": "Após um naufrágio, o playboy bilionário Oliver Queen é dado como morto por cinco anos, até que é descoberto vivo numa ilha remota no Pacífico. Retornando a Starling City, Oliver é recepcionado por sua devotada mãe, Moira, sua irmã Thea e seu melhor amigo, Tommy Merlyn. Todos notam que Oliver retornou mudado.\n\nEscondendo de todos a transformação que sofreu, Oliver desesperadamente busca remediar os atos que cometeu quando era apenas um jovem irresponsável, se reaproximando de sua ex-namorada, Laurel Lance. Ao mesmo tempo, ele cria a identidade do vigilante Arqueiro, na esperança de combater os males da sociedade, salvando sua cidade e compensando os erros de sua família. De dia, Oliver finge ser o mesmo bilionário de sempre, sempre tendo ao seu lado seu segurança e chofer John Diggle. O pai de Laurel, o Detetive Quentin Lance, está determinado a prender o Arqueiro. E o herói nem imagina que sua própria mãe sabe muito mais sobre o naufrágio que mudou sua vida.",
+      "popularity": 2628.523,
+      "poster_path": "/oaLXsduGoDOOftWziIOvyZzrR4T.jpg",
+      "first_air_date": "2012-10-10",
+      "name": "Arrow",
+      "vote_average": 6.814,
+      "vote_count": 5776
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/SLAPI1h9SWBMLTCO8ULvTGiP9G.jpg",
+      "genre_ids": [
+        10765,
+        10759,
+        18
+      ],
+      "id": 2290,
+      "origin_country": [
+        "CA",
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Stargate Atlantis",
+      "overview": "Os acontecimentos em Stargate Atlantis seguem-se ao episódio final Lost City da sétima temporada de Stargate SG-1, no qual a equipa SG-1 encontrou um posto avançado na Antártida construí­do por uma raça conhecida como os Antigos (os Anciões). Com os desdobramentos em New Order, episódio inicial da oitava temporada de Stargate SG-1, o Comando Stargate envia uma equipa internacional para investigar o posto. O Dr. Jackson descobre a localização da mais grandiosa cidade criada pelos Antigos: Atlântida. A nova série acompanha as aventuras de um grupo de cientistas e militares que embarcam numa viagem sem volta para aquela cidade, na Galáxia Pégasus. Da mesma maneira que as equipas SG de Stargate SG-1, o uso, pela nova equipa, do Stargate coloca a humanidade em contacto com outras culturas, algumas humanas, outras aliení­genas, algumas amigáveis, outras profundamente hostis, como os Wraith.",
+      "popularity": 2456.609,
+      "poster_path": "/l0JYr2iqwId6VOmCV8dHzlIM6Wd.jpg",
+      "first_air_date": "2004-07-15",
+      "name": "Stargate Atlantis",
+      "vote_average": 8,
+      "vote_count": 972
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9faGSFi5jam6pDWGNd0p8JcJgXQ.jpg",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "id": 1396,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Breaking Bad",
+      "overview": "Um professor do secundário com cancro do pulmão terminal junta-se a um ex-aluno para fabricar e vender metanfetaminas como forma de garantir o futuro da sua família.",
+      "popularity": 2421.451,
+      "poster_path": "/rYCd6sLam5S4tMUUHdCXEWoBGsf.jpg",
+      "first_air_date": "2008-01-20",
+      "name": "Ruptura Total",
+      "vote_average": 8.908,
+      "vote_count": 13489
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/s92ZvqE4gWOrZq60AKvhgZZxDY4.jpg",
+      "genre_ids": [
+        10764
+      ],
+      "id": 240909,
+      "origin_country": [
+        "CO"
+      ],
+      "original_language": "es",
+      "original_name": "La Casa de los Famosos Colombia",
+      "overview": "",
+      "popularity": 2398.75,
+      "poster_path": "/lCn94cscNlFToXIbIWRSGBqb20Q.jpg",
+      "first_air_date": "2024-02-11",
+      "name": "La Casa de los Famosos Colombia",
+      "vote_average": 6.357,
+      "vote_count": 14
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lhdUwhInXu31qHm65jwBAlpTp8P.jpg",
+      "genre_ids": [
+        10767
+      ],
+      "id": 82873,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Kelly Clarkson Show",
+      "overview": "",
+      "popularity": 2391.009,
+      "poster_path": "/9Gg1oM8Us8gCS5aJA8e0ZRuIHnf.jpg",
+      "first_air_date": "2019-09-09",
+      "name": "The Kelly Clarkson Show",
+      "vote_average": 6.341,
+      "vote_count": 44
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rBF8wVQN8hTWHspVZBlI3h7HZJ.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10765,
+        10759
+      ],
+      "id": 60625,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Rick and Morty",
+      "overview": "O brilhante e alcoólico cientista Rick \"rapta\" o seu neto adolescente, Morty, para viagens loucas em outros mundos e dimensões alternativas.",
+      "popularity": 2303.511,
+      "poster_path": "/5qfd0e2uMbVInX3YdeFbDsfxi1t.jpg",
+      "first_air_date": "2013-12-02",
+      "name": "Rick and Morty",
+      "vote_average": 8.697,
+      "vote_count": 9363
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mUid3rbVigsDB3dgUUC04fYPrDB.jpg",
+      "genre_ids": [
+        10764
+      ],
+      "id": 137228,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "es",
+      "original_name": "La Casa de los Famosos",
+      "overview": "",
+      "popularity": 2282.363,
+      "poster_path": "/fxCgd9KZt06CxMDVztPEuV8F3b9.jpg",
+      "first_air_date": "2021-08-24",
+      "name": "La Casa de los Famosos",
+      "vote_average": 5.071,
+      "vote_count": 7
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jWXrQstj7p3Wl5MfYWY6IHqRpDb.jpg",
+      "genre_ids": [
+        10763
+      ],
+      "id": 94722,
+      "origin_country": [
+        "DE"
+      ],
+      "original_language": "de",
+      "original_name": "Tagesschau",
+      "overview": "Tagesschau é um serviço de notícias de televisão nacional e internacional alemão produzido pela equipe editorial da ARD-aktuell em nome da rede de televisão de serviço público alemão ARD. A edição principal do programa vai ao ar às 20h no Das Erste.",
+      "popularity": 2260.987,
+      "poster_path": "/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg",
+      "first_air_date": "1952-12-26",
+      "name": "Tagesschau",
+      "vote_average": 6.816,
+      "vote_count": 198
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/coHpOy9OJyFiHWeH36cSHMpLUHC.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 2691,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Two and a Half Men",
+      "overview": "A vida de um homem rico e solteiro, Charlie (Charlie Sheen), que se aborrece quando seu irmão divorciado Alan (Jon Cryer) e seu sobrinho Jake (Angus T. Jones) acabam indo morar na sua casa em Malibu. Apesar das enormes diferenças entre os dois irmãos, eles decidem firmar uma parceria para dar um lar ao pequeno Jake.",
+      "popularity": 2253.786,
+      "poster_path": "/dPCv0RaOj2pRxZcUDOoqXFe7Pqn.jpg",
+      "first_air_date": "2003-09-22",
+      "name": "Dois Homens e Meio",
+      "vote_average": 7.5,
+      "vote_count": 3044
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/f3cin9kOz4nOrlYEMxGFQhv4bdN.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 71712,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Good Doctor",
+      "overview": "Um jovem cirurgião diagnosticado com savantismo, um distúrbio psíquico raro, é recrutado para trabalhar na ala pediátrica de um hospital de prestígio. Apesar do seu incrível conhecimento na área da medicina, o médico não consegue se relacionar com o mundo à sua volta. Resta saber se esta dificuldade será um problema na hora de salvar vidas.",
+      "popularity": 2250.77,
+      "poster_path": "/v9WYk0nigzR9NAEjeSmfI6s4XA2.jpg",
+      "first_air_date": "2017-09-25",
+      "name": "The Good Doctor",
+      "vote_average": 8.495,
+      "vote_count": 12087
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3u5b6Zy3EKQX0ALvg1uBC7wd1Jw.jpg",
+      "genre_ids": [
+        35,
+        10767
+      ],
+      "id": 4419,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Real Time with Bill Maher",
+      "overview": "Em direto de Los Angeles, Bill Maher e os seus convidados dissecam o elenco de personagens de Wall Street, Washington e de todo o mundo e cobrem assuntos da atualidade como os serviços de saúde, a dívida federal, o ambiente e muitos outros.",
+      "popularity": 2245.298,
+      "poster_path": "/pbpoLLp4kvnYVfnEGiEhagpJuVZ.jpg",
+      "first_air_date": "2003-02-21",
+      "name": "Real Time with Bill Maher",
+      "vote_average": 6.008,
+      "vote_count": 191
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/butPVWgcbtAjL9Z7jU7Xj1KA8KD.jpg",
+      "genre_ids": [
+        10767,
+        35
+      ],
+      "id": 22980,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Watch What Happens Live with Andy Cohen",
+      "overview": "",
+      "popularity": 2202.903,
+      "poster_path": "/onSD9UXfJwrMXWhq7UY7hGF2S1h.jpg",
+      "first_air_date": "2009-07-16",
+      "name": "Watch What Happens Live with Andy Cohen",
+      "vote_average": 4.971,
+      "vote_count": 52
+    }
+  ],
+  "total_pages": 8564,
+  "total_results": 171275
+}

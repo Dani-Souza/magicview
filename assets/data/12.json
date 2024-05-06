@@ -1,0 +1,406 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/qrGtVFxaD8c7et0jUtaYhyTzzPg.jpg",
+      "genre_ids": [
+        28,
+        878,
+        12
+      ],
+      "id": 823464,
+      "original_language": "en",
+      "original_title": "Godzilla x Kong: The New Empire",
+      "overview": "O poderoso Kong e o temível Godzilla se unem contra uma colossal ameaça mortal escondida no mundo dos humanos, que ameaça a existência de sua espécie e da nossa. Mergulhando profundamente nos mistérios da Ilha da Caveira e nas origens da Terra Oca, o filme irá explorar a antiga batalha de Titãs que ajudou a forjar esses seres extraordinários e os ligou à humanidade para sempre.",
+      "popularity": 1818.259,
+      "poster_path": "/qPLQIVTVkhSm0tmhPMX0OeEuG0P.jpg",
+      "release_date": "2024-03-27",
+      "title": "Godzilla e Kong: O Novo Império",
+      "video": false,
+      "vote_average": 6.511,
+      "vote_count": 913
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+      "genre_ids": [
+        878,
+        12
+      ],
+      "id": 693134,
+      "original_language": "en",
+      "original_title": "Dune: Part Two",
+      "overview": "A jornada de Paul Atreides continua. Ele está determinado a buscar vingança contra aqueles que destruíram sua família e seu lar. Com a ajuda de Chani e dos Fremen, ele embarca em uma jornada espiritual, mística e marcial. Se torna Muad'Dib, o líder messiânico dos Fremen, enquanto luta para evitar um futuro sombrio que ele testemunhou em visões. No entanto, suas ações inadvertidamente desencadeiam uma Guerra Santa em seu nome, que se espalha pelo universo conhecido. Enquanto enfrenta escolhas difíceis entre o amor por Chani e o destino de seu povo, Paul precisa usar suas habilidades e conhecimentos para evitar o terrível futuro que previu.",
+      "popularity": 1390.639,
+      "poster_path": "/e8pI4XkYgUMuSJ8cEFbJE18wc4e.jpg",
+      "release_date": "2024-02-27",
+      "title": "Duna: Parte Dois",
+      "video": false,
+      "vote_average": 8.235,
+      "vote_count": 3593
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qGJASuD3fs9ZBxuEZoxCLVidVq8.jpg",
+      "genre_ids": [
+        12,
+        28,
+        18
+      ],
+      "id": 845111,
+      "original_language": "fr",
+      "original_title": "Les trois mousquetaires : Milady",
+      "overview": "No segundo capítulo da saga dos Três Mosqueteiros, Constance Bonacieux é sequestrada diante dos olhos de D'Artagnan, o que o leva a iniciar uma frenética busca para salvá-la, sendo forçado a aliar-se à misteriosa Milady de Winter. Junto a Athos, Porthos e Aramis, o jovem mosqueteiro enfrentará alguns segredos obscuros que podem balançar velhas alianças e desencadear uma grande guerra.",
+      "popularity": 796.029,
+      "poster_path": "/qsOK6mqsmddKmiEtLReV6nlbuW0.jpg",
+      "release_date": "2023-12-13",
+      "title": "Os Três Mosqueteiros: Milady",
+      "video": false,
+      "vote_average": 6.528,
+      "vote_count": 371
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vTlK3chwsEToSoQJYUcJaHlNhIf.jpg",
+      "genre_ids": [
+        18,
+        12
+      ],
+      "id": 618588,
+      "original_language": "en",
+      "original_title": "Arthur the King",
+      "overview": "Um corredor de aventura adota um cão de rua chamado Arthur para acompanhá-lo em uma corrida épica de resistência.",
+      "popularity": 651.969,
+      "poster_path": "/31092QuIGplIz0Tmds5LytzU0yY.jpg",
+      "release_date": "2024-03-15",
+      "title": "Uma Prova de Coragem",
+      "video": false,
+      "vote_average": 6.886,
+      "vote_count": 92
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fypydCipcWDKDTTCoPucBsdGYXW.jpg",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "id": 653346,
+      "original_language": "en",
+      "original_title": "Kingdom of the Planet of the Apes",
+      "overview": "Várias gerações no futuro, após o reinado de César, os macacos são agora a espécie dominante e vivem harmoniosamente, enquanto os humanos foram reduzidos a viver nas sombras. À medida que um novo líder símio tirânico constrói o seu império, um jovem macaco empreende uma jornada angustiante que o levará a questionar tudo o que sabia sobre o passado e a fazer escolhas que definirão um futuro tanto para os macacos como para os humanos.",
+      "popularity": 686.196,
+      "poster_path": "/dzDK2TMXsxrolGVdZwNGcOlZqrF.jpg",
+      "release_date": "2024-05-08",
+      "title": "Planeta dos Macacos: O Reinado",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 8
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7ZP8HtgOIDaBs12krXgUIygqEsy.jpg",
+      "genre_ids": [
+        878,
+        28,
+        14,
+        12
+      ],
+      "id": 601796,
+      "original_language": "ko",
+      "original_title": "외계+인 1부",
+      "overview": "A porta do tempo se abre entre o espadachim que quer apoderar-se da lendária espada divina no final da Dinastia Goryeo e aqueles que perseguem um prisioneiro alienígena preso em um corpo humano em 2022.",
+      "popularity": 570.84,
+      "poster_path": "/ynyN9hdxL5vq7GnSX8Fdz3TfoTE.jpg",
+      "release_date": "2022-07-20",
+      "title": "Alienoid",
+      "video": false,
+      "vote_average": 6.801,
+      "vote_count": 306
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2KGxQFV9Wp1MshPBf8BuqWUgVAz.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        35,
+        10751
+      ],
+      "id": 940551,
+      "original_language": "en",
+      "original_title": "Migration",
+      "overview": "A família Mallard está um pouco refém da rotina. Enquanto Mack, o pai, se contenta em manter sua família segura nos arredores de um lago da Nova Inglaterra para sempre, Pam, a mãe, está ansiosa para agitar as coisas e mostrar a seus filhos – o adolescente Dax e a patinha Gwen – o mundo inteiro. Quando uma família de patos migratórios aterrissa em seu lago com histórias emocionantes de lugares distantes, Pam convence Mack a embarcar em uma viagem em família, via Nova York, para a Jamaica tropical.",
+      "popularity": 607.748,
+      "poster_path": "/wXWnUhdnSuADRp9w7aAZNHx682v.jpg",
+      "release_date": "2023-12-06",
+      "title": "Patos!",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 1273
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg",
+      "genre_ids": [
+        878,
+        12
+      ],
+      "id": 438631,
+      "original_language": "en",
+      "original_title": "Dune",
+      "overview": "Em um futuro distante, planetas são comandados por casas nobres que fazem parte de um império feudal intergalático. Paul Atreides é um jovem cuja família toma o controle do planeta deserto Arrakis, também conhecido como Duna. A única fonte da especiaria Melange, a substância mais importante do cosmos, Arrakis se mostra ser um planeta nem um pouco fácil de governar.",
+      "popularity": 533.044,
+      "poster_path": "/uzERcfV2rSHNhW5eViQiO9hNiA7.jpg",
+      "release_date": "2021-09-15",
+      "title": "Duna",
+      "video": false,
+      "vote_average": 7.784,
+      "vote_count": 11490
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg",
+      "genre_ids": [
+        35,
+        12
+      ],
+      "id": 346698,
+      "original_language": "en",
+      "original_title": "Barbie",
+      "overview": "No mundo mágico das Barbies, \"Barbieland\", uma das bonecas começa a perceber que não se encaixa como as outras. Depois de ser expulsa, ela parte para uma aventura no \"mundo real\", onde descobre que a beleza está no interior de cada um.",
+      "popularity": 454.815,
+      "poster_path": "/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg",
+      "release_date": "2023-07-19",
+      "title": "Barbie",
+      "video": false,
+      "vote_average": 7.07,
+      "vote_count": 8150
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/en971MEXui9diirXlogOrPKmsEn.jpg",
+      "genre_ids": [
+        28,
+        12,
+        35
+      ],
+      "id": 293660,
+      "original_language": "en",
+      "original_title": "Deadpool",
+      "overview": "Baseado no anti-herói não convencional da Marvel Comics, Deadpool conta a história da origem do ex-agente das Forças Especiais que se tornou o mercenário Wade Wilson. Depois de ser submetido a um desonesto experimento que o deixa com poderes de cura acelerada, Wade adota o alter ego de Deadpool. Armado com suas novas habilidades e um senso de humor negro e distorcido, Deadpool persegue o homem que quase destruiu sua vida.",
+      "popularity": 423.367,
+      "poster_path": "/fSRb7vyIP8rQpL0I47P3qUsEKX3.jpg",
+      "release_date": "2016-02-09",
+      "title": "Deadpool",
+      "video": false,
+      "vote_average": 7.612,
+      "vote_count": 29820
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yF1eOkaYvwiORauRCPWznV9xVvi.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 298618,
+      "original_language": "en",
+      "original_title": "The Flash",
+      "overview": "Os mundos colidem quando Barry Allen usa seus superpoderes para viajar no tempo e mudar os acontecimentos do passado. Mas a tentativa de salvar sua família altera inadvertidamente o futuro.",
+      "popularity": 399.718,
+      "poster_path": "/itYONYDHpJqTuu8BCXAtHxgpglq.jpg",
+      "release_date": "2023-06-13",
+      "title": "The Flash",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 3854
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kaIfm5ryEOwYg8mLbq8HkPuM1Fo.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 284053,
+      "original_language": "en",
+      "original_title": "Thor: Ragnarok",
+      "overview": "Thor está preso do outro lado do universo. Ele precisa correr contra o tempo para voltar a Asgard e parar Ragnarok, a destruição de seu mundo, que está nas mãos da poderosa e implacável vilã Hela.",
+      "popularity": 416.581,
+      "poster_path": "/3MZlw0ztDak4ATX2FqA5qUh4DfN.jpg",
+      "release_date": "2017-10-02",
+      "title": "Thor: Ragnarok",
+      "video": false,
+      "vote_average": 7.592,
+      "vote_count": 20170
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/w4pRLYYbhHn3sh9kqRgPZM6GjyS.jpg",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "id": 609681,
+      "original_language": "en",
+      "original_title": "The Marvels",
+      "overview": "Quando suas obrigações a levam a uma fenda espacial anômala ligada a um revolucionário Kree, os poderes de Carol Danvers, a Capitã Marvel, se entrelaçam aos de Kamala Khan, a Ms. Marvel, e aos da sobrinha de Carol, astronauta da S.A.B.E.R., Capitã Monica Rambeau. Juntas, esse trio improvável deve ser unir para salvar o universo como \"As Marvels\".",
+      "popularity": 390.533,
+      "poster_path": "/wpp5KIwjtrKoWj5H0TSsJdqsDx7.jpg",
+      "release_date": "2023-11-08",
+      "title": "As Marvels",
+      "video": false,
+      "vote_average": 6.2,
+      "vote_count": 2248
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7lmBufEG7P7Y1HClYK3gCxYrkgS.jpg",
+      "genre_ids": [
+        12,
+        28,
+        878
+      ],
+      "id": 10138,
+      "original_language": "en",
+      "original_title": "Iron Man 2",
+      "overview": "Em um mundo ciente da existência do Homem de Ferro, o inventor bilionário Tony Stark sofre pressão de todos os lados para compartilhar sua tecnologia com as forças armadas. Ele resiste para divulgar os segredos de sua inigualável armadura, com medo de que estas informações caiam nas mãos erradas.",
+      "popularity": 408.559,
+      "poster_path": "/A7NFIOapixCJV3zA3sF823KVrNL.jpg",
+      "release_date": "2010-04-28",
+      "title": "Homem de Ferro 2",
+      "video": false,
+      "vote_average": 6.84,
+      "vote_count": 20405
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6iUNJZymJBMXXriQyFZfLAKnjO6.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 297762,
+      "original_language": "en",
+      "original_title": "Wonder Woman",
+      "overview": "Treinada desde cedo para ser uma guerreira imbatível, Diana Prince (Gal Gadot) nunca saiu da paradisíaca ilha em que é reconhecida como Princesa das Amazonas. Quando o piloto Steve Trevor (Chris Pine) se acidenta e cai numa praia do local, ela descobre que uma guerra sem precedentes está se espalhando pelo mundo e decide deixar seu lar certa de que pode parar o conflito. Lutando para acabar com todas as lutas, Diana percebe o alcance de seus poderes e sua verdadeira missão na Terra.",
+      "popularity": 397.529,
+      "poster_path": "/ujQthWB6c0ojlARk28NSTmqidbF.jpg",
+      "release_date": "2017-05-30",
+      "title": "Mulher-Maravilha",
+      "video": false,
+      "vote_average": 7.228,
+      "vote_count": 19485
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/deLWkOLZmBNkm8p16igfapQyqeq.jpg",
+      "genre_ids": [
+        14,
+        28,
+        12
+      ],
+      "id": 763215,
+      "original_language": "en",
+      "original_title": "Damsel",
+      "overview": "O casamento de uma jovem com um príncipe encantado se transforma em uma luta por sobrevivência quando ela é oferecida em sacrifício a um dragão que cospe fogo.",
+      "popularity": 350.342,
+      "poster_path": "/ub4EHdVBVm3nHJiamU0gGcKS4ae.jpg",
+      "release_date": "2024-03-07",
+      "title": "Donzela",
+      "video": false,
+      "vote_average": 7.139,
+      "vote_count": 1721
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qAzYK4YPSWDc7aa4R43LcwRIAyb.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 299537,
+      "original_language": "en",
+      "original_title": "Captain Marvel",
+      "overview": "Capitã Marvel, parte do exército de elite dos Kree, uma raça alienígena, encontra-se no meio de uma batalha entre seu povo e os Skrulls. Ao tentar impedir uma invasão de larga escala na Terra, em 1995, ela tem memórias recorrentes de uma outra vida, como Carol Danvers, agente da Força Aérea norte-americana. Com a ajuda de Nick Fury, Capitã Marvel precisa descobrir os segredos de seu passado e pôr um fim ao conflito intergalático com os Skrulls.",
+      "popularity": 401.409,
+      "poster_path": "/n3BisLdTMceUWcdP1ooP5VwN9JF.jpg",
+      "release_date": "2019-03-06",
+      "title": "Capitã Marvel",
+      "video": false,
+      "vote_average": 6.824,
+      "vote_count": 15236
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4qCqAdHcNKeAHcK8tJ8wNJZa9cx.jpg",
+      "genre_ids": [
+        12,
+        28,
+        878
+      ],
+      "id": 11,
+      "original_language": "en",
+      "original_title": "Star Wars",
+      "overview": "A princesa Leia é mantida refém pelas forças imperiais comandadas por Darth Vader. Luke Skywalker e Han Solo precisam libertá-la e restaurar a liberdade e a justiça na galáxia.",
+      "popularity": 438.551,
+      "poster_path": "/lesQwNHiSdauuo1xrtLP8uBUlIu.jpg",
+      "release_date": "1977-05-25",
+      "title": "Guerra nas Estrelas",
+      "video": false,
+      "vote_average": 8.203,
+      "vote_count": 19948
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
+      "genre_ids": [
+        12,
+        18,
+        878
+      ],
+      "id": 157336,
+      "original_language": "en",
+      "original_title": "Interstellar",
+      "overview": "As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie. Cooper é chamado para liderar o grupo e aceita a missão sabendo que pode nunca mais ver os filhos. Ao lado de Brand, Jenkins e Doyle, ele seguirá em busca de um novo lar.",
+      "popularity": 365.667,
+      "poster_path": "/nCbkOyOMTEwlEV0LtCOvCnwEONA.jpg",
+      "release_date": "2014-11-05",
+      "title": "Interestelar",
+      "video": false,
+      "vote_average": 8.434,
+      "vote_count": 34240
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 284054,
+      "original_language": "en",
+      "original_title": "Black Panther",
+      "overview": "O príncipe T'Challa retorna a Wakanda para ser coroado rei. Assumindo o manto de Pantera Negra, ele vai à caça de um vilão que roubou um precioso metal de seu país.",
+      "popularity": 383.27,
+      "poster_path": "/9D40jv8pi9uKnrVDPiN3JYYad72.jpg",
+      "release_date": "2018-02-13",
+      "title": "Pantera Negra",
+      "video": false,
+      "vote_average": 7.385,
+      "vote_count": 21630
+    }
+  ],
+  "total_pages": 1087,
+  "total_results": 21736
+}

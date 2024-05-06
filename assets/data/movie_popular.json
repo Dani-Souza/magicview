@@ -1,0 +1,402 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/qrGtVFxaD8c7et0jUtaYhyTzzPg.jpg",
+      "genre_ids": [
+        28,
+        878,
+        12
+      ],
+      "id": 823464,
+      "original_language": "en",
+      "original_title": "Godzilla x Kong: The New Empire",
+      "overview": "Uma nova e emocionante aventura coloca o poderoso Kong e o temível Godzilla contra uma ameaça colossal e desconhecida, oculta dentro do nosso mundo, desafiando a própria existência deles – e a nossa também. \"Godzilla X Kong: O Novo Império\" aprofunda-se ainda mais as histórias desses Titãs e as suas origens, assim como nos mistérios da Ilha da Caveira e além, revelando a batalha mítica que ajudou a forjar esses seres extraordinários e os vinculou para sempre à humanidade.",
+      "popularity": 1818.259,
+      "poster_path": "/qPLQIVTVkhSm0tmhPMX0OeEuG0P.jpg",
+      "release_date": "2024-03-27",
+      "title": "Godzilla x Kong: O Novo Império",
+      "video": false,
+      "vote_average": 6.511,
+      "vote_count": 913
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jnE1GA7cGEfv5DJBoU2t4bZHaP4.jpg",
+      "genre_ids": [
+        28,
+        878
+      ],
+      "id": 1094844,
+      "original_language": "en",
+      "original_title": "Ape vs. Mecha Ape",
+      "overview": "",
+      "popularity": 1639.584,
+      "poster_path": "/isXDRoaeOm7BJVXVwPzPTnKWKqi.jpg",
+      "release_date": "2023-03-24",
+      "title": "Ape vs. Mecha Ape",
+      "video": false,
+      "vote_average": 5.84,
+      "vote_count": 78
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+      "genre_ids": [
+        878,
+        12
+      ],
+      "id": 693134,
+      "original_language": "en",
+      "original_title": "Dune: Part Two",
+      "overview": "\"Duna: Parte Dois\" continua a explorar a viagem de Paul Atreides que agora se une a Chani e aos Fremen para vingar a conspiração que destruiu a sua família. Ao enfrentar uma escolha entre o amor e o destino do universo, lutará para evitar o futuro terrível que só ele pode prever.",
+      "popularity": 1390.639,
+      "poster_path": "/e8pI4XkYgUMuSJ8cEFbJE18wc4e.jpg",
+      "release_date": "2024-02-27",
+      "title": "Duna: Parte 2",
+      "video": false,
+      "vote_average": 8.236,
+      "vote_count": 3594
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4woSOUD0equAYzvwhWBHIJDCM88.jpg",
+      "genre_ids": [
+        28,
+        27,
+        53
+      ],
+      "id": 1096197,
+      "original_language": "en",
+      "original_title": "No Way Up",
+      "overview": "Os sobreviventes de um voo têm de unir forças quando o seu avião cai no Oceano Pacífico. Com a aeronave perigosamente perto da borda de uma ravina, os passageiros e tripulantes sobreviventes ficam presos numa bolsa de ar, dando início a uma luta aterrorizante pela sobrevivência. Com o fornecimento de ar a esgotar-se e perigos a surgirem por todos os lados, a situação torna-se cada vez mais desesperada.",
+      "popularity": 1245.817,
+      "poster_path": "/ktxq0LYgl41I2DUn49TYIaS9dZR.jpg",
+      "release_date": "2024-01-18",
+      "title": "No Way Up - Sem Saída",
+      "video": false,
+      "vote_average": 6.329,
+      "vote_count": 559
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kYgQzzjNis5jJalYtIHgrom0gOx.jpg",
+      "genre_ids": [
+        16,
+        28,
+        10751,
+        35,
+        14
+      ],
+      "id": 1011985,
+      "original_language": "en",
+      "original_title": "Kung Fu Panda 4",
+      "overview": "Po está prestes a tornar-se o novo líder espiritual do Vale da Paz, mas antes disso, ele deve encontrar um sucessor para se tornar o novo Guerreiro Dragão. Parece que ele encontra um em Zhen, uma raposa com muitas habilidades promissoras, mas que não gosta muito da ideia de Po treiná-lo.",
+      "popularity": 1230.013,
+      "poster_path": "/aNK6MA5EApIo0UJE7ZWSYcZBJKy.jpg",
+      "release_date": "2024-03-02",
+      "title": "O Panda do Kung Fu 4",
+      "video": false,
+      "vote_average": 7.132,
+      "vote_count": 1476
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tpiqEVTLRz2Mq7eLq5DT8jSrp71.jpg",
+      "genre_ids": [
+        878,
+        28,
+        18
+      ],
+      "id": 934632,
+      "original_language": "en",
+      "original_title": "Rebel Moon - Part Two: The Scargiver",
+      "overview": "Os rebeldes preparam-se para a batalha contra as implacáveis forças do Mundo-Mãe. Um momento crucial em que se forjam laços inquebráveis, surgem heróis e se criam lendas.",
+      "popularity": 1187.439,
+      "poster_path": "/kkP50MUDBqt4JqDEwxk32wUHePk.jpg",
+      "release_date": "2024-04-19",
+      "title": "Rebel Moon — Parte 2: A Scargiver",
+      "video": false,
+      "vote_average": 6.123,
+      "vote_count": 632
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5Eip60UDiPLASyKjmHPMruggTc4.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "id": 1041613,
+      "original_language": "en",
+      "original_title": "Immaculate",
+      "overview": "Cecília, uma mulher de fé devota, é calorosamente recebida na pitoresca paisagem italiana, onde lhe é oferecido um novo papel num convento ilustre. No entanto, torna-se evidente para Cecília que o seu novo lar esconde segredos sombrios e aterrorizantes",
+      "popularity": 892.57,
+      "poster_path": "/tsV19P8J4NMP54cC8QCg1IkLLks.jpg",
+      "release_date": "2024-03-20",
+      "title": "Imaculada",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 367
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6a3aiSYNqABoV1Fq8n10LMOBxhH.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 821937,
+      "original_language": "vi",
+      "original_title": "578: Phát Đạn Của Kẻ Điên",
+      "overview": "",
+      "popularity": 843.881,
+      "poster_path": "/cPTphSqJ0dF0EPeeAR1qeeNbMPV.jpg",
+      "release_date": "2022-05-20",
+      "title": "578: Phát Đạn Của Kẻ Điên",
+      "video": false,
+      "vote_average": 5.05,
+      "vote_count": 20
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qGJASuD3fs9ZBxuEZoxCLVidVq8.jpg",
+      "genre_ids": [
+        12,
+        28,
+        18
+      ],
+      "id": 845111,
+      "original_language": "fr",
+      "original_title": "Les trois mousquetaires : Milady",
+      "overview": "Constance é raptada diante dos olhos de D'Artagnan. Numa busca frenética para a salvar, o jovem mosqueteiro é forçado a juntar forças com a misteriosa Milady de Winter. Quando a guerra é declarada e Athos, Porthos e Aramis já se juntaram à frente de batalha, um terrível segredo do passado destrói todas as antigas alianças. À medida que o Rei fica cada vez mais sob o controlo do Cardeal Richelieu, D'Artagnan e os Mosqueteiros são o último bastião antes do caos. No entanto, envolvidos numa conspiração que ameaça colocar o país a ferro e fogo, o destino submete-os a uma terrível escolha: terão de sacrificar aqueles que amam para cumprir a sua missão? Segunda de uma adaptação cinematográfica em duas partes do romance de Alexandre Dumas.",
+      "popularity": 796.029,
+      "poster_path": "/qsOK6mqsmddKmiEtLReV6nlbuW0.jpg",
+      "release_date": "2023-12-13",
+      "title": "Os Três Mosqueteiros: Milady",
+      "video": false,
+      "vote_average": 6.516,
+      "vote_count": 372
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/v5XyXZe8FADw8iHupB4L7QOAwH9.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751
+      ],
+      "id": 748783,
+      "original_language": "en",
+      "original_title": "The Garfield Movie",
+      "overview": "",
+      "popularity": 757.742,
+      "poster_path": "/rC5RqXtFoTkBhNWE1dczwi4dZrX.jpg",
+      "release_date": "2024-04-30",
+      "title": "Garfield - O Filme",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 16
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bWIIWhnaoWx3FTVXv6GkYDv3djL.jpg",
+      "genre_ids": [
+        878,
+        27,
+        28
+      ],
+      "id": 940721,
+      "original_language": "ja",
+      "original_title": "ゴジラ-1.0",
+      "overview": "Devastado pela Segunda Guerra Mundial, o Japão enfrenta uma força monstruosa que ameaça uma destruição ainda maior. Se o país estava na estaca zero, atinge agora um nível negativo nunca antes visto. Conseguirão as pessoas lutar e sobreviver? Godzilla regressa às origens e recupera o seu lugar no trono como o Rei dos Monstros.",
+      "popularity": 726.877,
+      "poster_path": "/av8ERPRsvMQ8kGRWFccaU6DgBma.jpg",
+      "release_date": "2023-11-03",
+      "title": "Godzilla Minus One",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 640
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fypydCipcWDKDTTCoPucBsdGYXW.jpg",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "id": 653346,
+      "original_language": "en",
+      "original_title": "Kingdom of the Planet of the Apes",
+      "overview": "No futuro, várias gerações após o reinado de César, onde os macacos são a espécie dominante que vive harmoniosamente e os humanos foram reduzidos a viver nas sombras. À medida que um novo líder primata tirano constrói o seu império, um jovem macaco inicia uma jornada angustiante que o levará a questionar tudo o que sabe sobre o passado e a fazer escolhas que irão definir o futuro dos macacos e dos humanos.",
+      "popularity": 686.196,
+      "poster_path": "/dzDK2TMXsxrolGVdZwNGcOlZqrF.jpg",
+      "release_date": "2024-05-08",
+      "title": "O Reino do Planeta dos Macacos",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 8
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/k0ucFBBgSDTXYU8fVHXJyjAuIIe.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 1063879,
+      "original_language": "fr",
+      "original_title": "Vermines",
+      "overview": "",
+      "popularity": 678.79,
+      "poster_path": "/3dx1yPdVzxEr6rMn4cVSiljk1kX.jpg",
+      "release_date": "2023-12-27",
+      "title": "Vermines",
+      "video": false,
+      "vote_average": 7.104,
+      "vote_count": 149
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ilK1JRbMjo4sMJtNKLOKnqRf1RH.jpg",
+      "genre_ids": [
+        10752,
+        28,
+        36
+      ],
+      "id": 976906,
+      "original_language": "en",
+      "original_title": "Spitfire Over Berlin",
+      "overview": "",
+      "popularity": 667.795,
+      "poster_path": "/xtPPOPTad1qopK6uDe3VlYUa22o.jpg",
+      "release_date": "2022-05-13",
+      "title": "Spitfire Over Berlin",
+      "video": false,
+      "vote_average": 4.133,
+      "vote_count": 15
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vTlK3chwsEToSoQJYUcJaHlNhIf.jpg",
+      "genre_ids": [
+        18,
+        12
+      ],
+      "id": 618588,
+      "original_language": "en",
+      "original_title": "Arthur the King",
+      "overview": "Mikael Lindnord, capitão de uma equipa sueca de corridas de aventura, conhece um cão vadio durante uma prova através das selvas equatorianas.",
+      "popularity": 651.969,
+      "poster_path": "/31092QuIGplIz0Tmds5LytzU0yY.jpg",
+      "release_date": "2024-03-15",
+      "title": "Arthur Amigo Para Sempre",
+      "video": false,
+      "vote_average": 6.886,
+      "vote_count": 92
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pwGmXVKUgKN13psUjlhC9zBcq1o.jpg",
+      "genre_ids": [
+        28,
+        14
+      ],
+      "id": 634492,
+      "original_language": "en",
+      "original_title": "Madame Web",
+      "overview": "Cassandra Webb é uma paramédica de Manhattan que tem capacidades de clarividência. Forçada a enfrentar revelações sobre seu passado, cria laços com três jovens destinadas a futuros poderosos... se todas conseguirem sobreviver ao mortífero presente.",
+      "popularity": 636.241,
+      "poster_path": "/zWEm5oy2tE9ku1KSNM089FmZJ2p.jpg",
+      "release_date": "2024-02-14",
+      "title": "Madame Web",
+      "video": false,
+      "vote_average": 5.609,
+      "vote_count": 1201
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oe7mWkvYhK4PLRNAVSvonzyUXNy.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 359410,
+      "original_language": "en",
+      "original_title": "Road House",
+      "overview": "Neste remake cheio de adrenalina do clássico cult dos anos 80, Dalton, ex-lutador do UFC, consegue um emprego como segurança num bar de beira de estrada em Florida Keys e descobre que aquele paraíso não é bem o que parece.",
+      "popularity": 625.791,
+      "poster_path": "/h2xDLj6CtzItwQEFyBjIXh5z3QD.jpg",
+      "release_date": "2024-03-08",
+      "title": "Road House",
+      "video": false,
+      "vote_average": 7.016,
+      "vote_count": 1650
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 872585,
+      "original_language": "en",
+      "original_title": "Oppenheimer",
+      "overview": "A história do envolvimento de J. Robert Oppenheimer na criação da bomba atómica durante a Segunda Guerra Mundial.",
+      "popularity": 616.637,
+      "poster_path": "/1OsQJEoSXBjduuCvDOlRhoEUaHu.jpg",
+      "release_date": "2023-07-19",
+      "title": "Oppenheimer",
+      "video": false,
+      "vote_average": 8.11,
+      "vote_count": 7865
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2KGxQFV9Wp1MshPBf8BuqWUgVAz.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        35,
+        10751
+      ],
+      "id": 940551,
+      "original_language": "en",
+      "original_title": "Migration",
+      "overview": "Uma família de patos convence o pai superprotector a ir de férias e migrar da Nova Inglaterra, passando por Nova Iorque, até às Bahamas.",
+      "popularity": 607.748,
+      "poster_path": "/wXWnUhdnSuADRp9w7aAZNHx682v.jpg",
+      "release_date": "2023-12-06",
+      "title": "Patos!",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 1273
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/keVfqCMKmJ55nHzmqR2Q5K7LwJt.jpg",
+      "genre_ids": [
+        28,
+        53,
+        10752
+      ],
+      "id": 784651,
+      "original_language": "hi",
+      "original_title": "फाइटर",
+      "overview": "",
+      "popularity": 605.327,
+      "poster_path": "/eKML6xBIWCAlDsOCltxqEcZsgnY.jpg",
+      "release_date": "2024-01-24",
+      "title": "फाइटर",
+      "video": false,
+      "vote_average": 5.302,
+      "vote_count": 58
+    }
+  ],
+  "total_pages": 43963,
+  "total_results": 879257
+}
