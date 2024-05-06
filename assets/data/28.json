@@ -1,0 +1,401 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/tpiqEVTLRz2Mq7eLq5DT8jSrp71.jpg",
+      "genre_ids": [
+        878,
+        28,
+        18
+      ],
+      "id": 934632,
+      "original_language": "en",
+      "original_title": "Rebel Moon - Part Two: The Scargiver",
+      "overview": "Conforme os rebeldes se preparam para a batalha contra as forças implacáveis do Mundo-Mãe, laços são forjados, heróis emergem e lendas nascem.",
+      "popularity": 1187.439,
+      "poster_path": "/kkP50MUDBqt4JqDEwxk32wUHePk.jpg",
+      "release_date": "2024-04-19",
+      "title": "Rebel Moon - Parte 2: A Marcadora de Cicatrizes",
+      "video": false,
+      "vote_average": 6.136,
+      "vote_count": 627
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qGJASuD3fs9ZBxuEZoxCLVidVq8.jpg",
+      "genre_ids": [
+        12,
+        28,
+        18
+      ],
+      "id": 845111,
+      "original_language": "fr",
+      "original_title": "Les trois mousquetaires : Milady",
+      "overview": "No segundo capítulo da saga dos Três Mosqueteiros, Constance Bonacieux é sequestrada diante dos olhos de D'Artagnan, o que o leva a iniciar uma frenética busca para salvá-la, sendo forçado a aliar-se à misteriosa Milady de Winter. Junto a Athos, Porthos e Aramis, o jovem mosqueteiro enfrentará alguns segredos obscuros que podem balançar velhas alianças e desencadear uma grande guerra.",
+      "popularity": 796.029,
+      "poster_path": "/qsOK6mqsmddKmiEtLReV6nlbuW0.jpg",
+      "release_date": "2023-12-13",
+      "title": "Os Três Mosqueteiros: Milady",
+      "video": false,
+      "vote_average": 6.528,
+      "vote_count": 371
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vTlK3chwsEToSoQJYUcJaHlNhIf.jpg",
+      "genre_ids": [
+        18,
+        12
+      ],
+      "id": 618588,
+      "original_language": "en",
+      "original_title": "Arthur the King",
+      "overview": "Um corredor de aventura adota um cão de rua chamado Arthur para acompanhá-lo em uma corrida épica de resistência.",
+      "popularity": 651.969,
+      "poster_path": "/31092QuIGplIz0Tmds5LytzU0yY.jpg",
+      "release_date": "2024-03-15",
+      "title": "Uma Prova de Coragem",
+      "video": false,
+      "vote_average": 6.885,
+      "vote_count": 91
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 872585,
+      "original_language": "en",
+      "original_title": "Oppenheimer",
+      "overview": "A história do físico americano J. Robert Oppenheimer, seu papel no Projeto Manhattan e no desenvolvimento da bomba atômica durante a Segunda Guerra Mundial, e o quanto isso mudaria a história do mundo para sempre.",
+      "popularity": 616.637,
+      "poster_path": "/1OsQJEoSXBjduuCvDOlRhoEUaHu.jpg",
+      "release_date": "2023-07-19",
+      "title": "Oppenheimer",
+      "video": false,
+      "vote_average": 8.111,
+      "vote_count": 7862
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uv2twFGMk2qBdyJBJAVcrpRtSa9.jpg",
+      "genre_ids": [
+        10752,
+        28,
+        18
+      ],
+      "id": 929590,
+      "original_language": "en",
+      "original_title": "Civil War",
+      "overview": "Em um futuro não tão distante, quando uma guerra civil se instaura nos Estados Unidos, uma equipe pioneira de jornalistas de guerra viaja pelo país para registrar a dimensão e a situação de um cenário violento que tomou as ruas em uma rápida escalada, envolvendo toda a nação. No entanto, o trabalho de registro se transforma em uma guerra de sobrevivência quando eles também se tornam o alvo.",
+      "popularity": 541.412,
+      "poster_path": "/3Use5sOQWXL3BvcaKqUH7eQ7I53.jpg",
+      "release_date": "2024-04-10",
+      "title": "Guerra Civil",
+      "video": false,
+      "vote_average": 7.407,
+      "vote_count": 564
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9X7YweCJw3q8Mcf6GadxReFEksM.jpg",
+      "genre_ids": [
+        28,
+        18,
+        878
+      ],
+      "id": 263115,
+      "original_language": "en",
+      "original_title": "Logan",
+      "overview": "Em 2029, Logan ganha a vida como chofer de limousine para cuidar do nonagenário Charles Xavier. Debilitado fisicamente e esgotado emocionalmente, ele é procurado por Gabriela, uma mexicana que precisa da ajuda do ex-X-Men para defender a pequena Laura Kinney / X-23. Ao mesmo tempo em que se recusa a voltar à ativa, Logan é perseguido pelo mercenário Donald Pierce, interessado na menina.",
+      "popularity": 408.798,
+      "poster_path": "/f0CtZbae9cXj8bkWdCHzUHx5lsR.jpg",
+      "release_date": "2017-02-28",
+      "title": "Logan",
+      "video": false,
+      "vote_average": 7.817,
+      "vote_count": 18651
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
+      "genre_ids": [
+        80,
+        53,
+        18
+      ],
+      "id": 475557,
+      "original_language": "en",
+      "original_title": "Joker",
+      "overview": "Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.",
+      "popularity": 412.589,
+      "poster_path": "/xLxgVxFWvb9hhUyCDDXxRPPnFck.jpg",
+      "release_date": "2019-10-01",
+      "title": "Coringa",
+      "video": false,
+      "vote_average": 8.162,
+      "vote_count": 24510
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bxmiZSQhQ581Y3vbEgpTtmEjt67.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 937287,
+      "original_language": "en",
+      "original_title": "Challengers",
+      "overview": "Tashi Duncan, atleta prodígio do tênis que se tornou treinadora, é uma força da natureza que não pede desculpas por seu jogo dentro e fora da quadra. Casada com um campeão que tem acumulado apenas derrotas nos últimos jogos, a estratégia de Tashi para a redenção de seu marido toma um rumo surpreendente quando ele deve enfrentar o fracassado Patrick nas quadras. Patrick foi o melhor amigo de seu marido, e é ex-namorado de Tashi. Quando o passado e o presente entram em colisão, e as tensões aumentam, Tashi deve se perguntar qual será o custo dessa vitória.",
+      "popularity": 392.576,
+      "poster_path": "/zoYD52lPwO4agBEKcja6cAsoyLW.jpg",
+      "release_date": "2024-04-18",
+      "title": "Rivais",
+      "video": false,
+      "vote_average": 7.454,
+      "vote_count": 317
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pDKFL1zcHzEpmz4MJA5JJnRbJeD.jpg",
+      "genre_ids": [
+        27,
+        53,
+        18
+      ],
+      "id": 405774,
+      "original_language": "en",
+      "original_title": "Bird Box",
+      "overview": "Uma misteriosa presença dizima grande parte da sociedade. Cinco anos depois, uma sobrevivente e seus dois filhos saem em busca de um abrigo seguro.",
+      "popularity": 382.621,
+      "poster_path": "/akAO6r0ZuPB98VwQsN0SGIkE4z.jpg",
+      "release_date": "2018-12-13",
+      "title": "Caixa de Pássaros",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 9565
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
+      "genre_ids": [
+        12,
+        18,
+        878
+      ],
+      "id": 157336,
+      "original_language": "en",
+      "original_title": "Interstellar",
+      "overview": "As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie. Cooper é chamado para liderar o grupo e aceita a missão sabendo que pode nunca mais ver os filhos. Ao lado de Brand, Jenkins e Doyle, ele seguirá em busca de um novo lar.",
+      "popularity": 365.667,
+      "poster_path": "/nCbkOyOMTEwlEV0LtCOvCnwEONA.jpg",
+      "release_date": "2014-11-05",
+      "title": "Interestelar",
+      "video": false,
+      "vote_average": 8.434,
+      "vote_count": 34236
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/atPlFdUrQl2U9MtUwujrrjnQHBA.jpg",
+      "genre_ids": [
+        28,
+        80,
+        18,
+        53
+      ],
+      "id": 654739,
+      "original_language": "ko",
+      "original_title": "발신제한",
+      "overview": "Uma família comum enfrenta circunstâncias imprevisíveis desencadeadas por um telefonema misterioso que a coloca numa situação aterradora.",
+      "popularity": 320.616,
+      "poster_path": "/xR5FcfJ2fyKhuucWy2DmZJfVlHm.jpg",
+      "release_date": "2021-06-23",
+      "title": "Ligação Explosiva",
+      "video": false,
+      "vote_average": 7.677,
+      "vote_count": 175
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kK9v1wclQxug6ZUJucD4DTaHgVF.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 1366,
+      "original_language": "en",
+      "original_title": "Rocky",
+      "overview": "Rocky Balboa, um pequeno boxeador da classe trabalhadora da Filadélfia, é arbitrariamente escolhido para lutar contra o campeão dos pesos pesados, Apollo Creed, quando o adversário do invicto lutador agendado para a luta é ferido. Durante o treinamento com o mal-humorado Mickey Goldmill, Rocky timidamente começa um relacionamento com Adrian, a invisível irmã de Paulie, seu amigo empacotador de carne.",
+      "popularity": 359.908,
+      "poster_path": "/b9B1DXcPNsJfTtc4x2LKA3bykoJ.jpg",
+      "release_date": "1976-11-21",
+      "title": "Rocky: Um Lutador",
+      "video": false,
+      "vote_average": 7.787,
+      "vote_count": 7512
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cgo3OmF84touDrrLkQ1DQ3MRFyO.jpg",
+      "genre_ids": [
+        18,
+        53
+      ],
+      "id": 1700,
+      "original_language": "en",
+      "original_title": "Misery",
+      "overview": "Depois de terminar seu mais novo manuscrito, o escritor de sucesso, Paul Sheldon, decide sair para comemorar. O problema é que está nevando demais e Paul acaba sofrendo um terrível acidente. Ele é salvo e abrigado por uma ex-enfermeira chamada Annie Wilkes, que se auto-intitula sua fã número um. Aparentemente uma simpática e doce senhora, Annie, aos poucos, vai se revelando uma sádica psicótica, que começa a torturar Paul quando descobre que ele matou sua personagem favorita em seu último livro publicado. Agora, Paul Sheldon terá de usar suas artimanhas de escritor para ganhar tempo, enganar Annie e, com sorte, escapar deste pesadelo.",
+      "popularity": 339.004,
+      "poster_path": "/3aANzopHLOlJLrq9LfbJI5zY2IP.jpg",
+      "release_date": "1990-11-30",
+      "title": "Louca Obsessão",
+      "video": false,
+      "vote_average": 7.756,
+      "vote_count": 4420
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg",
+      "genre_ids": [
+        28,
+        53,
+        18
+      ],
+      "id": 866398,
+      "original_language": "en",
+      "original_title": "The Beekeeper",
+      "overview": "Clay está em busca de vingança e não vai parar até acabar com o sistema criminoso responsável pela morte de sua amiga. O plano brutal de Clay, um ex-agente de uma organização secreta poderosa conhecida como “Beekeepers”, ganha dimensões nacionais envolvendo governos e as instituições mais influentes do mundo. Determinado a fazer justiça com suas próprias mãos, ele está disposto a tudo e não vai poupar ninguém para concluir seu plano.",
+      "popularity": 315.332,
+      "poster_path": "/6Gw8MMtwE87W7rbrlmL2GnajFc5.jpg",
+      "release_date": "2024-01-08",
+      "title": "Beekeeper: Rede de Vingança",
+      "video": false,
+      "vote_average": 7.437,
+      "vote_count": 2222
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2Xe9lISpwXKhvKiHttbFfVRERQX.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 490132,
+      "original_language": "en",
+      "original_title": "Green Book",
+      "overview": "Quando Tony Lip, um segurança ítalo-americano, é contratado como motorista do Dr. Don Shirley, um pianista negro de classe alta, durante uma turnê pelo sul dos Estados Unidos, eles devem seguir o \"O Guia\" para leva-los aos poucos estabelecimentos que eram seguros para os afro-americanos. Confrontados com o racismo, o perigo, assim como pela humanidade e o humor inesperados, eles são forçados a deixar de lado as diferenças para sobreviver e prosperar nessa jornada.",
+      "popularity": 338.325,
+      "poster_path": "/u9dldwRwQjTZGlIxKaAtAPLAjOv.jpg",
+      "release_date": "2018-11-16",
+      "title": "Green Book: O Guia",
+      "video": false,
+      "vote_average": 8.244,
+      "vote_count": 11142
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8eLXy49T36e0e1YhYvUQOCXNRhm.jpg",
+      "genre_ids": [
+        14,
+        18,
+        9648
+      ],
+      "id": 141,
+      "original_language": "en",
+      "original_title": "Donnie Darko",
+      "overview": "Quem vê Donnie Darko logo imagina se tratar de um adolescente desajustado. Na verdade, Donnie está à beira da loucura, devido a visões constantes de um coelho monstruoso, que tenta mantê-lo sob a sua sinistra influência. Incitado pela aparição, Donnie tem atuação antissocial, enquanto se submete à terapia, sobrevive às extravagâncias da vida e do romance no colégio e, por acaso, escapa a uma estranha morte devido à queda de um avião. Donnie luta contra os seus demônios, literal e figurativamente, numa intriga de histórias entrelaçadas que jogam com as viagens no tempo, gurus fundamentalistas, predestinação e os desígnios do universo.",
+      "popularity": 352.524,
+      "poster_path": "/fhQoQfejY1hUcwyuLgpBrYs6uFt.jpg",
+      "release_date": "2001-01-19",
+      "title": "Donnie Darko",
+      "video": false,
+      "vote_average": 7.779,
+      "vote_count": 11989
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zlU8BIkgY7E6SMfD3USTWC6bchL.jpg",
+      "genre_ids": [
+        878,
+        28,
+        18,
+        53
+      ],
+      "id": 119450,
+      "original_language": "en",
+      "original_title": "Dawn of the Planet of the Apes",
+      "overview": "Em 2026, a humanidade está enfrentando sua pior crise e está muito próxima da extinção por conta de um vírus mortal. Um grupo de sobreviventes organiza uma expedição pelas florestas próximas de São Francisco em busca de uma nova fonte de energia quando se deparam com uma comunidade, muito evoluída, de macacos liderados por César. Alguns dissidentes, mesmo com o pacto de paz firmado, quebram a trégua e dão início a uma guerra sem precedentes entre as duas espécies.",
+      "popularity": 324.983,
+      "poster_path": "/4vLhF6R3lmhTjTVUdK4gI1s5a8v.jpg",
+      "release_date": "2014-07-08",
+      "title": "Planeta dos Macacos: O Confronto",
+      "video": false,
+      "vote_average": 7.312,
+      "vote_count": 10758
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6MmYsaK6poR8f4R8jsBnJBU5tfd.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 400928,
+      "original_language": "en",
+      "original_title": "Gifted",
+      "overview": "Frank, um homem solteiro, cria sozinho sua sobrinha Mary, uma criança-prodígio. Quando a garota se destaca na escola por causa de suas habilidades com a matemática, a avó dela planeja um futuro que pode separá-la do tio.",
+      "popularity": 319.157,
+      "poster_path": "/21uwPrntyCV9Z0LW7pZcVfbrqWo.jpg",
+      "release_date": "2017-04-07",
+      "title": "Um Laço de Amor",
+      "video": false,
+      "vote_average": 8.036,
+      "vote_count": 5206
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/a2n6bKD7qhCPCAEALgsAhWOAQcc.jpg",
+      "genre_ids": [
+        878,
+        53,
+        18
+      ],
+      "id": 49047,
+      "original_language": "en",
+      "original_title": "Gravity",
+      "overview": "Matt Kowalski é um astronauta experiente que está em missão de conserto ao telescópio Hubble juntamente com a doutora Ryan Stone. Ambos são surpreendidos por uma chuva de destroços decorrente da destruição de um satélite por um míssil russo, que faz com que sejam jogados no espaço sideral. Sem qualquer apoio da base terrestre da NASA, eles precisam encontrar um meio de sobreviver em meio a um ambiente completamente inóspito para a vida humana.",
+      "popularity": 331.119,
+      "poster_path": "/eHLufJ1bHy4PtEBJdPSTu4jIhZ0.jpg",
+      "release_date": "2013-10-03",
+      "title": "Gravidade",
+      "video": false,
+      "vote_average": 7.164,
+      "vote_count": 14903
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/iTyh3hqTUjiRqQo8Uz1w1KtQti9.jpg",
+      "genre_ids": [
+        18,
+        878,
+        9648
+      ],
+      "id": 329865,
+      "original_language": "en",
+      "original_title": "Arrival",
+      "overview": "Quando seres interplanetários deixam marcas na Terra, a Dra. Louise Banks, uma linguista especialista no assunto, é procurada por militares para traduzir os sinais e desvendar se os alienígenas representam uma ameaça. No entanto, a resposta para todas as perguntas e mistérios coloca em risco  a vida de Louise e a de toda a humanidade.",
+      "popularity": 340.11,
+      "poster_path": "/4av3oWqgZ8QOl96xitvEovcu8jm.jpg",
+      "release_date": "2016-11-10",
+      "title": "A Chegada",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 17217
+    }
+  ],
+  "total_pages": 10866,
+  "total_results": 217301
+}
