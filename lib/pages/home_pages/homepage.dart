@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:magicview/entities/genres.dart';
 import 'package:magicview/entities/results.dart';
 import 'package:magicview/entities/results_country.dart';
+import 'package:magicview/pages/home_pages/movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/mySearch.dart';
 
 class HomePage extends StatefulWidget {
@@ -68,41 +69,7 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-                SizedBox(
-                    height: 204,
-                    child: FutureBuilder<List<Results>>(
-                      future: _loadMoviePopularData('movie_popular'),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          List<Results>? resultado = snapshot.data;
-                          return ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: resultado!.length,
-                            separatorBuilder:
-                                (BuildContext context, int index) =>
-                                    const SizedBox(width: 10),
-                            itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                height: 204,
-                                width: 136,
-                                decoration: BoxDecoration(
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                    image: DecorationImage(
-                                        image: NetworkImage(
-                                            "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultado[index].posterPath}")),
-                                    borderRadius: BorderRadius.circular(5)),
-                              );
-                            },
-                          );
-                        } else {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-                      },
-                    )),
-
+                MoviePopularPages(),
                 const SizedBox(
                   height: 10,
                 ),

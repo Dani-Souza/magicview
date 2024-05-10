@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
 
 void main() {
@@ -18,12 +20,15 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Open Sans',
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
-          background: const Color(0xff21005D),
+          background: const Color(0xf21005D),
           secondary: Color(0xFFD0BCFF),
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: BlocProvider(
+          create: (context) =>
+              MoviePopularBloc()..add(MoviePopularEventInitial()),
+          child: const HomePage()),
     );
   }
 }
