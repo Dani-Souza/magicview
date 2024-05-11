@@ -1,7 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
+import 'package:magicview/entities/genres.dart';
 import 'package:magicview/entities/results.dart';
+import 'package:magicview/pages/home_pages/genres_movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/genres_page.dart';
 import 'package:magicview/pages/home_pages/movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/mySearch.dart';
@@ -16,8 +20,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int positionGenres = 0;
   int genreIdsDefault = 28;
+
+  @override
+  void initState() {
+    context.read<GenresBloc>().add(GenresEventFetchs());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,43 +107,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                SizedBox(
-                  height: 138,
-                  child: FutureBuilder<List<Results>>(
-                    future: DataMoviePopularApi.getMoviePopularById(
-                        genreIdsDefault),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        List<Results>? resultSearch = snapshot.data;
-                        return ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: resultSearch!.length,
-                          separatorBuilder: (BuildContext context, int index) =>
-                              const SizedBox(
-                            width: 10,
-                          ),
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              height: 50,
-                              width: 92,
-                              decoration: BoxDecoration(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultSearch[index].posterPath}")),
-                                  borderRadius: BorderRadius.circular(5)),
-                            );
-                          },
-                        );
-                      } else {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    },
-                  ),
-                )
+                GenresMoviePopularPage(),
               ],
             ),
           ),
@@ -142,20 +115,5 @@ class _HomePageState extends State<HomePage> {
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
-
-  Future<List<Results>> _loadResultData(int genres_id) async {
-    List<Results> results = [];
-    String data = await rootBundle.loadString('assets/data/$genres_id.json');
-    final jsonData = json.decode(data);
-    final jsonResults = jsonData["results"];
-
-    for (var json in jsonResults) {
-      Results resultList = Results.fromJson(json);
-
-      results.add(resultList);
-    }
-
-    return results;
   }
 }

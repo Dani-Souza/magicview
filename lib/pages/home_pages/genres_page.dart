@@ -45,11 +45,9 @@ class _GenresPageState extends State<GenresPage> {
                     onTap: () {
                       setState(() {
                         positionGenres = index;
-                        setState(() {
-                          genreIdsDefault = state.genres[index].id;
-                          DataMoviePopularApi.getMoviePopularById(
-                              genreIdsDefault);
-                        });
+                        genreIdsDefault = state.genres[index].id;
+                        DataMoviePopularApi.getMoviePopularById(
+                            genreIdsDefault);
                       });
                     },
                     child: Text(

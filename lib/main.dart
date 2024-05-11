@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
+import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
 import 'package:magicview/pages/home_pages/genres_page.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
@@ -43,6 +44,10 @@ class MyApp extends StatelessWidget {
               child: const SeriePopularPage()),
           BlocProvider(
               create: (context) => GenresBloc()..add(GenresEventInitial()),
+              child: const GenresPage()),
+          BlocProvider(
+              create: (context) => MovieGenresPopularBloc()
+                ..add(MovieGenresPopularEventById(28, [])),
               child: const GenresPage()),
         ],
       ),
