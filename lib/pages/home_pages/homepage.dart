@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:magicview/entities/genres.dart';
 import 'package:magicview/entities/results.dart';
-import 'package:magicview/entities/results_serie_popular.dart';
+import 'package:magicview/pages/home_pages/genres_page.dart';
 import 'package:magicview/pages/home_pages/movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/mySearch.dart';
 import 'package:magicview/pages/home_pages/serie_popular_page.dart';
+import 'package:magicview/utility/data_movie_popular_api.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -94,67 +94,15 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                SizedBox(
-                  height: 20,
-                  child: FutureBuilder<List<Genres>>(
-                    future: _loadGenresData(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        List<Genres>? restultGenres = snapshot.data;
-                        return ListView.separated(
-                          itemCount: restultGenres!.length,
-                          scrollDirection: Axis.horizontal,
-                          separatorBuilder: (BuildContext context, int index) =>
-                              const SizedBox(width: 10),
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              height: 260,
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              decoration: (index == positionGenres)
-                                  ? BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(5))
-                                  : BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    positionGenres = index;
-                                    setState(() {
-                                      genreIdsDefault = restultGenres[index].id;
-                                      _loadResultData(genreIdsDefault);
-                                    });
-                                  });
-                                },
-                                child: Text(
-                                  '${restultGenres[index].name}',
-                                  style: TextStyle(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      } else {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    },
-                  ),
-                ),
+                GenresPage(),
                 const SizedBox(
                   height: 10,
                 ),
                 SizedBox(
                   height: 138,
                   child: FutureBuilder<List<Results>>(
-                    future: _loadResultData(genreIdsDefault),
+                    future: DataMoviePopularApi.getMoviePopularById(
+                        genreIdsDefault),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         List<Results>? resultSearch = snapshot.data;
@@ -194,34 +142,6 @@ class _HomePageState extends State<HomePage> {
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
-
-  Future<List<Genres>> _loadGenresData() async {
-    List<Genres> genres = [];
-    String data = await rootBundle.loadString('assets/data/genres.json');
-    final jsonData = json.decode(data);
-    final jsonGenres = jsonData["genres"];
-
-    for (var json in jsonGenres) {
-      Genres genresList = Genres.fromJson(json);
-      genres.add(genresList);
-    }
-    return genres;
-  }
-
-  Future<List<Results>> _loadMoviePopularData(String type) async {
-    List<Results> results = [];
-    String data = await rootBundle.loadString('assets/data/$type.json');
-    final jsonData = json.decode(data);
-    final jsonResults = jsonData["results"];
-
-    for (var json in jsonResults) {
-      Results resultList = Results.fromJson(json);
-
-      results.add(resultList);
-    }
-
-    return results;
   }
 
   Future<List<Results>> _loadResultData(int genres_id) async {

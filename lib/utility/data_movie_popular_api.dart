@@ -17,4 +17,19 @@ class DataMoviePopularApi {
     }
     return resultsMoviePopular;
   }
+
+  static Future<List<Results>> getMoviePopularById(int genresId) async {
+    List<Results> results = [];
+    String data = await rootBundle.loadString('assets/data/$genresId.json');
+    final jsonData = json.decode(data);
+    final jsonResults = jsonData["results"];
+
+    for (var json in jsonResults) {
+      Results resultList = Results.fromJson(json);
+
+      results.add(resultList);
+    }
+
+    return results;
+  }
 }
