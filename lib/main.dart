@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
+import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
+import 'package:magicview/pages/home_pages/movie_popular_page.dart';
+import 'package:magicview/pages/home_pages/serie_popular_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,10 +28,19 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: BlocProvider(
-          create: (context) =>
-              MoviePopularBloc()..add(MoviePopularEventInitial()),
-          child: const HomePage()),
+      home: MultiBlocProvider(
+        child: HomePage(),
+        providers: [
+          BlocProvider(
+              create: (context) =>
+                  MoviePopularBloc()..add(MoviePopularEventInitial()),
+              child: const MoviePopularPages()),
+          BlocProvider(
+              create: (context) =>
+                  SeriePopularBloc()..add(SeriePopularEventInitial()),
+              child: const SeriePopularPage()),
+        ],
+      ),
     );
   }
 }

@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
+import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
 import 'package:magicview/utility/utilities.dart';
 
-class MoviePopularPages extends StatefulWidget {
-  const MoviePopularPages({super.key});
+class SeriePopularPage extends StatefulWidget {
+  const SeriePopularPage({super.key});
 
   @override
-  State<MoviePopularPages> createState() => _MoviePopularPagesState();
+  State<SeriePopularPage> createState() => _SeriePopularPageState();
 }
 
-class _MoviePopularPagesState extends State<MoviePopularPages> {
+class _SeriePopularPageState extends State<SeriePopularPage> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: 204,
-        child: BlocBuilder<MoviePopularBloc, MoviePopularState>(
+        child: BlocBuilder<SeriePopularBloc, SeriePopularState>(
           builder: (context, state) {
-            if (state is MoviePopularStateInitial) {
+            if (state is SeriePopularStateInitial) {
               return const Center(
                 child: CircularProgressIndicator(),
               );
             }
-            if (state is MoviePopularStateFetchs) {
+            if (state is SeriePopularStateFetchs) {
               return ListView.separated(
                 scrollDirection: Axis.horizontal,
-                itemCount: state.results.length,
+                itemCount: state.resultSeriePopular.length,
                 separatorBuilder: (BuildContext context, int index) =>
                     const SizedBox(width: 10),
                 itemBuilder: (BuildContext context, int index) {
@@ -36,13 +36,16 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                         color: Theme.of(context).colorScheme.secondary,
                         image: DecorationImage(
                             image: NetworkImage(
-                                "${Utilities.urlImagePath}/${state.results[index].posterPath}")),
+                                "${Utilities.urlImagePath}/${state.resultSeriePopular[index].posterPath}")),
                         borderRadius: BorderRadius.circular(5)),
                   );
                 },
               );
+            } else {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
             }
-            return Container();
           },
         ));
   }

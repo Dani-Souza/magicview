@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:magicview/entities/genres.dart';
 import 'package:magicview/entities/results.dart';
-import 'package:magicview/entities/results_country.dart';
+import 'package:magicview/entities/results_serie_popular.dart';
 import 'package:magicview/pages/home_pages/movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/mySearch.dart';
+import 'package:magicview/pages/home_pages/serie_popular_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -85,45 +86,10 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-                SizedBox(
-                    height: 204,
-                    child: FutureBuilder<List<ResultsCountry>>(
-                      future: _loadSeriePopularData('serie_popular'),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          List<ResultsCountry>? resultado = snapshot.data;
-                          return ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: resultado!.length,
-                            separatorBuilder:
-                                (BuildContext context, int index) =>
-                                    const SizedBox(width: 10),
-                            itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                height: 204,
-                                width: 136,
-                                decoration: BoxDecoration(
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                    image: DecorationImage(
-                                        image: NetworkImage(
-                                            "https://media.themoviedb.org/t/p/w220_and_h330_face/${resultado[index].posterPath}")),
-                                    borderRadius: BorderRadius.circular(5)),
-                              );
-                            },
-                          );
-                        } else {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-                      },
-                    )),
-
                 const SizedBox(
                   height: 10,
                 ),
-
+                SeriePopularPage(),
                 // generos
                 const SizedBox(
                   height: 10,
@@ -251,21 +217,6 @@ class _HomePageState extends State<HomePage> {
 
     for (var json in jsonResults) {
       Results resultList = Results.fromJson(json);
-
-      results.add(resultList);
-    }
-
-    return results;
-  }
-
-  Future<List<ResultsCountry>> _loadSeriePopularData(String type) async {
-    List<ResultsCountry> results = [];
-    String data = await rootBundle.loadString('assets/data/$type.json');
-    final jsonData = json.decode(data);
-    final jsonResults = jsonData["results"];
-
-    for (var json in jsonResults) {
-      ResultsCountry resultList = ResultsCountry.fromJson(json);
 
       results.add(resultList);
     }
