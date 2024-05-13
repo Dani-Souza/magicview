@@ -1,7 +1,3 @@
-import 'dart:convert';
-
-import 'package:magicview/entities/origin_country.dart';
-
 import '../entities/genres.dart';
 
 class Results {

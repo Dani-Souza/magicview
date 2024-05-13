@@ -1,6 +1,6 @@
 import '../entities/genres.dart';
 
-class ResultsCountry {
+class ResultsSeriePopular {
   final int id;
   final bool adult;
   final String backdropPath;
@@ -16,7 +16,7 @@ class ResultsCountry {
   final double voteAverage;
   final int voteCount;
 
-  ResultsCountry({
+  ResultsSeriePopular({
     required this.id,
     required this.adult,
     required this.backdropPath,
@@ -33,7 +33,7 @@ class ResultsCountry {
     required this.voteCount,
   });
 
-  factory ResultsCountry.fromJson(Map<String, dynamic> data) {
+  factory ResultsSeriePopular.fromJson(Map<String, dynamic> data) {
     List<Genres> genresList = [];
 
     if (data['genres_id'] != null) {
@@ -45,7 +45,7 @@ class ResultsCountry {
         ? voteAverageInitial.toDouble()
         : voteAverageInitial;
 
-    return ResultsCountry(
+    return ResultsSeriePopular(
         id: data['id'],
         adult: data['adult'],
         backdropPath: data['backdrop_path'],
