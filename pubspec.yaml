@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.3
   equatable: ^2.0.5
+  youtube_player_flutter: ^9.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -60,14 +61,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/data/genres.json
-    - assets/data/12.json
-    - assets/data/16.json
-    - assets/data/28.json
-    - assets/data/35.json
-    - assets/data/movie_popular.json
-    - assets/data/serie_popular.json
-  #   - images/a_dot_burr.jpeg
+    - assets/data/
+    - assets/image/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -11,8 +11,7 @@ class MovieGenresPopularEventFetchs extends MovieGenresPopularEvent {}
 
 class MovieGenresPopularEventById extends MovieGenresPopularEvent {
   final int movieId;
-  final List<Results> resultList;
-  MovieGenresPopularEventById(this.movieId, this.resultList);
+  MovieGenresPopularEventById(this.movieId);
   @override
-  List<Object?> get props => [movieId, resultList];
+  List<Object?> get props => [movieId];
 }

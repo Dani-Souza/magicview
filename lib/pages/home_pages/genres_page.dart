@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
-import 'package:magicview/utility/data_movie_popular_api.dart';
+import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 
 class GenresPage extends StatefulWidget {
   const GenresPage({super.key});
@@ -13,6 +13,14 @@ class GenresPage extends StatefulWidget {
 class _GenresPageState extends State<GenresPage> {
   int positionGenres = 0;
   int genreIdsDefault = 28;
+  @override
+  void initState() {
+    context
+        .read<MovieGenresPopularBloc>()
+        .add(MovieGenresPopularEventById(genreIdsDefault));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -33,7 +41,7 @@ class _GenresPageState extends State<GenresPage> {
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   height: 260,
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: (index == positionGenres)
                       ? BoxDecoration(
                           color: Theme.of(context).primaryColor,
@@ -45,10 +53,10 @@ class _GenresPageState extends State<GenresPage> {
                     onTap: () {
                       setState(() {
                         positionGenres = index;
-                        genreIdsDefault = state.genres[index].id;
-                        DataMoviePopularApi.getMoviePopularById(
-                            genreIdsDefault);
                       });
+
+                      context.read<MovieGenresPopularBloc>().add(
+                          MovieGenresPopularEventById(state.genres[index].id));
                     },
                     child: Text(
                       '${state.genres[index].name}',

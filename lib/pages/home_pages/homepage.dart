@@ -1,16 +1,11 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
-import 'package:magicview/entities/genres.dart';
-import 'package:magicview/entities/results.dart';
 import 'package:magicview/pages/home_pages/genres_movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/genres_page.dart';
 import 'package:magicview/pages/home_pages/movie_popular_page.dart';
-import 'package:magicview/pages/home_pages/mySearch.dart';
+import 'package:magicview/pages/home_pages/my_search_page.dart';
 import 'package:magicview/pages/home_pages/serie_popular_page.dart';
-import 'package:magicview/utility/data_movie_popular_api.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,9 +26,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xf21005D),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.secondary,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
@@ -61,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const Row(
                   children: [
-                    MySearch(),
+                    MySearchPage(),
                   ],
                 ),
                 const SizedBox(
