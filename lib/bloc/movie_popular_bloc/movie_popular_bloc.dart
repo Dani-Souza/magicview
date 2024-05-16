@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/entities/results.dart';
-import 'package:magicview/utility/data_movie_popular_api.dart';
+import 'package:magicview/reposistories/movie_popular_repository.dart';
 import 'package:equatable/equatable.dart';
 
 part 'movie_popular_event.dart';
@@ -15,7 +15,7 @@ class MoviePopularBloc extends Bloc<MoviePopularEvent, MoviePopularState> {
 
   FutureOr<void> _onFetchMoviePopular(
       MoviePopularEvent event, Emitter<MoviePopularState> emit) async {
-    final moviePopular = await DataMoviePopularApi.getAllMoviePopular();
-    emit(MoviePopularStateFetchs(moviePopular));
+    final results = await MoviePopularRepository.getMoviePopular(1, 'pt');
+    emit(MoviePopularStateFetchs(results));
   }
 }

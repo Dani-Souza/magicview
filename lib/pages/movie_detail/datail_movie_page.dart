@@ -49,7 +49,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
                         image: DecorationImage(
                             opacity: .2,
                             image: NetworkImage(
-                                "https://media.themoviedb.org/t/p/w500/boObGdocQS07Nu7IrettgA5oRTp.jpg"),
+                                "https://media.themoviedb.org/t/p/w500/qrGtVFxaD8c7et0jUtaYhyTzzPg.jpg"),
                             fit: BoxFit.fill),
                       ),
                       child: Row(
@@ -80,7 +80,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
                       decoration: BoxDecoration(
                         image: const DecorationImage(
                           image: NetworkImage(
-                              "https://media.themoviedb.org/t/p/w500/boObGdocQS07Nu7IrettgA5oRTp.jpg"),
+                              "https://media.themoviedb.org/t/p/w500/kO6K9zEsKhNyqcrdGTSqAI6jrie.jpg"),
                         ),
                         borderRadius: BorderRadius.circular(5),
                         boxShadow: [

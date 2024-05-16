@@ -23,6 +23,5 @@ class _YoutubeScreenVideoPageState extends State<YoutubeScreenVideoPage> {
         controller: YoutubePlayerController(
             initialVideoId: videoId!,
             flags: const YoutubePlayerFlags(autoPlay: true, mute: false)));
-    ;
   }
 }

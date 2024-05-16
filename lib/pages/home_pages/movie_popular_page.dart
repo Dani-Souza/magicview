@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/app_routes.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/entities/screen_arguments.dart';
-import 'package:magicview/utility/utilities.dart';
+import 'package:magicview/utility/constants.dart';
 
 class MoviePopularPages extends StatefulWidget {
   const MoviePopularPages({super.key});
@@ -27,14 +27,14 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
             if (state is MoviePopularStateFetchs) {
               return ListView.separated(
                 scrollDirection: Axis.horizontal,
-                itemCount: state.results.length,
+                itemCount: state.result.length,
                 separatorBuilder: (BuildContext context, int index) =>
                     const SizedBox(width: 10),
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, AppRoutes.detailMovie,
-                          arguments: ScreenArguments(state.results[index].id));
+                          arguments: ScreenArguments(state.result[index].id));
                     },
                     child: Container(
                       height: 204,
@@ -43,7 +43,7 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                           color: Theme.of(context).colorScheme.secondary,
                           image: DecorationImage(
                               image: NetworkImage(
-                                  "${Utilities.urlImagePath}/${state.results[index].posterPath}")),
+                                  "${Constants.IMAGEPOSTERURL}${state.result[index].posterPath}")),
                           borderRadius: BorderRadius.circular(5)),
                     ),
                   );

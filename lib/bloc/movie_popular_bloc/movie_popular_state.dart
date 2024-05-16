@@ -8,9 +8,9 @@ class MoviePopularStateInitial extends MoviePopularState {
 }
 
 class MoviePopularStateFetchs extends MoviePopularState {
-  final List<Results> results;
-  MoviePopularStateFetchs(this.results);
+  final List<Results> result;
+  MoviePopularStateFetchs(this.result);
 
   @override
-  List<Object?> get props => [results];
+  List<Object?> get props => [result];
 }

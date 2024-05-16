@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/app_routes.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
-import 'package:magicview/pages/home_pages/datail_movie_page.dart';
+import 'package:magicview/pages/movie_detail/datail_movie_page.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
 import 'package:magicview/pages/home_pages/genres_page.dart';
