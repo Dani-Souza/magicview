@@ -5,6 +5,4 @@ abstract class GenresEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GenresEventInitial extends GenresEvent {}
-
-class GenresEventFetchs extends GenresEvent {}
+class GenresEventLoaded extends GenresEvent {}

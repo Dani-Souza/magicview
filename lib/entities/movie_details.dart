@@ -1,6 +1,6 @@
 class MovieDetail {
   final String backdropPath;
-  final String overview;
+  final String? overview;
   final String posterPath;
   final String realeaseDate;
   final String title;

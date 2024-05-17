@@ -9,13 +9,19 @@ part "genres_event_bloc.dart";
 part "genres_state_bloc.dart";
 
 class GenresBloc extends Bloc<GenresEvent, GenresState> {
-  GenresBloc() : super(GenresStateInitial()) {
+  final GenresRepository _genresRepository;
+  GenresBloc(this._genresRepository) : super(GenresLoadingState()) {
     on<GenresEvent>(_onFetchGenres);
   }
 
   FutureOr<void> _onFetchGenres(
       GenresEvent event, Emitter<GenresState> emit) async {
-    final genresResult = await GenresRepository.getMovieGenres('pt');
-    emit(GenresStateFetchs(genresResult));
+    emit(GenresLoadingState());
+    try {
+      final genresResult = await _genresRepository.getMovieGenres('pt');
+      emit(GenresLoadedState(genresResult));
+    } catch (e) {
+      emit(GenresErrorState(e.toString()));
+    }
   }
 }

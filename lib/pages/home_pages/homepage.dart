@@ -19,14 +19,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    context.read<GenresBloc>().add(GenresEventFetchs());
+    context.read<GenresBloc>().add(GenresEventLoaded());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xf21005D),
+      backgroundColor: const Color(0xff21005D),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.secondary,
         items: const [
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-                MoviePopularPages(),
+                const MoviePopularPages(),
                 const SizedBox(
                   height: 10,
                 ),
@@ -94,16 +94,16 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                SeriePopularPage(),
+                const SeriePopularPage(),
                 // generos
                 const SizedBox(
                   height: 10,
                 ),
-                GenresPage(),
+                const GenresPage(),
                 const SizedBox(
                   height: 10,
                 ),
-                GenresMoviePopularPage(),
+                const GenresMoviePopularPage(),
               ],
             ),
           ),

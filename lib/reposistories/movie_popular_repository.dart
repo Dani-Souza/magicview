@@ -11,15 +11,18 @@ class MoviePopularRepository {
   static Future<List<Results>> getMoviePopular(
       int page, String language) async {
     List<Results> resultList = [];
+
     try {
       var url = Uri.https('${Constants.URL_API}', '/3/movie/popular', {
         'language': '$language',
         'page': '$page',
         'sort_by': 'popularity.desc',
       });
+
       final response = await http.get(url, headers: {
         'Authorization': Constants.TOKEN_BEAR,
       });
+
       if (response.statusCode == 200) {
         final Map<String, dynamic> jsonData = jsonDecode(response.body);
         final jsonResults = jsonData["results"];
@@ -41,7 +44,7 @@ class MoviePopularRepository {
   static Future<MovieDetail> fetchMoviesDetailById(
       int genresId, String language) async {
     try {
-      var url = Uri.https('${Constants.URL_API}', '3/movie/$genresId', {
+      var url = Uri.https(Constants.URL_API, '3/movie/$genresId', {
         'language': '$language',
       });
       final response = await http.get(url, headers: {

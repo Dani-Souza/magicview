@@ -2,14 +2,23 @@ part of "genres_bloc.dart";
 
 abstract class GenresState extends Equatable {}
 
-class GenresStateInitial extends GenresState {
+class GenresLoadingState extends GenresState {
   @override
   List<Object?> get props => [];
 }
 
-class GenresStateFetchs extends GenresState {
+class GenresLoadedState extends GenresState {
   final List<Genres> genres;
-  GenresStateFetchs(this.genres);
+  GenresLoadedState(this.genres);
   @override
   List<Object?> get props => [genres];
+}
+
+class GenresErrorState extends GenresState {
+  final String error;
+
+  GenresErrorState(this.error);
+
+  @override
+  List<Object?> get props => [error];
 }

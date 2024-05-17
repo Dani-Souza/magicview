@@ -27,12 +27,12 @@ class _GenresPageState extends State<GenresPage> {
       height: 20,
       child: BlocBuilder<GenresBloc, GenresState>(
         builder: (context, state) {
-          if (state is GenresStateInitial) {
+          if (state is GenresLoadingState) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
-          if (state is GenresStateFetchs) {
+          if (state is GenresLoadedState) {
             return ListView.separated(
               itemCount: state.genres.length,
               scrollDirection: Axis.horizontal,

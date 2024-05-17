@@ -13,19 +13,46 @@ class MoviePopularPages extends StatefulWidget {
 }
 
 class _MoviePopularPagesState extends State<MoviePopularPages> {
+  final ScrollController _scrollController = ScrollController();
+  int pagina = 1;
+  @override
+  void initState() {
+    super.initState();
+
+    _scrollController.addListener(_loadMore);
+  }
+
+  void _loadMore() {
+    if (_scrollController.position.pixels ==
+        _scrollController.position.maxScrollExtent) {
+      pagina++;
+      context
+          .read<MoviePopularBloc>()
+          .add(MoviePopularEventLoaded(page: pagina, langague: 'pt'));
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: 204,
         child: BlocBuilder<MoviePopularBloc, MoviePopularState>(
           builder: (context, state) {
-            if (state is MoviePopularStateInitial) {
+            if (state is MoviePopularLoadingState) {
               return const Center(
                 child: CircularProgressIndicator(),
               );
             }
-            if (state is MoviePopularStateFetchs) {
+            if (state is MoviePopularFetchsState) {
               return ListView.separated(
+                controller: _scrollController,
                 scrollDirection: Axis.horizontal,
                 itemCount: state.result.length,
                 separatorBuilder: (BuildContext context, int index) =>
@@ -34,7 +61,15 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                   return GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, AppRoutes.detailMovie,
-                          arguments: ScreenArguments(state.result[index].id));
+                          arguments: ScreenArguments(
+                              state.result[index].id,
+                              state.result[index].popularity,
+                              state.result[index].title,
+                              state.result[index].overview,
+                              state.result[index].posterPath,
+                              state.result[index].backdropPath,
+                              state.result[index].voteAverage,
+                              state.result[index].voteCount));
                     },
                     child: Container(
                       height: 204,

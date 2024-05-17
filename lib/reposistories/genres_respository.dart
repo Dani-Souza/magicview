@@ -1,11 +1,10 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:magicview/entities/genres.dart';
 import 'package:magicview/utility/constants.dart';
 
 class GenresRepository {
-  static Future<List<Genres>> getMovieGenres(String language) async {
+  Future<List<Genres>> getMovieGenres(String language) async {
     List<Genres> genres = [];
     var url = Uri.https(
         Constants.URL_API, '/3/genre/movie/list', {'language': language});

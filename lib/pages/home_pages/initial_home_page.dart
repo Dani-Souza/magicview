@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:magicview/app_routes.dart';
-import 'package:magicview/reposistories/movie_popular_repository.dart';
 
 class InitialHomePage extends StatefulWidget {
   const InitialHomePage({super.key});
@@ -10,12 +9,6 @@ class InitialHomePage extends StatefulWidget {
 }
 
 class _InitialHomePageState extends State<InitialHomePage> {
-  @override
-  void initState() {
-    MoviePopularRepository.fetchMoviesDetailById(823464, 'pt');
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
