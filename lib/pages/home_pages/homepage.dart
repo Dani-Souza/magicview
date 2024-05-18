@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
+import 'package:magicview/pages/components/my_text_title.dart';
 import 'package:magicview/pages/home_pages/genres_movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/genres_page.dart';
-import 'package:magicview/pages/home_pages/movie_popular_page.dart';
+import 'package:magicview/pages/movie_page/movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/my_search_page.dart';
-import 'package:magicview/pages/home_pages/serie_popular_page.dart';
+import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,18 +42,10 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      "MAGICVIEW ",
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontFamily: "Righteous",
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+                    MyTextTitle(message: "MAGICVIEW"),
                   ],
                 ),
                 const Row(

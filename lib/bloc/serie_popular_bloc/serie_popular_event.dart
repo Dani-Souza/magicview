@@ -5,6 +5,10 @@ abstract class SeriePopularEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class SeriePopularEventInitial extends SeriePopularEvent {}
+class SeriePopularEventFetchs extends SeriePopularEvent {
+  final int page;
+  final String language;
 
-class SeriePopularEventFetchs extends SeriePopularEvent {}
+  SeriePopularEventFetchs(this.page, this.language);
+  List<Object?> get props => [page, language];
+}

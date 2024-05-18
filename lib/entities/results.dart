@@ -3,6 +3,7 @@ class Results {
   //final List<Genres> genres;
   final double popularity;
   final String title;
+  final String? name;
   final String? overview;
   final String posterPath;
   final String backdropPath;
@@ -14,6 +15,7 @@ class Results {
     //required this.genres,
     required this.popularity,
     required this.title,
+    required this.name,
     required this.overview,
     required this.posterPath,
     required this.backdropPath,
@@ -34,6 +36,7 @@ class Results {
         // genres: genresList,
         popularity: data['popularity'],
         title: data['title'],
+        name: data['name'],
         overview: data['overview'],
         posterPath: data['poster_path'],
         backdropPath: data['backdrop_path'],

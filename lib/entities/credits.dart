@@ -1,4 +1,4 @@
-class MovieCredits {
+class Credits {
   final int id;
   final String name;
   final String originalName;
@@ -8,7 +8,7 @@ class MovieCredits {
 
   final int order;
 
-  MovieCredits({
+  Credits({
     required this.id,
     required this.name,
     required this.originalName,
@@ -18,8 +18,8 @@ class MovieCredits {
     required this.order,
   });
 
-  factory MovieCredits.fromJson(Map<String, dynamic> data) {
-    return MovieCredits(
+  factory Credits.fromJson(Map<String, dynamic> data) {
+    return Credits(
       id: data['id'],
       name: data['name'],
       originalName: data['original_name'],

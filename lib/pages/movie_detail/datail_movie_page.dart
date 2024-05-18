@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:magicview/entities/movie_credits.dart';
+import 'package:magicview/entities/credits.dart';
 import 'package:magicview/entities/screen_arguments.dart';
-import 'package:magicview/pages/home_pages/youtube_video_screen_page.dart';
-import 'package:magicview/reposistories/credits_movie_repository.dart';
+import 'package:magicview/pages/components/my_text_title.dart';
+import 'package:magicview/pages/movie_detail/youtube_video_screen_page.dart';
+import 'package:magicview/reposistories/credits_repository.dart';
 
 class DetailMovePage extends StatefulWidget {
   const DetailMovePage({super.key});
@@ -105,15 +106,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: Text(
-                              "< MAGICVIEW ",
-                              style: TextStyle(
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: "Righteous",
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            )),
+                            child: MyTextTitle(message: "MAGICVIEW 123")),
                       ],
                     ),
                   ],
@@ -170,11 +163,13 @@ class _DetailMovePageState extends State<DetailMovePage> {
                                           .secondary),
                                 ),
                                 FutureBuilder(
-                                  future: CreditsRepository.getMovieCredits(
-                                      argMovies.id, "pt"),
+                                  future: CreditsRepository.getCredits(
+                                      argMovies.id,
+                                      "en-US",
+                                      argMovies.typeMovieOrTV),
                                   builder: (context, snapshot) {
                                     if (snapshot.hasData) {
-                                      List<MovieCredits>? movieCredits =
+                                      List<Credits>? movieCredits =
                                           snapshot.data;
                                       return SingleChildScrollView(
                                         child: Wrap(
@@ -187,40 +182,38 @@ class _DetailMovePageState extends State<DetailMovePage> {
                                             for (var i = 0;
                                                 i < movieCredits!.length;
                                                 i++)
-                                              if (movieCredits[i].profilePath !=
-                                                  null)
-                                                Container(
-                                                  height: 93,
-                                                  width: 64,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: NetworkImage(
-                                                            "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${movieCredits[i].profilePath}")),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                  ),
-                                                  child: Baseline(
-                                                    baseline: 89,
-                                                    baselineType:
-                                                        TextBaseline.alphabetic,
-                                                    child: Text(
-                                                      movieCredits[i].character,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      style: TextStyle(
-                                                          color:
-                                                              Theme.of(context)
-                                                                  .colorScheme
-                                                                  .secondary,
-                                                          fontSize: 10,
-                                                          backgroundColor:
-                                                              Theme.of(context)
-                                                                  .colorScheme
-                                                                  .primary),
-                                                    ),
+                                              // if (movieCredits[i].profilePath !=
+                                              //     null)
+                                              Container(
+                                                height: 93,
+                                                width: 64,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(
+                                                          "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${movieCredits[i].profilePath}")),
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                ),
+                                                child: Baseline(
+                                                  baseline: 89,
+                                                  baselineType:
+                                                      TextBaseline.alphabetic,
+                                                  child: Text(
+                                                    movieCredits[i].character,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                        color: Theme.of(context)
+                                                            .colorScheme
+                                                            .secondary,
+                                                        fontSize: 10,
+                                                        backgroundColor:
+                                                            Theme.of(context)
+                                                                .colorScheme
+                                                                .primary),
                                                   ),
                                                 ),
+                                              ),
                                           ],
                                         ),
                                       );
@@ -231,7 +224,9 @@ class _DetailMovePageState extends State<DetailMovePage> {
                                     }
                                   },
                                 ),
-                                const YoutubeScreenVideoPage()
+                                YoutubeScreenVideoPage(
+                                    movieId: argMovies.id,
+                                    typeMovieOrSerie: argMovies.typeMovieOrTV)
                               ],
                             ),
                           ),

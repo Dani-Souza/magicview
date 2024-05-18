@@ -7,6 +7,7 @@ class ScreenArguments {
   final String backdropPath;
   final double voteAverage;
   final int voteCount;
+  final String typeMovieOrTV;
 
   ScreenArguments(
     this.id,
@@ -17,5 +18,6 @@ class ScreenArguments {
     this.backdropPath,
     this.voteAverage,
     this.voteCount,
+    this.typeMovieOrTV,
   );
 }

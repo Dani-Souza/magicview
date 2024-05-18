@@ -69,7 +69,8 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                               state.result[index].posterPath,
                               state.result[index].backdropPath,
                               state.result[index].voteAverage,
-                              state.result[index].voteCount));
+                              state.result[index].voteCount,
+                              "movie"));
                     },
                     child: Container(
                       height: 204,

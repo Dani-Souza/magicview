@@ -9,8 +9,8 @@ import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
 import 'package:magicview/pages/home_pages/genres_page.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
 import 'package:magicview/pages/home_pages/initial_home_page.dart';
-import 'package:magicview/pages/home_pages/movie_popular_page.dart';
-import 'package:magicview/pages/home_pages/serie_popular_page.dart';
+import 'package:magicview/pages/movie_page/movie_popular_page.dart';
+import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 import 'package:magicview/reposistories/genres_respository.dart';
 
 void main() {
@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(
               create: (context) => MoviePopularBloc()
-                ..add(MoviePopularEventLoaded(page: 1, langague: 'pt')),
+                ..add(MoviePopularEventLoaded(page: 1, langague: 'pt-br')),
               child: const MoviePopularPages()),
           BlocProvider(
               create: (context) =>
-                  SeriePopularBloc()..add(SeriePopularEventInitial()),
+                  SeriePopularBloc()..add(SeriePopularEventFetchs(1, 'pt-br')),
               child: const SeriePopularPage()),
           BlocProvider(
               create: (context) =>
@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
               AppRoutes.initial: (context) => const InitialHomePage(),
               AppRoutes.homePage: (context) => const HomePage(),
               AppRoutes.detailMovie: (context) => const DetailMovePage(),
+              AppRoutes.detailSerie: (context) => const DetailMovePage()
             }));
   }
 }
