@@ -61,23 +61,44 @@ class MoviePopularRepository {
       throw Exception('Failed to fetch movies');
     }
   }
+/*
+--url 'https://api.themoviedb.org/3/discover/movie?
+include_adult=false&include_video=false
+&language=pt-br&page=1
+&sort_by=popularity.desc&with_genres=28' \
+     
+     --header 'accept: application/json'
+*/
 
-  // static Future<List<Results>> getMoviePopularById(int genresId, String language) async {
-  //   MovieDetail results;
+  static Future<List<Results>> getMoviePopularByGenresId(
+      int genresId, int page, String language) async {
+    List<Results> resultMovies = [];
+    try {
+      var url = Uri.https('${Constants.URL_API}', '/3/discover/movie', {
+        'language': '$language',
+        'page': '$page',
+        'sort_by': 'popularity.desc',
+        'with_genres': '$genresId',
+      });
 
-  //   try {
-  //     //https://api.themoviedb.org/3/movie/movie_id?language=en-US'
-  //     var url = Uri.https('${Constants.URL_API}', '3/movie/{$genresId}', {
-  //       'language': '$language',
-  //     });
-  //     final response = await http.get(url, headers: {
-  //       'Authorization': '${Constants.TOKEN_BEAR}',
-  //     });
-  //     if (response.statusCode == 200) {
-  //       final Map<String, dynamic> jsonData = jsonDecode(response.body);
+      final response = await http.get(url, headers: {
+        'Authorization': Constants.TOKEN_BEAR,
+      });
 
-  //     }
-  //   } catch (e) {}
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> jsonData = jsonDecode(response.body);
+        final jsonResult = jsonData["results"];
 
-  // }
+        for (var json in jsonResult) {
+          Results resultJson = Results.fromJson(json);
+          resultMovies.add(resultJson);
+        }
+        return resultMovies;
+      } else {
+        return resultMovies;
+      }
+    } catch (e) {
+      return resultMovies;
+    }
+  }
 }

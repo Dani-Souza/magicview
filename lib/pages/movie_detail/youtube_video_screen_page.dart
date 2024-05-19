@@ -29,7 +29,7 @@ class _YoutubeScreenVideoPageState extends State<YoutubeScreenVideoPage> {
               snapshot.hasData) {
             return YoutubePlayer(
                 controller: YoutubePlayerController(
-                    initialVideoId: snapshot!.data.toString(),
+                    initialVideoId: snapshot.data.toString(),
                     flags:
                         const YoutubePlayerFlags(autoPlay: true, mute: false)));
           } else {

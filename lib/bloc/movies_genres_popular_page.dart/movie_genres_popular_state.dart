@@ -17,11 +17,11 @@ class MovieGenresPopularStateFetchs extends MovieGenresPopularState {
   List<Object?> get props => [results];
 }
 
-class MovieGenresPopularStateByID extends MovieGenresPopularState {
-  final List<Results> resultList;
-  final int movieId;
-  const MovieGenresPopularStateByID(this.movieId, this.resultList);
+class MovieGenresPopularErrorState extends MovieGenresPopularState {
+  final String error;
+
+  const MovieGenresPopularErrorState(this.error);
 
   @override
-  List<Object?> get props => [movieId, resultList];
+  List<Object?> get props => [error];
 }

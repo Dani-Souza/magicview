@@ -5,13 +5,15 @@ abstract class MovieGenresPopularEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class MovieGenresPopularEventInitial extends MovieGenresPopularEvent {}
+//class MovieGenresPopularEventLoading extends MovieGenresPopularEvent {}
 
-class MovieGenresPopularEventFetchs extends MovieGenresPopularEvent {}
+// class MovieGenresPopularEventFetchs extends MovieGenresPopularEvent {}
 
-class MovieGenresPopularEventById extends MovieGenresPopularEvent {
-  final int movieId;
-  MovieGenresPopularEventById(this.movieId);
+class MovieGenresPopularEventByIdLoaded extends MovieGenresPopularEvent {
+  final int genresId;
+  final int page;
+  final String language;
+  MovieGenresPopularEventByIdLoaded(this.genresId, this.page, this.language);
   @override
-  List<Object?> get props => [movieId];
+  List<Object?> get props => [genresId, page, language];
 }

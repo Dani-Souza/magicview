@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/app_routes.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/entities/screen_arguments.dart';
+import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/utility/constants.dart';
 
 class MoviePopularPages extends StatefulWidget {
@@ -49,6 +50,9 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
               return const Center(
                 child: CircularProgressIndicator(),
               );
+            }
+            if (state is MoviePopularErrorState) {
+              return (MyText(title: state.error));
             }
             if (state is MoviePopularFetchsState) {
               return ListView.separated(

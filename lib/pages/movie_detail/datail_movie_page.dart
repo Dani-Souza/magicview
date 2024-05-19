@@ -107,7 +107,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: MyTextTitle(message: "MAGICVIEW 123")),
+                            child: const MyTextTitle(message: " < MAGICVIEW")),
                       ],
                     ),
                   ],

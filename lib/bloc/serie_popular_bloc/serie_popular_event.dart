@@ -10,5 +10,6 @@ class SeriePopularEventFetchs extends SeriePopularEvent {
   final String language;
 
   SeriePopularEventFetchs(this.page, this.language);
+  @override
   List<Object?> get props => [page, language];
 }

@@ -9,25 +9,29 @@ class CreditsRepository {
       int movieId, String language, String typeMovieOrSerie) async {
     List<Credits> listMovieCredits = [];
 
-    var url = Uri.https(Constants.URL_API,
-        '3/$typeMovieOrSerie/$movieId/credits', {'language': language});
+    try {
+      var url = Uri.https(Constants.URL_API,
+          '3/$typeMovieOrSerie/$movieId/credits', {'language': language});
 
-    final response = await http.get(url, headers: {
-      'Authorization': Constants.TOKEN_BEAR,
-    });
+      final response = await http.get(url, headers: {
+        'Authorization': Constants.TOKEN_BEAR,
+      });
 
-    if (response.statusCode == 200) {
-      final jsonData = json.decode(response.body);
-      final jsonMovieCredits = jsonData['cast'];
+      if (response.statusCode == 200) {
+        final jsonData = json.decode(response.body);
+        final jsonMovieCredits = jsonData['cast'];
 
-      for (var json in jsonMovieCredits) {
-        Credits listCredits = Credits.fromJson(json);
-        listMovieCredits.add(listCredits);
+        for (var json in jsonMovieCredits) {
+          Credits listCredits = Credits.fromJson(json);
+          listMovieCredits.add(listCredits);
+        }
+        return listMovieCredits;
+      } else {
+        return listMovieCredits;
       }
+    } catch (e) {
       return listMovieCredits;
     }
-
-    return listMovieCredits;
   }
 
   static Future<String?> getTrailer(

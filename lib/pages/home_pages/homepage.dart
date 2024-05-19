@@ -30,11 +30,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color(0xff21005D),
       bottomNavigationBar: BottomNavigationBar(
+        //  type: BottomNavigationBarType.fixed,
         backgroundColor: Theme.of(context).colorScheme.secondary,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
+          //  BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
         ],
       ),
       body: const SingleChildScrollView(

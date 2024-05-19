@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
               child: const GenresPage()),
           BlocProvider(
               create: (context) => MovieGenresPopularBloc()
-                ..add(MovieGenresPopularEventById(28)),
+                ..add(MovieGenresPopularEventByIdLoaded(28, 1, "pt-br")),
               child: const GenresPage()),
         ],
         child: MaterialApp(
