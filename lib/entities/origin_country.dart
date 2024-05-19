@@ -1,10 +1,10 @@
 class OriginCountry {
-  String? origin_country;
+  String? originCountry;
 
-  OriginCountry({this.origin_country = ""});
+  OriginCountry({this.originCountry = ""});
 
   factory OriginCountry.fromJson(Map<String, dynamic> data) {
-    final origin_country = data['origin_country'];
-    return OriginCountry(origin_country: origin_country);
+    final originCountry = data['origin_country'];
+    return OriginCountry(originCountry: originCountry);
   }
 }
