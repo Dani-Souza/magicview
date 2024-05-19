@@ -6,7 +6,7 @@ import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/pages/movie_detail/datail_movie_page.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
-import 'package:magicview/pages/home_pages/genres_page.dart';
+import 'package:magicview/pages/genres_page/genres_page.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
 import 'package:magicview/pages/home_pages/initial_home_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';

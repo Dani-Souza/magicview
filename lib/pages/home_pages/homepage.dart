@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
-import 'package:magicview/pages/home_pages/genres_movie_popular_page.dart';
-import 'package:magicview/pages/home_pages/genres_page.dart';
+import 'package:magicview/pages/genres_page/genres_movie_popular_page.dart';
+import 'package:magicview/pages/genres_page/genres_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/my_search_page.dart';
 import 'package:magicview/pages/serie_page/serie_popular_page.dart';
@@ -51,11 +51,11 @@ class _HomePageState extends State<HomePage> {
                     MyTextTitle(message: "MAGICVIEW"),
                   ],
                 ),
-                Row(
-                  children: [
-                    MySearchPage(),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     MySearchPage(),
+                //   ],
+                // ),
                 SizedBox(
                   height: 10,
                 ),
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                     MyText(
                       title: "Filmes Populares",
                       fontSize: 18,
-                    )
+                    ),
                   ],
                 ),
                 MoviePopularPages(),
