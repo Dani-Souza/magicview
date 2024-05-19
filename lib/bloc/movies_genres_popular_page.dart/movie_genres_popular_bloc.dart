@@ -9,7 +9,7 @@ part 'movie_genres_popular_state.dart';
 
 class MovieGenresPopularBloc
     extends Bloc<MovieGenresPopularEvent, MovieGenresPopularState> {
-  MovieGenresPopularBloc() : super(MovieGenresPopularStateInitial()) {
+  MovieGenresPopularBloc() : super(MovieGenresPopularStateLoading()) {
     on<MovieGenresPopularEventById>(_onGetByIdMoviePopular);
   }
 

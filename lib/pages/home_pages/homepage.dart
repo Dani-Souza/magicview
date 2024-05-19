@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
+import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
 import 'package:magicview/pages/home_pages/genres_movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/genres_page.dart';
@@ -36,67 +37,59 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     MyTextTitle(message: "MAGICVIEW"),
                   ],
                 ),
-                const Row(
+                Row(
                   children: [
                     MySearchPage(),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 Row(
                   children: [
-                    Text(
-                      'Filmes Populares',
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    MyText(
+                      title: "Filmes Populares",
+                      fontSize: 18,
                     )
                   ],
                 ),
-                const MoviePopularPages(),
-                const SizedBox(
+                MoviePopularPages(),
+                SizedBox(
                   height: 10,
                 ),
                 Row(
                   children: [
-                    Text(
-                      'Series Polulares',
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    MyText(
+                      title: "Série Populares",
+                      fontSize: 18,
                     )
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const SeriePopularPage(),
+                SeriePopularPage(),
                 // generos
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const GenresPage(),
-                const SizedBox(
+                GenresPage(),
+                SizedBox(
                   height: 10,
                 ),
-                const GenresMoviePopularPage(),
+                GenresMoviePopularPage(),
               ],
             ),
           ),

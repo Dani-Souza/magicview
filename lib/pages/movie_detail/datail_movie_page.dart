@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:magicview/entities/credits.dart';
 import 'package:magicview/entities/screen_arguments.dart';
+import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
 import 'package:magicview/pages/movie_detail/youtube_video_screen_page.dart';
 import 'package:magicview/reposistories/credits_repository.dart';
@@ -127,25 +128,10 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             ),
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          tabs: [
-                            Text(
-                              "Sinopse",
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
-                            ),
-                            Text(
-                              "Elenco",
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
-                            ),
-                            Text(
-                              "Trailer",
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
-                            )
+                          tabs: const [
+                            MyText(title: "Sinopse"),
+                            MyText(title: "Elenco"),
+                            MyText(title: "Trailer"),
                           ],
                         ),
                         Padding(
@@ -155,12 +141,9 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             width: screenWidth,
                             child: TabBarView(
                               children: [
-                                Text(
-                                  "${argMovies.overview} ",
-                                  style: TextStyle(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary),
+                                MyText(
+                                  title: "${argMovies.overview} ",
+                                  fontSize: 14,
                                 ),
                                 FutureBuilder(
                                   future: CreditsRepository.getCredits(

@@ -16,7 +16,7 @@ class _GenresMoviePopularPageState extends State<GenresMoviePopularPage> {
       height: 138,
       child: BlocBuilder<MovieGenresPopularBloc, MovieGenresPopularState>(
         builder: (context, state) {
-          if (state is MovieGenresPopularStateInitial) {
+          if (state is MovieGenresPopularStateLoading) {
             return const Center(
               child: CircularProgressIndicator(),
             );

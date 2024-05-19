@@ -7,7 +7,7 @@ abstract class MovieGenresPopularState extends Equatable {
   List<Object?> get props => [];
 }
 
-class MovieGenresPopularStateInitial extends MovieGenresPopularState {}
+class MovieGenresPopularStateLoading extends MovieGenresPopularState {}
 
 class MovieGenresPopularStateFetchs extends MovieGenresPopularState {
   final List<Results> results;
