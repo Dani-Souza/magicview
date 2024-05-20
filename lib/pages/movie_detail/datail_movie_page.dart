@@ -1,12 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:magicview/entities/movie_credits.dart';
-import 'package:magicview/entities/movie_details.dart';
+import 'package:magicview/entities/credits.dart';
 import 'package:magicview/entities/screen_arguments.dart';
-import 'package:magicview/pages/home_pages/youtube_video_screen_page.dart';
-import 'package:magicview/utility/data_credit_movie.dart';
+import 'package:magicview/pages/components/my_text.dart';
+import 'package:magicview/pages/components/my_text_title.dart';
+import 'package:magicview/pages/movie_detail/youtube_video_screen_page.dart';
+import 'package:magicview/reposistories/credits_repository.dart';
 
 class DetailMovePage extends StatefulWidget {
   const DetailMovePage({super.key});
@@ -16,21 +14,20 @@ class DetailMovePage extends StatefulWidget {
 }
 
 class _DetailMovePageState extends State<DetailMovePage> {
-  Future<MovieDetail> getMovieDetail(int movieId) async {
-    late MovieDetail movieDetail;
-    String data =
-        await rootBundle.loadString('assets/data/${movieId}_movie_detail.json');
-    Map<String, dynamic> jsonData = json.decode(data);
-    movieDetail = MovieDetail.fromJson(jsonData);
-    return movieDetail;
-  }
+  // Future<MovieDetail> getMovieDetail(int movieId) async {
+  //   late MovieDetail movieDetail;
+  //   String data =
+  //       await rootBundle.loadString('assets/data/${movieId}_movie_detail.json');
+  //   Map<String, dynamic> jsonData = json.decode(data);
+  //   movieDetail = MovieDetail.fromJson(jsonData);
+  //   return movieDetail;
+  // }
 
   @override
   Widget build(BuildContext context) {
-    final argMovieId =
+    ScreenArguments argMovies =
         ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
-    String nomeDoFilme = "Godzilla x Kong: O Novo Império";
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return DefaultTabController(
@@ -45,11 +42,11 @@ class _DetailMovePageState extends State<DetailMovePage> {
                     Container(
                       height: screenHeight * 0.51,
                       width: screenWidth,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         image: DecorationImage(
                             opacity: .2,
                             image: NetworkImage(
-                                "https://media.themoviedb.org/t/p/w500/boObGdocQS07Nu7IrettgA5oRTp.jpg"),
+                                "https://media.themoviedb.org/t/p/w500${argMovies.backdropPath}"),
                             fit: BoxFit.fill),
                       ),
                       child: Row(
@@ -60,11 +57,12 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             child: Padding(
                               padding: const EdgeInsets.only(left: 5, right: 5),
                               child: Text(
-                                nomeDoFilme,
+                                argMovies.title,
                                 style: TextStyle(
                                   color: Color(0xFFF1EBF9),
                                   fontFamily: "Righteous",
-                                  fontSize: nomeDoFilme.length > 12 ? 28 : 38,
+                                  fontSize:
+                                      argMovies.title.length > 12 ? 28 : 38,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
@@ -78,9 +76,9 @@ class _DetailMovePageState extends State<DetailMovePage> {
                       width: 136,
                       margin: const EdgeInsets.only(left: 16, top: 110),
                       decoration: BoxDecoration(
-                        image: const DecorationImage(
+                        image: DecorationImage(
                           image: NetworkImage(
-                              "https://media.themoviedb.org/t/p/w500/boObGdocQS07Nu7IrettgA5oRTp.jpg"),
+                              "https://media.themoviedb.org/t/p/w500${argMovies.posterPath}"),
                         ),
                         borderRadius: BorderRadius.circular(5),
                         boxShadow: [
@@ -109,15 +107,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: Text(
-                              "< MAGICVIEW ",
-                              style: TextStyle(
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: "Righteous",
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            )),
+                            child: const MyTextTitle(message: " < MAGICVIEW")),
                       ],
                     ),
                   ],
@@ -138,25 +128,10 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             ),
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          tabs: [
-                            Text(
-                              "Sinopse",
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
-                            ),
-                            Text(
-                              "Elenco",
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
-                            ),
-                            Text(
-                              "Trailer",
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
-                            )
+                          tabs: const [
+                            MyText(title: "Sinopse"),
+                            MyText(title: "Elenco"),
+                            MyText(title: "Trailer"),
                           ],
                         ),
                         Padding(
@@ -166,19 +141,18 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             width: screenWidth,
                             child: TabBarView(
                               children: [
-                                Text(
-                                  "Uma nova e emocionante aventura coloca o poderoso Kong e o temível Godzilla contra uma ameaça colossal e desconhecida, oculta dentro do nosso mundo, desafiando a própria existência deles – e a nossa também. \"Godzilla X Kong: O Novo Império\" aprofunda-se ainda mais as histórias desses Titãs e as suas origens, assim como nos mistérios da Ilha da Caveira e além, revelando a batalha mítica que ajudou a forjar esses seres extraordinários e os vinculou para sempre à humanidade.",
-                                  style: TextStyle(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary),
+                                MyText(
+                                  title: "${argMovies.overview} ",
+                                  fontSize: 14,
                                 ),
                                 FutureBuilder(
-                                  future: DataMovieCredit.getMovieCredit(
-                                      argMovieId.movieId),
+                                  future: CreditsRepository.getCredits(
+                                      argMovies.id,
+                                      "en-US",
+                                      argMovies.typeMovieOrTV),
                                   builder: (context, snapshot) {
                                     if (snapshot.hasData) {
-                                      List<MovieCredits>? movieCredits =
+                                      List<Credits>? movieCredits =
                                           snapshot.data;
                                       return SingleChildScrollView(
                                         child: Wrap(
@@ -191,40 +165,38 @@ class _DetailMovePageState extends State<DetailMovePage> {
                                             for (var i = 0;
                                                 i < movieCredits!.length;
                                                 i++)
-                                              if (movieCredits[i].profilePath !=
-                                                  null)
-                                                Container(
-                                                  height: 93,
-                                                  width: 64,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: NetworkImage(
-                                                            "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${movieCredits[i].profilePath}")),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                  ),
-                                                  child: Baseline(
-                                                    baseline: 89,
-                                                    baselineType:
-                                                        TextBaseline.alphabetic,
-                                                    child: Text(
-                                                      movieCredits[i].character,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      style: TextStyle(
-                                                          color:
-                                                              Theme.of(context)
-                                                                  .colorScheme
-                                                                  .secondary,
-                                                          fontSize: 10,
-                                                          backgroundColor:
-                                                              Theme.of(context)
-                                                                  .colorScheme
-                                                                  .primary),
-                                                    ),
+                                              // if (movieCredits[i].profilePath !=
+                                              //     null)
+                                              Container(
+                                                height: 93,
+                                                width: 64,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(
+                                                          "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${movieCredits[i].profilePath}")),
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                ),
+                                                child: Baseline(
+                                                  baseline: 89,
+                                                  baselineType:
+                                                      TextBaseline.alphabetic,
+                                                  child: Text(
+                                                    movieCredits[i].character,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                        color: Theme.of(context)
+                                                            .colorScheme
+                                                            .secondary,
+                                                        fontSize: 10,
+                                                        backgroundColor:
+                                                            Theme.of(context)
+                                                                .colorScheme
+                                                                .primary),
                                                   ),
                                                 ),
+                                              ),
                                           ],
                                         ),
                                       );
@@ -235,7 +207,9 @@ class _DetailMovePageState extends State<DetailMovePage> {
                                     }
                                   },
                                 ),
-                                YoutubeScreenVideoPage()
+                                YoutubeScreenVideoPage(
+                                    movieId: argMovies.id,
+                                    typeMovieOrSerie: argMovies.typeMovieOrTV)
                               ],
                             ),
                           ),

@@ -2,20 +2,26 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/entities/results.dart';
-import 'package:magicview/utility/data_movie_popular_api.dart';
+import 'package:magicview/reposistories/movie_popular_repository.dart';
 import 'package:equatable/equatable.dart';
 
 part 'movie_popular_event.dart';
 part 'movie_popular_state.dart';
 
 class MoviePopularBloc extends Bloc<MoviePopularEvent, MoviePopularState> {
-  MoviePopularBloc() : super(MoviePopularStateInitial()) {
-    on<MoviePopularEvent>(_onFetchMoviePopular);
+  MoviePopularBloc() : super(MoviePopularLoadingState()) {
+    on<MoviePopularEventLoaded>(_onFetchMoviePopular);
   }
 
   FutureOr<void> _onFetchMoviePopular(
-      MoviePopularEvent event, Emitter<MoviePopularState> emit) async {
-    final moviePopular = await DataMoviePopularApi.getAllMoviePopular();
-    emit(MoviePopularStateFetchs(moviePopular));
+      MoviePopularEventLoaded event, Emitter<MoviePopularState> emit) async {
+    emit(MoviePopularLoadingState());
+    try {
+      final results = await MoviePopularRepository.getMoviePopular(
+          event.page, event.langague);
+      emit(MoviePopularFetchsState(results));
+    } catch (e) {
+      emit(MoviePopularErrorState("Erro ao Carregar Filmes"));
+    }
   }
 }

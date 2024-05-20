@@ -5,6 +5,18 @@ abstract class MoviePopularEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class MoviePopularEventInitial extends MoviePopularEvent {}
+class MoviePopularEventLoaded extends MoviePopularEvent {
+  final int page;
+  final String langague;
 
-class MoviePopularEventFetchs extends MoviePopularEvent {}
+  MoviePopularEventLoaded({required this.page, required this.langague});
+}
+
+// class MoviePopularEventErrorState extends MoviePopularEvent {
+//   final String error;
+
+//   MoviePopularEventErrorState(this.error);
+
+//   @override
+//   List<Object?> get props => [error];
+// }

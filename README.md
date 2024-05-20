@@ -32,3 +32,7 @@ uma lista estática de filmes e séries populares, com informações básicas so
 3. Pesquisa de Filmes e Séries (desafio extra): Os usuários poderão pesquisar por
    filmes e séries utilizando palavras-chave, títulos, gêneros, etc., para encontrar
    conteúdos específicos
+
+   ### Arquivo constants.dart
+   Na pasta utility possui um arquivo chamado constants_sample.dart; renomear o arquivo para constants.dart.
+   No atributo TOKEN_BEAR adicionar o TOKEN BEAR na API que esta disponivel no site themoviedb.org.

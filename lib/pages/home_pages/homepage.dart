@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
-import 'package:magicview/pages/home_pages/genres_movie_popular_page.dart';
-import 'package:magicview/pages/home_pages/genres_page.dart';
-import 'package:magicview/pages/home_pages/movie_popular_page.dart';
+import 'package:magicview/pages/components/my_text.dart';
+import 'package:magicview/pages/components/my_text_title.dart';
+import 'package:magicview/pages/genres_page/genres_movie_popular_page.dart';
+import 'package:magicview/pages/genres_page/genres_page.dart';
+import 'package:magicview/pages/movie_page/movie_popular_page.dart';
 import 'package:magicview/pages/home_pages/my_search_page.dart';
-import 'package:magicview/pages/home_pages/serie_popular_page.dart';
+import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,88 +21,74 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    context.read<GenresBloc>().add(GenresEventFetchs());
+    context.read<GenresBloc>().add(GenresEventLoaded());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xf21005D),
+      backgroundColor: const Color(0xff21005D),
       bottomNavigationBar: BottomNavigationBar(
+        //  type: BottomNavigationBarType.fixed,
         backgroundColor: Theme.of(context).colorScheme.secondary,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
+          //  BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      "MAGICVIEW ",
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontFamily: "Righteous",
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
+                    MyTextTitle(message: "MAGICVIEW"),
+                  ],
+                ),
+                // Row(
+                //   children: [
+                //     MySearchPage(),
+                //   ],
+                // ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    MyText(
+                      title: "Filmes Populares",
+                      fontSize: 18,
                     ),
                   ],
                 ),
-                const Row(
-                  children: [
-                    MySearchPage(),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Filmes Populares',
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
                 MoviePopularPages(),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 Row(
                   children: [
-                    Text(
-                      'Series Polulares',
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    MyText(
+                      title: "Série Populares",
+                      fontSize: 18,
                     )
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 SeriePopularPage(),
                 // generos
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 GenresPage(),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 GenresMoviePopularPage(),

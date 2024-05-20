@@ -1,64 +1,46 @@
-import '../entities/genres.dart';
-
 class Results {
   final int id;
-  final bool adult;
-  final String backdropPath;
-  final List<Genres> genres;
-  final String originalLanguage;
-  final String originalTitle;
-  final String overview;
+  //final List<Genres> genres;
   final double popularity;
-  final String posterPath;
-  final String releaseDate;
   final String title;
-  final bool video;
+  final String? name;
+  final String? overview;
+  final String posterPath;
+  final String backdropPath;
   final double voteAverage;
   final int voteCount;
 
   Results({
     required this.id,
-    required this.adult,
-    required this.backdropPath,
-    required this.genres,
-    required this.originalLanguage,
-    required this.originalTitle,
-    required this.overview,
+    //required this.genres,
     required this.popularity,
-    required this.posterPath,
-    required this.releaseDate,
     required this.title,
-    required this.video,
+    required this.name,
+    required this.overview,
+    required this.posterPath,
+    required this.backdropPath,
     required this.voteAverage,
     required this.voteCount,
   });
 
   factory Results.fromJson(Map<String, dynamic> data) {
-    List<Genres> genresList = [];
+    // List<Genres> genresList = [];
 
-    if (data['genres_id'] != null) {
-      List<int> genreIds = List<int>.from(data['genres_id']);
-      genresList = genreIds.map((id) => Genres(id: id, name: "")).toList();
-    }
-    dynamic voteAverageInitial = data['vote_average'];
-    double voteAverage = voteAverageInitial is int
-        ? voteAverageInitial.toDouble()
-        : voteAverageInitial;
+    // if (data['genres_id'] != null) {
+    //   List<int> genreIds = List<int>.from(data['genres_id']);
+    //   genresList = genreIds.map((id) => Genres(id: id, name: "")).toList();
+    // }
 
     return Results(
         id: data['id'],
-        adult: data['adult'],
-        backdropPath: data['backdrop_path'],
-        genres: genresList,
-        originalLanguage: data['original_language'],
-        originalTitle: data['original_title'],
-        overview: data['overview'],
+        // genres: genresList,
         popularity: data['popularity'],
-        posterPath: data['poster_path'],
-        releaseDate: data['release_date'],
         title: data['title'],
-        video: data['video'],
-        voteAverage: voteAverage,
+        name: data['name'],
+        overview: data['overview'],
+        posterPath: data['poster_path'],
+        backdropPath: data['backdrop_path'],
+        voteAverage: data['vote_average'] * 1.0,
         voteCount: data['vote_count']);
   }
 }

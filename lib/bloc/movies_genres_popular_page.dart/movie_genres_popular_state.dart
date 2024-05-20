@@ -7,7 +7,7 @@ abstract class MovieGenresPopularState extends Equatable {
   List<Object?> get props => [];
 }
 
-class MovieGenresPopularStateInitial extends MovieGenresPopularState {}
+class MovieGenresPopularStateLoading extends MovieGenresPopularState {}
 
 class MovieGenresPopularStateFetchs extends MovieGenresPopularState {
   final List<Results> results;
@@ -17,11 +17,11 @@ class MovieGenresPopularStateFetchs extends MovieGenresPopularState {
   List<Object?> get props => [results];
 }
 
-class MovieGenresPopularStateByID extends MovieGenresPopularState {
-  final List<Results> resultList;
-  final int movieId;
-  const MovieGenresPopularStateByID(this.movieId, this.resultList);
+class MovieGenresPopularErrorState extends MovieGenresPopularState {
+  final String error;
+
+  const MovieGenresPopularErrorState(this.error);
 
   @override
-  List<Object?> get props => [movieId, resultList];
+  List<Object?> get props => [error];
 }
