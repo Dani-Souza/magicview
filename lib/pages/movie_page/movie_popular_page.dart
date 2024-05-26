@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/app_routes.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
+import 'package:magicview/entities/results.dart';
 import 'package:magicview/entities/screen_arguments.dart';
 import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/utility/constants.dart';
@@ -14,6 +15,7 @@ class MoviePopularPages extends StatefulWidget {
 }
 
 class _MoviePopularPagesState extends State<MoviePopularPages> {
+  List<Results> result = [];
   final ScrollController _scrollController = ScrollController();
   int pagina = 1;
   @override
@@ -27,9 +29,8 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
     if (_scrollController.position.pixels ==
         _scrollController.position.maxScrollExtent) {
       pagina++;
-      context
-          .read<MoviePopularBloc>()
-          .add(MoviePopularEventLoaded(page: pagina, langague: 'pt'));
+      context.read<MoviePopularBloc>().add(MoviePopularEventMoreLoad(
+          page: pagina, langague: 'pt', results: result));
     }
   }
 
@@ -55,10 +56,11 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
               return (MyText(title: state.error));
             }
             if (state is MoviePopularFetchsState) {
+              result += state.result;
               return ListView.separated(
                 controller: _scrollController,
                 scrollDirection: Axis.horizontal,
-                itemCount: state.result.length,
+                itemCount: result.length,
                 separatorBuilder: (BuildContext context, int index) =>
                     const SizedBox(width: 10),
                 itemBuilder: (BuildContext context, int index) {
@@ -66,14 +68,14 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                     onTap: () {
                       Navigator.pushNamed(context, AppRoutes.detailMovie,
                           arguments: ScreenArguments(
-                              state.result[index].id,
-                              state.result[index].popularity,
-                              state.result[index].title,
-                              state.result[index].overview,
-                              state.result[index].posterPath,
-                              state.result[index].backdropPath,
-                              state.result[index].voteAverage,
-                              state.result[index].voteCount,
+                              result[index].id,
+                              result[index].popularity,
+                              result[index].title,
+                              result[index].overview,
+                              result[index].posterPath,
+                              result[index].backdropPath,
+                              result[index].voteAverage,
+                              result[index].voteCount,
                               "movie"));
                     },
                     child: Container(
@@ -83,7 +85,7 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                           color: Theme.of(context).colorScheme.secondary,
                           image: DecorationImage(
                               image: NetworkImage(
-                                  "${Constants.IMAGEPOSTERURL}${state.result[index].posterPath}")),
+                                  "${Constants.IMAGEPOSTERURL}${result[index].posterPath}")),
                           borderRadius: BorderRadius.circular(5)),
                     ),
                   );

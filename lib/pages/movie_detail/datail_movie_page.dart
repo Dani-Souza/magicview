@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/entities/credits.dart';
 import 'package:magicview/entities/screen_arguments.dart';
 import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
+import 'package:magicview/pages/movie_detail/image_poster_page.dart';
 import 'package:magicview/pages/movie_detail/youtube_video_screen_page.dart';
 import 'package:magicview/reposistories/credits_repository.dart';
 
@@ -14,15 +17,8 @@ class DetailMovePage extends StatefulWidget {
 }
 
 class _DetailMovePageState extends State<DetailMovePage> {
-  // Future<MovieDetail> getMovieDetail(int movieId) async {
-  //   late MovieDetail movieDetail;
-  //   String data =
-  //       await rootBundle.loadString('assets/data/${movieId}_movie_detail.json');
-  //   Map<String, dynamic> jsonData = json.decode(data);
-  //   movieDetail = MovieDetail.fromJson(jsonData);
-  //   return movieDetail;
-  // }
-
+  @override
+  final GlobalKey genKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     ScreenArguments argMovies =
@@ -39,75 +35,83 @@ class _DetailMovePageState extends State<DetailMovePage> {
               children: [
                 Stack(
                   children: [
-                    Container(
-                      height: screenHeight * 0.51,
-                      width: screenWidth,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            opacity: .2,
-                            image: NetworkImage(
-                                "https://media.themoviedb.org/t/p/w500${argMovies.backdropPath}"),
-                            fit: BoxFit.fill),
+                    Opacity(
+                      opacity: 1.0,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(0, 100, 20, 0),
+                        alignment: Alignment.bottomRight,
+                        child: SizedBox(
+                          height: 148,
+                          width: 98,
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(0, 100, 20, 0),
+                            alignment: Alignment.bottomRight,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        "https://media.themoviedb.org/t/p/w500/${argMovies.posterPath}"),
+                                    fit: BoxFit.cover),
+                                color: Theme.of(context).colorScheme.secondary,
+                                borderRadius: BorderRadius.circular(5),
+                                border:
+                                    Border.all(color: Colors.purple, width: 3)),
+                          ),
+                        ),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Flexible(
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 5, right: 5),
-                              child: Text(
-                                argMovies.title,
-                                style: TextStyle(
-                                  color: Color(0xFFF1EBF9),
-                                  fontFamily: "Righteous",
-                                  fontSize:
-                                      argMovies.title.length > 12 ? 28 : 38,
-                                  fontWeight: FontWeight.w700,
+                    ),
+                    RepaintBoundary(
+                      key: genKey,
+                      child: Container(
+                        height: screenHeight * 0.51,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              opacity: .2,
+                              image: NetworkImage(
+                                  "https://media.themoviedb.org/t/p/w500${argMovies.backdropPath}"),
+                              fit: BoxFit.fill),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Flexible(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 5, right: 5),
+                                child: Text(
+                                  argMovies.title,
+                                  style: TextStyle(
+                                    color: Color(0xFFF1EBF9),
+                                    fontFamily: "Righteous",
+                                    fontSize:
+                                        argMovies.title.length > 12 ? 28 : 38,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 204,
-                      width: 136,
-                      margin: const EdgeInsets.only(left: 16, top: 110),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              "https://media.themoviedb.org/t/p/w500${argMovies.posterPath}"),
+                          ],
                         ),
-                        borderRadius: BorderRadius.circular(5),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Theme.of(context).colorScheme.primary,
-                            offset: const Offset(
-                              0.0,
-                              0.0,
-                            ),
-                            blurRadius: 10.0,
-                            spreadRadius: 2,
-                          ), //BoxShadow
-                          const BoxShadow(
-                            color: Colors.white,
-                            offset: const Offset(0.0, 0.0),
-                            blurRadius: 0.0,
-                            spreadRadius: 0.0,
-                          ), //BoxShadow
-                        ],
                       ),
                     ),
+                    ImagePosterPage(posterPath: argMovies.posterPath),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         InkWell(
                             onTap: () {
                               Navigator.pop(context);
                             },
                             child: const MyTextTitle(message: " < MAGICVIEW")),
+                        InkWell(
+                          onTap: () {
+                            context.read<FavoriteBloc>().add(
+                                FavoriteCreateEvent(fileName: "MAGICVIEW"));
+                          },
+                          child: const Icon(Icons.favorite_border,
+                              color: Colors.redAccent, size: 40.0),
+                        ),
                       ],
                     ),
                   ],
