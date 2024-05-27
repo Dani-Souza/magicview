@@ -8,6 +8,7 @@ class MyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
+      textAlign: TextAlign.justify,
       title,
       style: TextStyle(
         color: Theme.of(context).colorScheme.secondary,

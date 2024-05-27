@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/app_routes.dart';
+import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
+import 'package:magicview/entities/results.dart';
 import 'package:magicview/pages/movie_detail/datail_movie_page.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
@@ -12,8 +14,12 @@ import 'package:magicview/pages/home_pages/initial_home_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';
 import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 import 'package:magicview/reposistories/genres_respository.dart';
+import 'package:magicview/reposistories/local/favorite_repository.dart';
+import 'package:magicview/utility/create_image.dart';
+import 'package:magicview/utility/hive_initialize.dart';
 
-void main() {
+void main() async {
+  HiveInitialize.initializeHive();
   runApp(const MyApp());
 }
 
@@ -27,7 +33,8 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(
               create: (context) => MoviePopularBloc()
-                ..add(MoviePopularEventLoaded(page: 1, langague: 'pt-br')),
+                ..add(MoviePopularEventLoaded(
+                    page: 1, langague: 'pt-br', results: const <Results>[])),
               child: const MoviePopularPages()),
           BlocProvider(
               create: (context) =>
@@ -41,6 +48,10 @@ class MyApp extends StatelessWidget {
               create: (context) => MovieGenresPopularBloc()
                 ..add(MovieGenresPopularEventByIdLoaded(28, 1, "pt-br")),
               child: const GenresPage()),
+          BlocProvider(
+            create: (context) =>
+                FavoriteBloc(ImageCreate(), FavoriteRepository()),
+          )
         ],
         child: MaterialApp(
             debugShowCheckedModeBanner: false,

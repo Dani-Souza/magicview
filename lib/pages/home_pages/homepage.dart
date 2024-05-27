@@ -6,7 +6,7 @@ import 'package:magicview/pages/components/my_text_title.dart';
 import 'package:magicview/pages/genres_page/genres_movie_popular_page.dart';
 import 'package:magicview/pages/genres_page/genres_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';
-import 'package:magicview/pages/home_pages/my_search_page.dart';
+
 import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 
 class HomePage extends StatefulWidget {

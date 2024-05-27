@@ -11,11 +11,23 @@ part 'movie_popular_state.dart';
 class MoviePopularBloc extends Bloc<MoviePopularEvent, MoviePopularState> {
   MoviePopularBloc() : super(MoviePopularLoadingState()) {
     on<MoviePopularEventLoaded>(_onFetchMoviePopular);
+    on<MoviePopularEventMoreLoad>(_onFetchMoreMovie);
   }
 
   FutureOr<void> _onFetchMoviePopular(
       MoviePopularEventLoaded event, Emitter<MoviePopularState> emit) async {
     emit(MoviePopularLoadingState());
+    try {
+      final results = await MoviePopularRepository.getMoviePopular(
+          event.page, event.langague);
+      emit(MoviePopularFetchsState(results));
+    } catch (e) {
+      emit(MoviePopularErrorState("Erro ao Carregar Filmes"));
+    }
+  }
+
+  FutureOr<void> _onFetchMoreMovie(
+      MoviePopularEventMoreLoad event, Emitter<MoviePopularState> emit) async {
     try {
       final results = await MoviePopularRepository.getMoviePopular(
           event.page, event.langague);
