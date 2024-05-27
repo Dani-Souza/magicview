@@ -14,9 +14,12 @@ import 'package:magicview/pages/home_pages/initial_home_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';
 import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 import 'package:magicview/reposistories/genres_respository.dart';
+import 'package:magicview/reposistories/local/favorite_repository.dart';
 import 'package:magicview/utility/create_image.dart';
+import 'package:magicview/utility/hive_initialize.dart';
 
-void main() {
+void main() async {
+  HiveInitialize.initializeHive();
   runApp(const MyApp());
 }
 
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
               child: const GenresPage()),
           BlocProvider(
             create: (context) =>
-                FavoriteBloc(ImageCreate())..add(FavoritoImageDefault()),
+                FavoriteBloc(ImageCreate(), FavoriteRepository()),
           )
         ],
         child: MaterialApp(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/app_routes.dart';
+import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/entities/results.dart';
 import 'package:magicview/entities/screen_arguments.dart';

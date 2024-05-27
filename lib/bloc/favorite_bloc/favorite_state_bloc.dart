@@ -2,6 +2,11 @@ part of 'favorite_bloc.dart';
 
 abstract class FavoriteStateBloc extends Equatable {}
 
+class FavoriteInitializeState extends FavoriteStateBloc {
+  @override
+  List<Object?> get props => [];
+}
+
 //loading
 class FavoriteLoadingState extends FavoriteStateBloc {
   @override
@@ -19,14 +24,32 @@ class FavoriteAddNickAndNumberState extends FavoriteStateBloc {
 }
 
 // //FavoriteCreate
-// class FavoriteCreateImageSate extends FavoriteStateBloc {
-//   final String fileName;
+class FavoriteCreateImageSate extends FavoriteStateBloc {
+  final String fileName;
 
-//   FavoriteCreateImageSate({required this.fileName});
+  FavoriteCreateImageSate({required this.fileName});
 
-//   @override
-//   List<Object?> get props => [fileName];
-// }
+  @override
+  List<Object?> get props => [fileName];
+}
+
+class FavoriteImageExistByIdState extends FavoriteStateBloc {
+  final int id;
+
+  FavoriteImageExistByIdState({required this.id});
+
+  @override
+  List<Object?> get props => [id];
+}
+
+class FavoriteImageExistState extends FavoriteStateBloc {
+  final String fileName;
+
+  FavoriteImageExistState({required this.fileName});
+
+  @override
+  List<Object?> get props => [fileName];
+}
 
 // //FavariteSave
 // class FavoriteSaveState extends FavoriteStateBloc {

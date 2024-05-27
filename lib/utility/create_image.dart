@@ -8,9 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 
 class ImageCreate {
-  final GlobalKey genKey = GlobalKey();
-
-  Future<String> takePicture() async {
+  Future<String> takePicture(GlobalKey genKey) async {
     DateTime date = DateTime.now();
     String fileName = DateFormat('ddMMyyyyhhmmss').format(date);
 
@@ -23,6 +21,6 @@ class ImageCreate {
     File imgFile = File('$directory/$fileName.png');
     await imgFile.writeAsBytes(pngBytes);
 
-    return (imgFile.path);
+    return (imgFile.path.toString());
   }
 }
