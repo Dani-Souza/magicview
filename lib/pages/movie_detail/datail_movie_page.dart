@@ -1,8 +1,14 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/entities/credits.dart';
 import 'package:magicview/entities/screen_arguments.dart';
 import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
+import 'package:magicview/pages/movie_detail/components/image_favorite_page.dart';
+import 'package:magicview/pages/movie_detail/components/image_poster_page.dart';
 import 'package:magicview/pages/movie_detail/youtube_video_screen_page.dart';
 import 'package:magicview/reposistories/credits_repository.dart';
 
@@ -14,22 +20,16 @@ class DetailMovePage extends StatefulWidget {
 }
 
 class _DetailMovePageState extends State<DetailMovePage> {
-  // Future<MovieDetail> getMovieDetail(int movieId) async {
-  //   late MovieDetail movieDetail;
-  //   String data =
-  //       await rootBundle.loadString('assets/data/${movieId}_movie_detail.json');
-  //   Map<String, dynamic> jsonData = json.decode(data);
-  //   movieDetail = MovieDetail.fromJson(jsonData);
-  //   return movieDetail;
-  // }
-
+  @override
+  final GlobalKey genKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     ScreenArguments argMovies =
         ModalRoute.of(context)!.settings.arguments as ScreenArguments;
-
+    context.read<FavoriteBloc>().add(FavoriteShowImageSaved(id: argMovies.id));
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -37,6 +37,8 @@ class _DetailMovePageState extends State<DetailMovePage> {
           child: SafeArea(
             child: Column(
               children: [
+                //figurinha
+
                 Stack(
                   children: [
                     Container(
@@ -71,43 +73,29 @@ class _DetailMovePageState extends State<DetailMovePage> {
                         ],
                       ),
                     ),
-                    Container(
-                      height: 204,
-                      width: 136,
-                      margin: const EdgeInsets.only(left: 16, top: 110),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              "https://media.themoviedb.org/t/p/w500${argMovies.posterPath}"),
-                        ),
-                        borderRadius: BorderRadius.circular(5),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Theme.of(context).colorScheme.primary,
-                            offset: const Offset(
-                              0.0,
-                              0.0,
-                            ),
-                            blurRadius: 10.0,
-                            spreadRadius: 2,
-                          ), //BoxShadow
-                          const BoxShadow(
-                            color: Colors.white,
-                            offset: const Offset(0.0, 0.0),
-                            blurRadius: 0.0,
-                            spreadRadius: 0.0,
-                          ), //BoxShadow
-                        ],
-                      ),
-                    ),
+                    ImagePosterPage(
+                        posterPath: argMovies.posterPath, genKey: genKey),
+                    //   ImageFavoritePage(),
+                    ImageFavoritePage(id: argMovies.id),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         InkWell(
                             onTap: () {
                               Navigator.pop(context);
                             },
                             child: const MyTextTitle(message: " < MAGICVIEW")),
+                        InkWell(
+                          onTap: () {
+                            context.read<FavoriteBloc>().add(
+                                FavoriteCreateEvent(
+                                    screenArguments: argMovies,
+                                    fileName: "MAGICVIEW",
+                                    genKey: genKey));
+                          },
+                          child: const Icon(Icons.favorite_border,
+                              color: Colors.redAccent, size: 40.0),
+                        ),
                       ],
                     ),
                   ],
@@ -129,14 +117,23 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             color: Theme.of(context).colorScheme.primary,
                           ),
                           tabs: const [
-                            MyText(title: "Sinopse"),
-                            MyText(title: "Elenco"),
-                            MyText(title: "Trailer"),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 4.0),
+                              child: MyText(title: "SINOPSE"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 4.0),
+                              child: MyText(title: "ELENCO"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 4.0),
+                              child: MyText(title: "TRAILER"),
+                            ),
                           ],
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
-                          child: Container(
+                          child: SizedBox(
                             height: screenHeight * .35,
                             width: screenWidth,
                             child: TabBarView(
