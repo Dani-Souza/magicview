@@ -4,11 +4,12 @@ import 'package:magicview/entities/genres.dart';
 import 'package:magicview/utility/constants.dart';
 
 class GenresRepository {
-  Future<List<Genres>> getMovieGenres(String language) async {
+  Future<List<Genres>> getMovieGenres(
+      String language, String typeMovieOrTv) async {
     List<Genres> genres = [];
     try {
-      var url = Uri.https(
-          Constants.URL_API, '/3/genre/movie/list', {'language': language});
+      var url = Uri.https(Constants.URL_API, '/3/genre/$typeMovieOrTv/list',
+          {'language': language});
 
       final response = await http.get(url, headers: {
         'Authorization': Constants.TOKEN_BEAR,

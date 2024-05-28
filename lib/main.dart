@@ -44,13 +44,16 @@ class MyApp extends StatelessWidget {
                   SeriePopularBloc()..add(SeriePopularEventFetchs(1, 'pt-br')),
               child: const SeriePopularPage()),
           BlocProvider(
-              create: (context) =>
-                  GenresBloc(GenresRepository())..add(GenresEventLoaded()),
-              child: const GenresPage()),
+              create: (context) => GenresBloc(GenresRepository())
+                ..add(GenresEventLoaded(typeMovieOrSerie: "movie")),
+              child: const GenresPage(typeMovieOrFilme: "movie")),
           BlocProvider(
               create: (context) => MovieGenresPopularBloc()
-                ..add(MovieGenresPopularEventByIdLoaded(28, 1, "pt-br")),
-              child: const GenresPage()),
+                ..add(
+                    MovieGenresPopularEventByIdLoaded(28, 1, "pt-br", "movie")),
+              child: const GenresPage(
+                typeMovieOrFilme: "movie",
+              )),
           BlocProvider(
             create: (context) =>
                 FavoriteBloc(ImageCreate(), FavoriteRepository()),

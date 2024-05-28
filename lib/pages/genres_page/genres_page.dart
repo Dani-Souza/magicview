@@ -5,7 +5,8 @@ import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popu
 import 'package:magicview/pages/components/my_text.dart';
 
 class GenresPage extends StatefulWidget {
-  const GenresPage({super.key});
+  final String typeMovieOrFilme;
+  const GenresPage({super.key, required this.typeMovieOrFilme});
 
   @override
   State<GenresPage> createState() => _GenresPageState();
@@ -15,13 +16,13 @@ class _GenresPageState extends State<GenresPage> {
   int positionGenres = 0;
   int pageInitial = 1;
   int genreIdsDefault = 28;
-  @override
-  void initState() {
-    context.read<MovieGenresPopularBloc>().add(
-        MovieGenresPopularEventByIdLoaded(
-            genreIdsDefault, pageInitial, 'pt-br'));
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   context.read<MovieGenresPopularBloc>().add(
+  //       MovieGenresPopularEventByIdLoaded(
+  //           genreIdsDefault, pageInitial, 'pt-br', widget.typeMovieOrFilme));
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +63,10 @@ class _GenresPageState extends State<GenresPage> {
 
                       context.read<MovieGenresPopularBloc>().add(
                           MovieGenresPopularEventByIdLoaded(
-                              state.genres[index].id, pageInitial, 'pt-br'));
+                              state.genres[index].id,
+                              pageInitial,
+                              'pt-br',
+                              widget.typeMovieOrFilme));
                     },
                     child: Text(
                       '${state.genres[index].name}',

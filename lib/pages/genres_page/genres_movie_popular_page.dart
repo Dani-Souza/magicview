@@ -6,7 +6,8 @@ import 'package:magicview/entities/screen_arguments.dart';
 import 'package:magicview/pages/components/my_text.dart';
 
 class GenresMoviePopularPage extends StatefulWidget {
-  const GenresMoviePopularPage({super.key});
+  final String typeMovieOrTv;
+  const GenresMoviePopularPage({super.key, required this.typeMovieOrTv});
 
   @override
   State<GenresMoviePopularPage> createState() => _GenresMoviePopularPageState();
@@ -48,7 +49,7 @@ class _GenresMoviePopularPageState extends State<GenresMoviePopularPage> {
                             state.results[index].backdropPath,
                             state.results[index].voteAverage,
                             state.results[index].voteCount,
-                            "movie"));
+                            widget.typeMovieOrTv));
                   },
                   child: Container(
                     height: 50,

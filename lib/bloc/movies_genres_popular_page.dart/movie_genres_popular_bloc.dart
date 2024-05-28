@@ -18,7 +18,7 @@ class MovieGenresPopularBloc
     emit(MovieGenresPopularStateLoading());
     try {
       final results = await MoviePopularRepository.getMoviePopularByGenresId(
-          event.genresId, event.page, event.language);
+          event.genresId, event.page, event.language, event.typeMovieOrTv);
       emit(MovieGenresPopularStateFetchs(results));
     } catch (e) {
       emit(const MovieGenresPopularErrorState("error"));

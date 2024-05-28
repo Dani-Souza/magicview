@@ -69,10 +69,11 @@ include_adult=false&include_video=false
 */
 
   static Future<List<Results>> getMoviePopularByGenresId(
-      int genresId, int page, String language) async {
+      int genresId, int page, String language, String typeMovieOrFile) async {
     List<Results> resultMovies = [];
     try {
-      var url = Uri.https('${Constants.URL_API}', '/3/discover/movie', {
+      var url =
+          Uri.https('${Constants.URL_API}', '/3/discover/$typeMovieOrFile', {
         'language': '$language',
         'page': '$page',
         'sort_by': 'popularity.desc',
