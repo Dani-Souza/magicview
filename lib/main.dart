@@ -34,8 +34,11 @@ class MyApp extends StatelessWidget {
           BlocProvider(
               create: (context) => MoviePopularBloc()
                 ..add(MoviePopularEventLoaded(
-                    page: 1, langague: 'pt-br', results: const <Results>[])),
-              child: const MoviePopularPages()),
+                    page: 1,
+                    langague: 'pt-br',
+                    results: const <Results>[],
+                    typeMovieOrTv: "movie")),
+              child: const MoviePopularPages(typeMovieOrSerie: "movie")),
           BlocProvider(
               create: (context) =>
                   SeriePopularBloc()..add(SeriePopularEventFetchs(1, 'pt-br')),

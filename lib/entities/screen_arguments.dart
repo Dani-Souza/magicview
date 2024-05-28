@@ -1,7 +1,7 @@
 class ScreenArguments {
   final int id;
   final double popularity;
-  final String title;
+  final String? title;
   final String? overview;
   final String posterPath;
   final String backdropPath;

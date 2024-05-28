@@ -19,8 +19,8 @@ class MoviePopularBloc extends Bloc<MoviePopularEvent, MoviePopularState> {
     emit(MoviePopularLoadingState());
     try {
       final results = await MoviePopularRepository.getMoviePopular(
-          event.page, event.langague);
-      emit(MoviePopularFetchsState(results));
+          event.page, event.langague, event.typeMovieOrTv);
+      emit(MoviePopularFetchsState(results, event.page));
     } catch (e) {
       emit(MoviePopularErrorState("Erro ao Carregar Filmes"));
     }
@@ -30,8 +30,8 @@ class MoviePopularBloc extends Bloc<MoviePopularEvent, MoviePopularState> {
       MoviePopularEventMoreLoad event, Emitter<MoviePopularState> emit) async {
     try {
       final results = await MoviePopularRepository.getMoviePopular(
-          event.page, event.langague);
-      emit(MoviePopularFetchsState(results));
+          event.page, event.langague, event.typeMovieOrTv);
+      emit(MoviePopularFetchsState(results, event.page));
     } catch (e) {
       emit(MoviePopularErrorState("Erro ao Carregar Filmes"));
     }

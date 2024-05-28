@@ -31,6 +31,5 @@ class _ShowImageFavoriteState extends State<ShowImageFavorite> {
         ),
       ),
     );
-    ;
   }
 }

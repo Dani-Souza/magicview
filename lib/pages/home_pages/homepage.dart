@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
+import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
+import 'package:magicview/entities/results.dart';
 import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
 import 'package:magicview/pages/genres_page/genres_movie_popular_page.dart';
 import 'package:magicview/pages/genres_page/genres_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';
-
-import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int genreIdsDefault = 28;
-
+  bool hasMovieSelect = true;
   @override
   void initState() {
     context.read<GenresBloc>().add(GenresEventLoaded());
@@ -27,6 +27,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    String typeMovieOrTv = "movie";
+
     return Scaffold(
       backgroundColor: const Color(0xff21005D),
       bottomNavigationBar: BottomNavigationBar(
@@ -39,13 +41,13 @@ class _HomePageState extends State<HomePage> {
           //  BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
         ],
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     MyTextTitle(message: "MAGICVIEW"),
@@ -56,22 +58,72 @@ class _HomePageState extends State<HomePage> {
                 //     MySearchPage(),
                 //   ],
                 // ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText(
-                      title: "Filmes Populares",
-                      fontSize: 18,
-                    ),
+                    InkWell(
+                        onTap: () {
+                          typeMovieOrTv = "movie";
+                          context.read<MoviePopularBloc>().add(
+                              MoviePopularEventLoaded(
+                                  page: 1,
+                                  langague: 'pt-br',
+                                  results: const <Results>[],
+                                  typeMovieOrTv: typeMovieOrTv));
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          child: Text(
+                            "Filmes Populares",
+                            style: TextStyle(
+                              backgroundColor: hasMovieSelect
+                                  ? Theme.of(context).colorScheme.primary
+                                  : Colors.transparent,
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        )),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          hasMovieSelect = true;
+                        });
+                        typeMovieOrTv = "tv";
+                        setState(() {
+                          hasMovieSelect = false;
+                        });
+                        context.read<MoviePopularBloc>().add(
+                            MoviePopularEventLoaded(
+                                page: 1,
+                                langague: 'pt-br',
+                                results: const <Results>[],
+                                typeMovieOrTv: typeMovieOrTv));
+                      },
+                      child: Text(
+                        "Séries Populares",
+                        style: TextStyle(
+                          backgroundColor: !hasMovieSelect
+                              ? Theme.of(context).colorScheme.primary
+                              : Colors.transparent,
+                          color: Theme.of(context).colorScheme.secondary,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    )
                   ],
                 ),
-                MoviePopularPages(),
-                SizedBox(
+                MoviePopularPages(typeMovieOrSerie: typeMovieOrTv),
+                const SizedBox(
                   height: 10,
                 ),
-                Row(
+                const Row(
                   children: [
                     MyText(
                       title: "Série Populares",
@@ -79,19 +131,19 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                SeriePopularPage(),
+                //   const SeriePopularPage(),
                 // generos
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                GenresPage(),
-                SizedBox(
+                const GenresPage(),
+                const SizedBox(
                   height: 10,
                 ),
-                GenresMoviePopularPage(),
+                const GenresMoviePopularPage(),
               ],
             ),
           ),
