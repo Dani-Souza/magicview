@@ -9,6 +9,7 @@ class GenresLoadingState extends GenresState {
 
 class GenresLoadedState extends GenresState {
   final List<Genres> genres;
+
   GenresLoadedState(this.genres);
   @override
   List<Object?> get props => [genres];

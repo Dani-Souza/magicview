@@ -39,7 +39,7 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
       FavoriteMovie favoritoMovie = FavoriteMovie(
           event.screenArguments.id,
           event.screenArguments.popularity,
-          event.screenArguments.title,
+          event.screenArguments.title!,
           newImage,
           event.screenArguments.posterPath,
           event.screenArguments.voteAverage,
@@ -57,7 +57,7 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
       emit(FavoriteInitializeState());
       final favoriteMovie = await favoriteRepository.getByIdFavorite(event.id);
       if (favoriteMovie!.id > 0) {
-        emit(FavoriteCreateImageSate(fileName: favoriteMovie!.postPathLocal));
+        emit(FavoriteCreateImageSate(fileName: favoriteMovie.postPathLocal));
       } else {
         emit(FavoriteInitializeState());
       }

@@ -6,14 +6,12 @@ import 'package:magicview/utility/constants.dart';
 import 'package:http/http.dart' as http;
 
 class MoviePopularRepository {
-//'https://api.themoviedb.org/3/movie/popular?language=pt&page=1'
-
   static Future<List<Results>> getMoviePopular(
-      int page, String language) async {
+      int page, String language, String typeMovieOrTv) async {
     List<Results> resultList = [];
 
     try {
-      var url = Uri.https('${Constants.URL_API}', '/3/movie/popular', {
+      var url = Uri.https('${Constants.URL_API}', '/3/$typeMovieOrTv/popular', {
         'language': '$language',
         'page': '$page',
         'sort_by': 'popularity.desc',
@@ -71,10 +69,11 @@ include_adult=false&include_video=false
 */
 
   static Future<List<Results>> getMoviePopularByGenresId(
-      int genresId, int page, String language) async {
+      int genresId, int page, String language, String typeMovieOrFile) async {
     List<Results> resultMovies = [];
     try {
-      var url = Uri.https('${Constants.URL_API}', '/3/discover/movie', {
+      var url =
+          Uri.https('${Constants.URL_API}', '/3/discover/$typeMovieOrFile', {
         'language': '$language',
         'page': '$page',
         'sort_by': 'popularity.desc',

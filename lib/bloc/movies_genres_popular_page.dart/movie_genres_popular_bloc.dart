@@ -11,6 +11,7 @@ class MovieGenresPopularBloc
     extends Bloc<MovieGenresPopularEvent, MovieGenresPopularState> {
   MovieGenresPopularBloc() : super(MovieGenresPopularStateLoading()) {
     on<MovieGenresPopularEventByIdLoaded>(_onGetByIdMoviePopular);
+    on<MovieEventGenresMoreLoadById>(_onFetchMoreMOvieByGenresId);
   }
 
   FutureOr<void> _onGetByIdMoviePopular(MovieGenresPopularEventByIdLoaded event,
@@ -18,8 +19,27 @@ class MovieGenresPopularBloc
     emit(MovieGenresPopularStateLoading());
     try {
       final results = await MoviePopularRepository.getMoviePopularByGenresId(
-          event.genresId, event.page, event.language);
-      emit(MovieGenresPopularStateFetchs(results));
+          event.genresId, event.page, event.language, event.typeMovieOrTv);
+      emit(MovieGenresPopularStateFetchs(
+        results,
+        event.genresId,
+        event.page,
+      ));
+    } catch (e) {
+      emit(const MovieGenresPopularErrorState("error"));
+    }
+  }
+
+  FutureOr<void> _onFetchMoreMOvieByGenresId(MovieEventGenresMoreLoadById event,
+      Emitter<MovieGenresPopularState> emit) async {
+    try {
+      final results = await MoviePopularRepository.getMoviePopularByGenresId(
+          event.genresId, event.page, event.language, event.typeMovieOrTv);
+      emit(MovieGenresPopularStateFetchs(
+        results,
+        event.genresId,
+        event.page,
+      ));
     } catch (e) {
       emit(const MovieGenresPopularErrorState("error"));
     }

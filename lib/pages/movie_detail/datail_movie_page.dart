@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
@@ -24,7 +22,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
   final GlobalKey genKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    ScreenArguments argMovies =
+    ScreenArguments? argMovies =
         ModalRoute.of(context)!.settings.arguments as ScreenArguments;
     context.read<FavoriteBloc>().add(FavoriteShowImageSaved(id: argMovies.id));
     double screenWidth = MediaQuery.of(context).size.width;
@@ -59,12 +57,12 @@ class _DetailMovePageState extends State<DetailMovePage> {
                             child: Padding(
                               padding: const EdgeInsets.only(left: 5, right: 5),
                               child: Text(
-                                argMovies.title,
+                                argMovies.title!,
                                 style: TextStyle(
                                   color: Color(0xFFF1EBF9),
                                   fontFamily: "Righteous",
                                   fontSize:
-                                      argMovies.title.length > 12 ? 28 : 38,
+                                      argMovies.title!.length > 12 ? 28 : 38,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),

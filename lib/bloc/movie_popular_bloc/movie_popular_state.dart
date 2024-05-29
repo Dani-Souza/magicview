@@ -9,8 +9,9 @@ class MoviePopularLoadingState extends MoviePopularState {
 
 class MoviePopularFetchsState extends MoviePopularState {
   final List<Results> result;
+  final int pageActual;
 
-  MoviePopularFetchsState(this.result);
+  MoviePopularFetchsState(this.result, this.pageActual);
 
   @override
   List<Object?> get props => [result];

@@ -2,7 +2,7 @@ class Results {
   final int id;
   //final List<Genres> genres;
   final double popularity;
-  final String title;
+  final String? title;
   final String? name;
   final String? overview;
   final String posterPath;
@@ -35,7 +35,7 @@ class Results {
         id: data['id'],
         // genres: genresList,
         popularity: data['popularity'],
-        title: data['title'],
+        title: data['title'] ?? data['name'],
         name: data['name'],
         overview: data['overview'],
         posterPath: data['poster_path'],
