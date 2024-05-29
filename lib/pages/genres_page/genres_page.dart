@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
+import 'package:magicview/entities/results.dart';
 import 'package:magicview/pages/components/my_text.dart';
 
 class GenresPage extends StatefulWidget {
@@ -13,16 +14,11 @@ class GenresPage extends StatefulWidget {
 }
 
 class _GenresPageState extends State<GenresPage> {
+  List<Results> result = [];
+
   int positionGenres = 0;
   int pageInitial = 1;
   int genreIdsDefault = 28;
-  // @override
-  // void initState() {
-  //   context.read<MovieGenresPopularBloc>().add(
-  //       MovieGenresPopularEventByIdLoaded(
-  //           genreIdsDefault, pageInitial, 'pt-br', widget.typeMovieOrFilme));
-  //   super.initState();
-  // }
 
   @override
   Widget build(BuildContext context) {

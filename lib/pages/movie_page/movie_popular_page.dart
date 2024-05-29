@@ -23,7 +23,6 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
   @override
   void initState() {
     super.initState();
-
     _scrollController.addListener(_loadMore);
   }
 

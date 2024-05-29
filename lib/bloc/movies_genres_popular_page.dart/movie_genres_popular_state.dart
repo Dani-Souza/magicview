@@ -11,7 +11,9 @@ class MovieGenresPopularStateLoading extends MovieGenresPopularState {}
 
 class MovieGenresPopularStateFetchs extends MovieGenresPopularState {
   final List<Results> results;
-  const MovieGenresPopularStateFetchs(this.results);
+  final int genresId;
+  final int page;
+  const MovieGenresPopularStateFetchs(this.results, this.genresId, this.page);
 
   @override
   List<Object?> get props => [results];

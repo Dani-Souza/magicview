@@ -20,3 +20,15 @@ class MovieGenresPopularEventByIdLoaded extends MovieGenresPopularEvent {
   @override
   List<Object?> get props => [genresId, page, language];
 }
+
+class MovieEventGenresMoreLoadById extends MovieGenresPopularEvent {
+  final int genresId;
+  final int page;
+  final String language;
+  final String typeMovieOrTv;
+
+  MovieEventGenresMoreLoadById(
+      this.genresId, this.page, this.language, this.typeMovieOrTv);
+  @override
+  List<Object?> get props => [genresId, page, language, typeMovieOrTv];
+}

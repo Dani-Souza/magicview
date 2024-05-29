@@ -59,6 +59,9 @@ class _HomePageState extends State<HomePage> {
                     InkWell(
                         onTap: () {
                           typeMovieOrTv = "movie";
+                          setState(() {
+                            hasMovieSelect = true;
+                          });
                           context.read<MoviePopularBloc>().add(
                               MoviePopularEventLoaded(
                                   page: 1,
@@ -86,9 +89,6 @@ class _HomePageState extends State<HomePage> {
                         )),
                     InkWell(
                       onTap: () {
-                        setState(() {
-                          hasMovieSelect = true;
-                        });
                         typeMovieOrTv = "tv";
                         setState(() {
                           hasMovieSelect = false;
@@ -138,8 +138,8 @@ class _HomePageState extends State<HomePage> {
                         context.read<GenresBloc>().add(GenresEventLoaded(
                             typeMovieOrSerie: typeMovieOrTvGenres));
                         context.read<MovieGenresPopularBloc>().add(
-                            MovieGenresPopularEventByIdLoaded(
-                                28, 1, 'pt-br', typeMovieOrTvGenres));
+                            MovieGenresPopularEventByIdLoaded(genreIdsDefault,
+                                1, 'pt-br', typeMovieOrTvGenres));
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
