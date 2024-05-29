@@ -28,3 +28,8 @@ class FavoriteShowImageSaved extends FavoriteEventBloc {
   @override
   List<Object?> get props => [id];
 }
+
+class FavoriteGetImageSave extends FavoriteEventBloc {
+  @override
+  List<Object?> get props => [];
+}

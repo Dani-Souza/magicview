@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
@@ -194,6 +198,46 @@ class _HomePageState extends State<HomePage> {
                 GenresMoviePopularPage(
                   typeMovieOrTv: typeMovieOrTvGenres,
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
+                MyText(
+                  title: "Favoritos",
+                  fontSize: 14,
+                ),
+                SizedBox(
+                    height: 138,
+                    child: BlocBuilder<FavoriteBloc, FavoriteStateBloc>(
+                      builder: (context, state) {
+                        if (state is FavoriteLoadingSavedLocalState) {
+                          return const CircularProgressIndicator();
+                        }
+                        if (state is FavoriteLoadedSavedLocalState) {
+                          return ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            padding: const EdgeInsets.all(8),
+                            itemCount: state.favorite.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                height: 50,
+                                child: Image.file(
+                                  File(state.favorite[index].postPathLocal),
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.center,
+                                ),
+                              );
+                            },
+                            separatorBuilder:
+                                (BuildContext context, int index) =>
+                                    const SizedBox(
+                              width: 10,
+                            ),
+                          );
+                        } else {
+                          return const Text("Falha Carregar Dados");
+                        }
+                      },
+                    )),
               ],
             ),
           ),
@@ -203,3 +247,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+//"/data/data/com.example.magicview/app_flutter/27052024034733.png"

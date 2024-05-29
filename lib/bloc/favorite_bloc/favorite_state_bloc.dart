@@ -13,6 +13,20 @@ class FavoriteLoadingState extends FavoriteStateBloc {
   List<Object?> get props => [];
 }
 
+class FavoriteLoadingSavedLocalState extends FavoriteStateBloc {
+  @override
+  List<Object?> get props => [];
+}
+
+class FavoriteLoadedSavedLocalState extends FavoriteStateBloc {
+  final List<FavoriteMovie> favorite;
+
+  FavoriteLoadedSavedLocalState(this.favorite);
+
+  @override
+  List<Object?> get props => [favorite];
+}
+
 class FavoriteDefaultImageState extends FavoriteStateBloc {
   @override
   List<Object?> get props => [];

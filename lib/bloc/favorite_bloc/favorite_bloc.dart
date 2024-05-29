@@ -19,6 +19,7 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
       : super(FavoriteInitializeState()) {
     on<FavoriteShowImageSaved>(_onFavoritoSaved);
     on<FavoriteCreateEvent>(_onCreateFavorite);
+    on<FavoriteGetImageSave>(_onGetImageSave);
   }
 
   FutureOr<void> _onCreateFavorite(
@@ -64,5 +65,14 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
     } catch (e) {
       print(e);
     }
+  }
+
+  FutureOr<void> _onGetImageSave(
+      FavoriteGetImageSave event, Emitter<FavoriteStateBloc> emit) async {
+    emit(FavoriteLoadingSavedLocalState());
+    try {
+      final results = await favoriteRepository.getAllFavorites();
+      emit(FavoriteLoadedSavedLocalState(results));
+    } catch (e) {}
   }
 }

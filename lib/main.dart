@@ -57,6 +57,11 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 FavoriteBloc(ImageCreate(), FavoriteRepository()),
+          ),
+          BlocProvider(
+            create: (context) =>
+                FavoriteBloc(ImageCreate(), FavoriteRepository())
+                  ..add(FavoriteGetImageSave()),
           )
         ],
         child: MaterialApp(
