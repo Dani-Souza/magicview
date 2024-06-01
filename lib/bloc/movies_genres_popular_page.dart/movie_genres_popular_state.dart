@@ -13,7 +13,10 @@ class MovieGenresPopularStateFetchs extends MovieGenresPopularState {
   final List<Results> results;
   final int genresId;
   final int page;
-  const MovieGenresPopularStateFetchs(this.results, this.genresId, this.page);
+  final String userId;
+
+  const MovieGenresPopularStateFetchs(
+      this.results, this.genresId, this.page, this.userId);
 
   @override
   List<Object?> get props => [results];

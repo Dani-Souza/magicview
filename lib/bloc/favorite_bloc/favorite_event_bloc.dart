@@ -2,11 +2,6 @@ part of 'favorite_bloc.dart';
 
 abstract class FavoriteEventBloc extends Equatable {}
 
-// class FavoritoImageDefault extends FavoriteEventBloc {
-//   @override
-//   List<Object?> get props => [];
-// }
-
 class FavoriteCreateEvent extends FavoriteEventBloc {
   final String fileName;
   final ScreenArguments screenArguments;
@@ -27,9 +22,4 @@ class FavoriteShowImageSaved extends FavoriteEventBloc {
   FavoriteShowImageSaved({required this.id});
   @override
   List<Object?> get props => [id];
-}
-
-class FavoriteGetImageSave extends FavoriteEventBloc {
-  @override
-  List<Object?> get props => [];
 }

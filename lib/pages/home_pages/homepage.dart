@@ -1,13 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
+import 'package:magicview/bloc/get_favorite_bloc/get_favorite_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 import 'package:magicview/entities/results.dart';
+import 'package:magicview/pages/components/my_bottom_navigation_bar.dart';
 import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
 import 'package:magicview/pages/genres_page/genres_movie_popular_page.dart';
@@ -27,20 +28,22 @@ class _HomePageState extends State<HomePage> {
   bool hasGenresMovieSelect = true;
   String typeMovieOrTv = "movie";
   String typeMovieOrTvGenres = "movie";
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      print(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff21005D),
-      bottomNavigationBar: BottomNavigationBar(
-        //  type: BottomNavigationBarType.fixed,
-        backgroundColor: Theme.of(context).colorScheme.secondary,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
-          //  BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
-        ],
+      bottomNavigationBar: MyBottonNavigationBar(
+        selectedIndex: _selectedIndex,
+        onItemTapped: _onItemTapped,
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -73,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                                   results: const <Results>[],
                                   typeMovieOrTv: typeMovieOrTv));
 
-                          context.read<GenresBloc>().add(GenresEventLoaded(
+                          context.read<GenresBloc>().add(GenresEventSubmit(
                               typeMovieOrSerie: typeMovieOrTv));
                         },
                         child: Padding(
@@ -104,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                                 results: const <Results>[],
                                 typeMovieOrTv: typeMovieOrTv));
                         context.read<GenresBloc>().add(
-                            GenresEventLoaded(typeMovieOrSerie: typeMovieOrTv));
+                            GenresEventSubmit(typeMovieOrSerie: typeMovieOrTv));
                       },
                       child: Text(
                         "Séries Populares",
@@ -137,9 +140,9 @@ class _HomePageState extends State<HomePage> {
                         setState(() {
                           hasGenresMovieSelect = true;
                         });
-                        context.read<GenresBloc>().add(GenresEventLoaded(
+                        context.read<GenresBloc>().add(GenresEventSubmit(
                             typeMovieOrSerie: typeMovieOrTvGenres));
-                        context.read<GenresBloc>().add(GenresEventLoaded(
+                        context.read<GenresBloc>().add(GenresEventSubmit(
                             typeMovieOrSerie: typeMovieOrTvGenres));
                         context.read<MovieGenresPopularBloc>().add(
                             MovieGenresPopularEventByIdLoaded(genreIdsDefault,
@@ -167,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                         setState(() {
                           hasGenresMovieSelect = false;
                         });
-                        context.read<GenresBloc>().add(GenresEventLoaded(
+                        context.read<GenresBloc>().add(GenresEventSubmit(
                             typeMovieOrSerie: typeMovieOrTvGenres));
                         context.read<MovieGenresPopularBloc>().add(
                             MovieGenresPopularEventByIdLoaded(
@@ -201,27 +204,28 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                MyText(
+                const MyText(
                   title: "Favoritos",
                   fontSize: 14,
                 ),
                 SizedBox(
                     height: 138,
-                    child: BlocBuilder<FavoriteBloc, FavoriteStateBloc>(
+                    child: BlocBuilder<GetFavoriteBloc, GetFavoriteStateBloc>(
                       builder: (context, state) {
-                        if (state is FavoriteLoadingSavedLocalState) {
+                        if (state is GetFavoriteLoandingStateLocalSavedBloc) {
                           return const CircularProgressIndicator();
                         }
-                        if (state is FavoriteLoadedSavedLocalState) {
+                        if (state is GetFavoriteLoandedStateLocalSavedBloc) {
                           return ListView.separated(
                             scrollDirection: Axis.horizontal,
                             padding: const EdgeInsets.all(8),
-                            itemCount: state.favorite.length,
+                            itemCount: state.favoriteMovie.length,
                             itemBuilder: (BuildContext context, int index) {
                               return Container(
                                 height: 50,
                                 child: Image.file(
-                                  File(state.favorite[index].postPathLocal),
+                                  File(
+                                      state.favoriteMovie[index].postPathLocal),
                                   fit: BoxFit.fill,
                                   alignment: Alignment.center,
                                 ),

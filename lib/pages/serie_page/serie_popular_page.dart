@@ -37,19 +37,19 @@ class _SeriePopularPageState extends State<SeriePopularPage> {
                     const SizedBox(width: 10),
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.detailSerie,
-                          arguments: ScreenArguments(
-                              state.resultSeriePopular[index].id,
-                              state.resultSeriePopular[index].popularity,
-                              state.resultSeriePopular[index].name,
-                              state.resultSeriePopular[index].overview,
-                              state.resultSeriePopular[index].posterPath,
-                              state.resultSeriePopular[index].backdropPath,
-                              state.resultSeriePopular[index].voteAverage,
-                              state.resultSeriePopular[index].voteCount,
-                              "tv"));
-                    },
+                    // onTap: () {
+                    //   Navigator.pushNamed(context, AppRoutes.detailSerie,
+                    //       arguments: ScreenArguments(
+                    //           state.resultSeriePopular[index].id,
+                    //           state.resultSeriePopular[index].popularity,
+                    //           state.resultSeriePopular[index].name,
+                    //           state.resultSeriePopular[index].overview,
+                    //           state.resultSeriePopular[index].posterPath,
+                    //           state.resultSeriePopular[index].backdropPath,
+                    //           state.resultSeriePopular[index].voteAverage,
+                    //           state.resultSeriePopular[index].voteCount,
+                    //           "tv"));
+                    // },
                     child: Container(
                       height: 204,
                       width: 136,

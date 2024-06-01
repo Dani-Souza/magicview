@@ -78,6 +78,7 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                       Navigator.pushNamed(context, AppRoutes.detailMovie,
                           arguments: ScreenArguments(
                               result[index].id,
+                              state.userId,
                               result[index].popularity,
                               result[index].title,
                               result[index].overview,

@@ -1,37 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:magicview/app_routes.dart';
-import 'package:magicview/bloc/login_user_bloc/login_user_bloc.dart';
+import 'package:magicview/bloc/add_new_user/add_new_user_bloc.dart';
 import 'package:magicview/pages/home_pages/components/my_text_form_field.dart';
-import 'package:magicview/pages/home_pages/homepage.dart';
+import 'package:magicview/pages/home_pages/initial_home_page.dart';
 
-class InitialHomePage extends StatefulWidget {
-  const InitialHomePage({super.key});
+class AddUserPage extends StatefulWidget {
+  const AddUserPage({super.key});
 
   @override
-  State<InitialHomePage> createState() => _InitialHomePageState();
+  State<AddUserPage> createState() => _AddUserPageState();
 }
 
-class _InitialHomePageState extends State<InitialHomePage> {
+class _AddUserPageState extends State<AddUserPage> {
+  final TextEditingController nickEditingController = TextEditingController();
   final TextEditingController emailEditingController = TextEditingController();
   final TextEditingController passwordEditingController =
       TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff21005D),
       body: SafeArea(
-          child: BlocListener<LoginUserBloc, LoginUserStateBloc>(
+          child: BlocListener<AddNewUserBloc, AddNewUserStateBloc>(
         listener: (context, state) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(state is LoginUserErrorState
-                  ? 'Erro autenticação'
-                  : " Logando ...")));
+              content: Text(state is AddNewUserErrorState
+                  ? state.message
+                  : " Cadastrando ...")));
         },
-        child: BlocBuilder<LoginUserBloc, LoginUserStateBloc>(
+        child: BlocBuilder<AddNewUserBloc, AddNewUserStateBloc>(
           builder: (context, state) {
-            if (state is LoginUserSuccessState) {
-              return const HomePage();
+            if (state is AddNewUserLoadedState) {
+              return const InitialHomePage();
             }
 
             return SingleChildScrollView(
@@ -54,6 +55,11 @@ class _InitialHomePageState extends State<InitialHomePage> {
                         height: 85,
                       ),
                       MyTextFormField(
+                        textEditingController: nickEditingController,
+                        labelText: "Nick",
+                        icon: Icons.person_4,
+                      ),
+                      MyTextFormField(
                         textEditingController: emailEditingController,
                         labelText: "E-mail",
                         icon: Icons.email,
@@ -68,24 +74,14 @@ class _InitialHomePageState extends State<InitialHomePage> {
                       ),
                       ElevatedButton(
                           onPressed: () {
-                            context.read<LoginUserBloc>().add(
-                                LoginUserEventSubmit(
+                            context.read<AddNewUserBloc>().add(
+                                AddNewUserSubmitEvent(
+                                    nick: nickEditingController.text,
                                     email: emailEditingController.text,
                                     password: passwordEditingController.text));
                           },
                           child: const Text(
-                            "ACESSAR",
-                            style: TextStyle(color: Colors.black, fontSize: 16),
-                          )),
-                      const SizedBox(
-                        height: 50,
-                      ),
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, AppRoutes.addNewUser);
-                          },
-                          child: const Text(
-                            "CRIAR CONTA",
+                            "CADASTRAR",
                             style: TextStyle(color: Colors.black, fontSize: 16),
                           )),
                     ],

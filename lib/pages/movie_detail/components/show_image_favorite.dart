@@ -19,7 +19,7 @@ class _ShowImageFavoriteState extends State<ShowImageFavorite> {
         height: 148,
         width: 98,
         child: Container(
-          padding: EdgeInsets.only(right: 30),
+          padding: const EdgeInsets.only(right: 30),
           height: 148,
           width: 98,
           child: Image.file(

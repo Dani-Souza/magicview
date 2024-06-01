@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
+import 'package:magicview/bloc/get_favorite_bloc/get_favorite_bloc.dart';
 import 'package:magicview/entities/credits.dart';
 import 'package:magicview/entities/screen_arguments.dart';
 import 'package:magicview/pages/components/my_text.dart';
@@ -9,6 +10,7 @@ import 'package:magicview/pages/movie_detail/components/image_favorite_page.dart
 import 'package:magicview/pages/movie_detail/components/image_poster_page.dart';
 import 'package:magicview/pages/movie_detail/youtube_video_screen_page.dart';
 import 'package:magicview/reposistories/credits_repository.dart';
+import 'package:magicview/reposistories/local/favorite_local_repository.dart';
 
 class DetailMovePage extends StatefulWidget {
   const DetailMovePage({super.key});
@@ -18,7 +20,6 @@ class DetailMovePage extends StatefulWidget {
 }
 
 class _DetailMovePageState extends State<DetailMovePage> {
-  @override
   final GlobalKey genKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
                               child: Text(
                                 argMovies.title!,
                                 style: TextStyle(
-                                  color: Color(0xFFF1EBF9),
+                                  color: const Color(0xFFF1EBF9),
                                   fontFamily: "Righteous",
                                   fontSize:
                                       argMovies.title!.length > 12 ? 28 : 38,
@@ -72,7 +73,9 @@ class _DetailMovePageState extends State<DetailMovePage> {
                       ),
                     ),
                     ImagePosterPage(
-                        posterPath: argMovies.posterPath, genKey: genKey),
+                      posterPath: argMovies.posterPath,
+                      genKey: genKey,
+                    ),
                     //   ImageFavoritePage(),
                     ImageFavoritePage(id: argMovies.id),
                     Row(
@@ -81,19 +84,21 @@ class _DetailMovePageState extends State<DetailMovePage> {
                         InkWell(
                             onTap: () {
                               Navigator.pop(context);
+                              context
+                                  .read<GetFavoriteBloc>()
+                                  .add(GetFavoriteImageSaveLocal());
                             },
                             child: const MyTextTitle(message: " < MAGICVIEW")),
                         InkWell(
-                          onTap: () {
-                            context.read<FavoriteBloc>().add(
-                                FavoriteCreateEvent(
-                                    screenArguments: argMovies,
-                                    fileName: "MAGICVIEW",
-                                    genKey: genKey));
-                          },
-                          child: const Icon(Icons.favorite_border,
-                              color: Colors.redAccent, size: 40.0),
-                        ),
+                            onTap: () {
+                              context.read<FavoriteBloc>().add(
+                                  FavoriteCreateEvent(
+                                      screenArguments: argMovies,
+                                      fileName: "MAGICVIEW",
+                                      genKey: genKey));
+                            },
+                            child: const Icon(Icons.favorite_border,
+                                color: Colors.redAccent, size: 40.0)),
                       ],
                     ),
                   ],
@@ -220,5 +225,10 @@ class _DetailMovePageState extends State<DetailMovePage> {
         // This trailing comma makes auto-formatting nicer for build methods.
       ),
     );
+  }
+
+  checkFavorite(int id) {
+    FavoriteLocalRepository favoritelocal = FavoriteLocalRepository();
+    return favoritelocal.existFavorite(id);
   }
 }

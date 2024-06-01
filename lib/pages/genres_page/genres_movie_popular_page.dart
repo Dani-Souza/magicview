@@ -19,8 +19,9 @@ class _GenresMoviePopularPageState extends State<GenresMoviePopularPage> {
   int pageInitial = 1;
   int genresId = 0;
   final ScrollController _scrollController = ScrollController();
+
   @override
-  void initState() {
+  initState() {
     _scrollController.addListener(_loadMore); // TODO: implement initState
     super.initState();
   }
@@ -70,6 +71,7 @@ class _GenresMoviePopularPageState extends State<GenresMoviePopularPage> {
                     Navigator.pushNamed(context, AppRoutes.detailMovie,
                         arguments: ScreenArguments(
                             results[index].id,
+                            state.userId,
                             results[index].popularity,
                             results[index].title,
                             results[index].overview,

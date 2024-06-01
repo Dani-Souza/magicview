@@ -11,11 +11,11 @@ part "genres_state_bloc.dart";
 class GenresBloc extends Bloc<GenresEvent, GenresState> {
   final GenresRepository _genresRepository;
   GenresBloc(this._genresRepository) : super(GenresLoadingState()) {
-    on<GenresEventLoaded>(_onFetchGenres);
+    on<GenresEventSubmit>(_onFetchGenres);
   }
 
   FutureOr<void> _onFetchGenres(
-      GenresEventLoaded event, Emitter<GenresState> emit) async {
+      GenresEventSubmit event, Emitter<GenresState> emit) async {
     emit(GenresLoadingState());
     try {
       final genresResult =
