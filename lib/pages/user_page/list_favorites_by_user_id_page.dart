@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/bloc/get_favorite_by_user/get_favorite_by_user_id_bloc.dart';
+import 'package:magicview/pages/components/my_bottom_navigation_bar.dart';
 import 'package:magicview/pages/components/my_text_title.dart';
 
 class ListFavoritesByUserIdPage extends StatefulWidget {
@@ -13,6 +14,14 @@ class ListFavoritesByUserIdPage extends StatefulWidget {
 }
 
 class _ListFavoritesByUserIdPageState extends State<ListFavoritesByUserIdPage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   void initState() {
     context
@@ -26,16 +35,8 @@ class _ListFavoritesByUserIdPageState extends State<ListFavoritesByUserIdPage> {
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color(0xff21005D),
-      bottomNavigationBar: BottomNavigationBar(
-        //  type: BottomNavigationBarType.fixed,
-        backgroundColor: Theme.of(context).colorScheme.secondary,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
-          //  BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
-        ],
-      ),
+      bottomNavigationBar: MyBottonNavigationBar(
+          selectedIndex: _selectedIndex, onItemTapped: _onItemTapped),
       body: SafeArea(
         child: SingleChildScrollView(
           child: BlocBuilder<GetFavoriteByUserIdBloc,

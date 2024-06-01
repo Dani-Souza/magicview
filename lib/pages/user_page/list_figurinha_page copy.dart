@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:magicview/pages/components/my_bottom_navigation_bar.dart';
 
 class ListUserPage1 extends StatefulWidget {
   const ListUserPage1({super.key});
@@ -10,19 +11,21 @@ class ListUserPage1 extends StatefulWidget {
 }
 
 class _ListUserPageState extends State<ListUserPage1> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xff21005D),
-        bottomNavigationBar: BottomNavigationBar(
-          //  type: BottomNavigationBarType.fixed,
-          backgroundColor: Theme.of(context).colorScheme.secondary,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
-            //  BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
-          ],
+        bottomNavigationBar: MyBottonNavigationBar(
+          selectedIndex: _selectedIndex,
+          onItemTapped: _onItemTapped,
         ),
         body: GridView.count(
           addRepaintBoundaries: true,

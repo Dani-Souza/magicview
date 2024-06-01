@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,27 +7,27 @@ import 'package:magicview/entities/favorite.dart';
 import 'package:magicview/reposistories/remote/favorite_repositoy_impl.dart';
 import 'package:magicview/utility/constants.dart';
 
-part 'get_favorite_by_user_id_event_bloc.dart';
-part 'get_favorite_by_user_id_state_bloc.dart';
+part 'get_my_favorite_event_bloc.dart';
+part 'get_my_favorite_state_bloc.dart';
 
-class GetFavoriteByUserIdBloc
-    extends Bloc<GetFavoriteByUserIdEventBloc, GetFavoriteByUserIdStateBloc> {
+class GetMyFavoriteBloc
+    extends Bloc<GetMyFavoriteEventBloc, GetMyFavoriteStateBloc> {
   final FavoriteRespositoryImpl favoriteRespositoryImpl;
   final SharePrefrencesAdapter sharePrefrencesAdapter;
-  GetFavoriteByUserIdBloc(
-      this.favoriteRespositoryImpl, this.sharePrefrencesAdapter)
-      : super(GetFavoriteByIdUserLoadingState()) {
-    on<FetchAllFavoriteByUserid>(_getFavoritoByUserId);
+  GetMyFavoriteBloc(this.favoriteRespositoryImpl, this.sharePrefrencesAdapter)
+      : super(GetMyFavoriteStateLoadindBloc()) {
+    on<FetchMyFavoriteEventBloc>(onGetMyFavorite);
   }
 
-  FutureOr<void> _getFavoritoByUserId(FetchAllFavoriteByUserid event,
-      Emitter<GetFavoriteByUserIdStateBloc> emit) async {
-    emit(GetFavoriteByIdUserLoadingState());
+  FutureOr<void> onGetMyFavorite(FetchMyFavoriteEventBloc event,
+      Emitter<GetMyFavoriteStateBloc> emit) async {
+    emit(GetMyFavoriteStateLoadindBloc());
     try {
       var token = await sharePrefrencesAdapter.getToken();
-      List<dynamic> result = await favoriteRespositoryImpl.getList(
+
+      final result = await favoriteRespositoryImpl.getList(
         url: Constants.URL_API_FAVORITE,
-        endPoint: 'file/user/${event.userId}',
+        endPoint: "file/user",
         headers: {
           'Content-type': 'application/json',
           'Accept': 'application/json',
@@ -37,9 +36,9 @@ class GetFavoriteByUserIdBloc
       );
 
       var favorites = result.map((json) => Favorite.fromJson(json)).toList();
-      emit(GetFavoriteByIdUserLoadadeState(favoriteList: favorites));
+      emit(GetMyFavoriteStateLoadedBloc(favorite: favorites));
     } on Exception catch (e) {
-      emit(GetFavoriteByIdUserErroState(message: e.toString()));
+      emit(GetMyFavoriteStateErrorBloc(message: e.toString()));
     }
   }
 }

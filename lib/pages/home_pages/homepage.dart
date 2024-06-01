@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/bloc/get_favorite_bloc/get_favorite_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
@@ -28,6 +27,7 @@ class _HomePageState extends State<HomePage> {
   bool hasGenresMovieSelect = true;
   String typeMovieOrTv = "movie";
   String typeMovieOrTvGenres = "movie";
+  //da 30 a 39
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {

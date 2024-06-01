@@ -7,6 +7,7 @@ import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/bloc/genres_bloc/genres_bloc.dart';
 import 'package:magicview/bloc/get_favorite_bloc/get_favorite_bloc.dart';
 import 'package:magicview/bloc/get_favorite_by_user/get_favorite_by_user_id_bloc.dart';
+import 'package:magicview/bloc/get_my_favorite/get_my_favorite_bloc.dart';
 import 'package:magicview/bloc/get_users/get_user_bloc.dart';
 import 'package:magicview/bloc/login_user_bloc/login_user_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
@@ -42,6 +43,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
+          BlocProvider(
+            create: (context) => GetMyFavoriteBloc(
+                FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
+          ),
           BlocProvider(
             create: (context) => GetFavoriteByUserIdBloc(
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
