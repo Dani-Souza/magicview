@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:magicview/bloc/get_users/get_user_bloc.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
 import 'package:magicview/pages/user_page/list_user_page.dart';
 import 'package:magicview/pages/user_page/my_favorites_page.dart';
@@ -28,6 +30,7 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
           );
           break;
         case 1:
+          context.read<GetUserBloc>().add(GetUserEvent());
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const ListUserPage()),
