@@ -1,5 +1,6 @@
 class ScreenArguments {
   final int id;
+  final String userId;
   final double popularity;
   final String? title;
   final String? overview;
@@ -11,6 +12,7 @@ class ScreenArguments {
 
   ScreenArguments(
     this.id,
+    this.userId,
     this.popularity,
     this.title,
     this.overview,

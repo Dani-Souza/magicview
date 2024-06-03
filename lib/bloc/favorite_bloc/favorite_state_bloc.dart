@@ -19,6 +19,17 @@ class FavoriteDefaultImageState extends FavoriteStateBloc {
 }
 
 class FavoriteAddNickAndNumberState extends FavoriteStateBloc {
+  final int numberFavorite;
+  final String nick;
+
+  FavoriteAddNickAndNumberState(
+      {required this.numberFavorite, required this.nick});
+
+  @override
+  List<Object?> get props => [];
+}
+
+class FavoriteUploadingState extends FavoriteStateBloc {
   @override
   List<Object?> get props => [];
 }
@@ -50,6 +61,9 @@ class FavoriteImageExistState extends FavoriteStateBloc {
   @override
   List<Object?> get props => [fileName];
 }
+
+
+
 
 // //FavariteSave
 // class FavoriteSaveState extends FavoriteStateBloc {

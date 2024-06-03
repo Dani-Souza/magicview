@@ -23,4 +23,14 @@ class ImageCreate {
 
     return (imgFile.path.toString());
   }
+
+  Future<void> deleteFile(File fileName) async {
+    try {
+      final file = fileName;
+
+      await file.delete();
+    } catch (e) {
+      throw ("falha tentar excluir");
+    }
+  }
 }

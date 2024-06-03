@@ -6,14 +6,19 @@ import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 class ImagePosterPage extends StatefulWidget {
   final String posterPath;
   final GlobalKey genKey;
-  const ImagePosterPage(
-      {super.key, required this.posterPath, required this.genKey});
+  const ImagePosterPage({
+    super.key,
+    required this.posterPath,
+    required this.genKey,
+  });
 
   @override
   State<ImagePosterPage> createState() => _ImagePosterPageState();
 }
 
 class _ImagePosterPageState extends State<ImagePosterPage> {
+  //int _favoriteCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoriteBloc, FavoriteStateBloc>(
@@ -47,12 +52,12 @@ class _ImagePosterPageState extends State<ImagePosterPage> {
                         baselineType: TextBaseline.alphabetic,
                         child: Center(
                           child: Text(
-                            "nick",
+                            state.nick,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                                 color: Colors.amber[50],
                                 fontWeight: FontWeight.bold,
-                                fontSize: 10,
+                                fontSize: 12,
                                 backgroundColor:
                                     Theme.of(context).colorScheme.primary),
                           ),
@@ -69,9 +74,9 @@ class _ImagePosterPageState extends State<ImagePosterPage> {
                       borderRadius: BorderRadius.circular(11),
                       color: Colors.purple,
                     ),
-                    child: const Text(
-                      "100",
-                      style: TextStyle(
+                    child: Text(
+                      state.numberFavorite.toString(),
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 9,
                           fontWeight: FontWeight.bold),
@@ -84,7 +89,7 @@ class _ImagePosterPageState extends State<ImagePosterPage> {
         return Container(
           height: 204,
           width: 136,
-          margin: EdgeInsets.only(left: 16, top: 110),
+          margin: const EdgeInsets.only(left: 16, top: 110),
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(
@@ -103,7 +108,7 @@ class _ImagePosterPageState extends State<ImagePosterPage> {
               ), //BoxShadow
               const BoxShadow(
                 color: Colors.white,
-                offset: const Offset(0.0, 0.0),
+                offset: Offset(0.0, 0.0),
                 blurRadius: 0.0,
                 spreadRadius: 0.0,
               ), //BoxShadow
