@@ -1,6 +1,6 @@
 # MAGICVIEW
 
-![Logo](https://cdn.discordapp.com/attachments/1205587823533629561/1237136320472551504/image.png?ex=663a8c7b&is=66393afb&hm=01f64a4cd6d8db661db52939cc55f44b9b49de565542d589eb006b307e79ea0c&)
+![Logo](https://raw.githubusercontent.com/viniciusmatoso/magicview/main/assets/image/magicview.gif)
 
 ### Objetivo
 
@@ -34,5 +34,67 @@ uma lista estática de filmes e séries populares, com informações básicas so
    conteúdos específicos
 
    ### Arquivo constants.dart
+
    Na pasta utility possui um arquivo chamado constants_sample.dart; renomear o arquivo para constants.dart.
    No atributo TOKEN_BEAR adicionar o TOKEN BEAR na API que esta disponivel no site themoviedb.org.
+
+## Configuração DOCKER
+
+Para Rodar o aplicativo instale atravé do docker as seguintes imagens.
+
+API
+etsfspontocom/magicview:1.2
+Banco de dados
+mysql
+
+Crie um arquivo chamado docker-compose.yaml com os seguintes linhas
+
+```
+networks:
+  magicview-network:
+    driver: bridge
+
+services:
+  magicview-mysql:
+    container_name: magicview-mysql
+    image: mysql:latest
+    container_name: magicview-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: SENHAROOT
+      MYSQL_DATABASE: magicview
+      MYSQL_USER: USUARIODOBANCO
+      MYSQL_PASSWORD: SENHADOUSUARIOBANCO
+    ports:
+      - "3306:3306"
+    networks:
+      - magicview-network
+    volumes:
+      - d:\volumes_docker\magic_view\mysql:/var/lib/mysql
+
+  magicview-api:
+    image: magiview:1.1
+    environment:
+      SRV_PORT: 8080
+      DATABASE_HOST: magicview-magicview-mysql-1
+      DATABASE_USER: USUARIODOBANCO
+      DATABASE_PASSWORD: SENHADOUSUARIOBANCO
+    ports:
+      - "8080:8080"
+    networks:
+      - magicview-network
+    volumes:
+      - d:\volumes_docker\magic_view\uploads:/uploads
+    depends_on:
+      - magicview-mysql
+    restart: on-failure
+
+```
+
+#Para subir as imagens execute o comando abaixo.
+
+```
+docker-composer up -d
+
+```
+
+Mais detalhes consulte o github github.com/adevalter/magicview

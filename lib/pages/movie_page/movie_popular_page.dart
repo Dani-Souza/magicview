@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/app_routes.dart';
-import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/entities/results.dart';
 import 'package:magicview/entities/screen_arguments.dart';
@@ -9,7 +8,8 @@ import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/utility/constants.dart';
 
 class MoviePopularPages extends StatefulWidget {
-  const MoviePopularPages({super.key});
+  final String typeMovieOrSerie;
+  const MoviePopularPages({super.key, required this.typeMovieOrSerie});
 
   @override
   State<MoviePopularPages> createState() => _MoviePopularPagesState();
@@ -19,10 +19,10 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
   List<Results> result = [];
   final ScrollController _scrollController = ScrollController();
   int pagina = 1;
+
   @override
   void initState() {
     super.initState();
-
     _scrollController.addListener(_loadMore);
   }
 
@@ -31,7 +31,10 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
         _scrollController.position.maxScrollExtent) {
       pagina++;
       context.read<MoviePopularBloc>().add(MoviePopularEventMoreLoad(
-          page: pagina, langague: 'pt', results: result));
+          page: pagina,
+          langague: 'pt',
+          results: result,
+          typeMovieOrTv: widget.typeMovieOrSerie));
     }
   }
 
@@ -57,7 +60,12 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
               return (MyText(title: state.error));
             }
             if (state is MoviePopularFetchsState) {
-              result += state.result;
+              if (state.pageActual == 1) {
+                result = state.result;
+              } else {
+                result += state.result;
+              }
+
               return ListView.separated(
                 controller: _scrollController,
                 scrollDirection: Axis.horizontal,
@@ -70,6 +78,7 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                       Navigator.pushNamed(context, AppRoutes.detailMovie,
                           arguments: ScreenArguments(
                               result[index].id,
+                              state.userId,
                               result[index].popularity,
                               result[index].title,
                               result[index].overview,
@@ -77,7 +86,7 @@ class _MoviePopularPagesState extends State<MoviePopularPages> {
                               result[index].backdropPath,
                               result[index].voteAverage,
                               result[index].voteCount,
-                              "movie"));
+                              widget.typeMovieOrSerie));
                     },
                     child: Container(
                       height: 204,
