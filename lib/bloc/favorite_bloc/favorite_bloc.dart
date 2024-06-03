@@ -46,13 +46,10 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
 
       emit(FavoriteAddNickAndNumberState(numberFavorite: count, nick: nick));
       await Future.delayed(const Duration(seconds: 2));
-      //criar a aimage
-
-      //verificar se já exisite o favorito
 
       var newImage = await imageCreate.takePicture(event.genKey);
       var fileUpload = File(newImage);
-
+      emit(FavoriteUploadingState());
       await favoriteRespositoryImpl.upload(
           url: Constants.URL_API_FAVORITE,
           endPoint: "upload/single",
@@ -72,6 +69,7 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
           event.screenArguments.userId,
           event.screenArguments.popularity,
           event.screenArguments.title!,
+          event.screenArguments.overview!,
           newImage,
           event.screenArguments.posterPath,
           event.screenArguments.voteAverage,
@@ -87,8 +85,8 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
       FavoriteShowImageSaved event, Emitter<FavoriteStateBloc> emit) async {
     try {
       emit(FavoriteInitializeState());
-      final favoriteMovie =
-          await favoriteLocalRepository.getByIdFavorite(event.id);
+      final favoriteMovie = await favoriteLocalRepository.getByIdAndUserId(
+          event.id, event.userId);
       if (favoriteMovie!.id > 0) {
         emit(FavoriteCreateImageSate(fileName: favoriteMovie.postPathLocal));
       } else {

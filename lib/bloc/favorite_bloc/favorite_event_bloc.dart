@@ -18,8 +18,9 @@ class FavoriteCreateEvent extends FavoriteEventBloc {
 
 class FavoriteShowImageSaved extends FavoriteEventBloc {
   final int id;
+  final String userId;
 
-  FavoriteShowImageSaved({required this.id});
+  FavoriteShowImageSaved(this.userId, {required this.id});
   @override
   List<Object?> get props => [id];
 }

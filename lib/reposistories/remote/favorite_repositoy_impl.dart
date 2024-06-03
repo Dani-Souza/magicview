@@ -66,11 +66,11 @@ class FavoriteRespositoryImpl implements FavoriteRepository {
         headers: headers, body: json.encode(body));
 
     if (response.statusCode == 400) {
-      throw HttpException("Falha Login");
+      throw HttpException(json.decode(response.body)["message"]);
     }
 
     if (response.statusCode == 403) {
-      throw HttpException("Falha Login");
+      throw HttpException(json.decode(response.body)["message"]);
     }
 
     if (response.statusCode == 200) {
@@ -93,11 +93,11 @@ class FavoriteRespositoryImpl implements FavoriteRepository {
         headers: headers, body: json.encode(body));
 
     if (response.statusCode == 400) {
-      throw HttpException("Erro no Cadastro");
+      throw HttpException(response.body);
     }
 
     if (response.statusCode == 403) {
-      throw HttpException("Falha Cadastro");
+      throw HttpException(response.body);
     }
 
     if (response.statusCode == 200) {

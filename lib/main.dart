@@ -17,13 +17,11 @@ import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popu
 import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
 import 'package:magicview/pages/genres_page/genres_page.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
-import 'package:magicview/pages/home_pages/initial_home_page.dart';
+import 'package:magicview/pages/home_pages/login_home_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';
 import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 import 'package:magicview/pages/user_page/add_user_page.dart';
-import 'package:magicview/pages/user_page/list_favorites_by_user_id_page.dart';
 import 'package:magicview/pages/user_page/list_user_page.dart';
-import 'package:magicview/pages/user_page/my_favorites_page.dart';
 import 'package:magicview/reposistories/genres_respository.dart';
 import 'package:magicview/reposistories/local/favorite_local_repository.dart';
 import 'package:magicview/reposistories/remote/favorite_repositoy_impl.dart';
@@ -59,7 +57,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(
               create: (context) => LoginUserBloc(
                   FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
-              child: const InitialHomePage()),
+              child: const LoginHomePage()),
           BlocProvider(
             create: (context) => AddNewUserBloc(
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
@@ -96,8 +94,8 @@ class MyApp extends StatelessWidget {
                 SharePrefrencesAdapter()),
           ),
           BlocProvider(
-            create: (context) => GetFavoriteBloc(
-                FavoriteLocalRepository(), SharePrefrencesAdapter())
+            create: (context) => GetFavoriteBloc(FavoriteLocalRepository(),
+                SharePrefrencesAdapter(), ImageCreate())
               ..add(GetFavoriteImageSaveLocal()),
           )
         ],
@@ -115,11 +113,11 @@ class MyApp extends StatelessWidget {
             ),
             initialRoute: AppRoutes.initial,
             routes: {
-              AppRoutes.initial: (context) => const InitialHomePage(),
+              AppRoutes.initial: (context) => const LoginHomePage(),
               //AppRoutes.initial: (context) => const ListUserPage(),
               AppRoutes.homePage: (context) => const HomePage(),
-              AppRoutes.detailMovie: (context) => const DetailMovePage(),
-              AppRoutes.detailSerie: (context) => const DetailMovePage(),
+              AppRoutes.detailMovie: (context) => DetailMovePage(
+                  favoriteLocalRepository: FavoriteLocalRepository()),
               AppRoutes.addNewUser: (context) => const AddUserPage(),
             }));
   }

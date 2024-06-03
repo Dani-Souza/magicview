@@ -33,7 +33,6 @@ class _HomePageState extends State<HomePage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      print(index);
     });
   }
 
@@ -76,21 +75,28 @@ class _HomePageState extends State<HomePage> {
                                   results: const <Results>[],
                                   typeMovieOrTv: typeMovieOrTv));
 
-                          context.read<GenresBloc>().add(GenresEventSubmit(
-                              typeMovieOrSerie: typeMovieOrTv));
+                          // context.read<GenresBloc>().add(GenresEventSubmit(
+                          //     typeMovieOrSerie: typeMovieOrTv));
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
-                          child: Text(
-                            "Filmes Populares",
-                            style: TextStyle(
-                              backgroundColor: hasMovieSelect
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Colors.transparent,
-                              color: Theme.of(context).colorScheme.secondary,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            decoration: (hasMovieSelect)
+                                ? BoxDecoration(
+                                    color: Theme.of(context).primaryColor,
+                                    borderRadius: BorderRadius.circular(5))
+                                : BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                            child: Text(
+                              "Filmes Populares",
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.secondary,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                           ),
                         )),
@@ -106,18 +112,25 @@ class _HomePageState extends State<HomePage> {
                                 langague: 'pt-br',
                                 results: const <Results>[],
                                 typeMovieOrTv: typeMovieOrTv));
-                        context.read<GenresBloc>().add(
-                            GenresEventSubmit(typeMovieOrSerie: typeMovieOrTv));
+                        // context.read<GenresBloc>().add(
+                        //     GenresEventSubmit(typeMovieOrSerie: typeMovieOrTv));
                       },
-                      child: Text(
-                        "Séries Populares",
-                        style: TextStyle(
-                          backgroundColor: !hasMovieSelect
-                              ? Theme.of(context).colorScheme.primary
-                              : Colors.transparent,
-                          color: Theme.of(context).colorScheme.secondary,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        decoration: (!hasMovieSelect)
+                            ? BoxDecoration(
+                                color: Theme.of(context).primaryColor,
+                                borderRadius: BorderRadius.circular(5))
+                            : BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                        child: Text(
+                          "Séries Populares",
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.secondary,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     )
@@ -132,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     const MyText(
                       title: "Gêneros: ",
-                      fontSize: 18,
+                      fontSize: 16,
                     ),
                     InkWell(
                       onTap: () {
@@ -151,15 +164,22 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 10),
-                        child: Text(
-                          "Filmes",
-                          style: TextStyle(
-                            backgroundColor: hasGenresMovieSelect
-                                ? Theme.of(context).colorScheme.primary
-                                : Colors.transparent,
-                            color: Theme.of(context).colorScheme.secondary,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: (hasGenresMovieSelect)
+                              ? BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(5))
+                              : BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                          child: Text(
+                            "Filmes",
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                       ),
@@ -179,15 +199,22 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 10),
-                        child: Text(
-                          "Série",
-                          style: TextStyle(
-                            backgroundColor: !hasGenresMovieSelect
-                                ? Theme.of(context).colorScheme.primary
-                                : Colors.transparent,
-                            color: Theme.of(context).colorScheme.secondary,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: (!hasGenresMovieSelect)
+                              ? BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(5))
+                              : BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                          child: Text(
+                            "Série",
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                       ),
@@ -204,9 +231,15 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const MyText(
-                  title: "Favoritos",
-                  fontSize: 14,
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: BorderRadius.circular(5)),
+                  child: const MyText(
+                    title: "Favoritos",
+                    fontSize: 14,
+                  ),
                 ),
                 SizedBox(
                     height: 138,
@@ -218,17 +251,92 @@ class _HomePageState extends State<HomePage> {
                         if (state is GetFavoriteLoandedStateLocalSavedBloc) {
                           return ListView.separated(
                             scrollDirection: Axis.horizontal,
-                            padding: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(2),
                             itemCount: state.favoriteMovie.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                height: 50,
-                                child: Image.file(
-                                  File(
-                                      state.favoriteMovie[index].postPathLocal),
-                                  fit: BoxFit.fill,
-                                  alignment: Alignment.center,
-                                ),
+                              return GestureDetector(
+                                onTap: () {
+                                  // Navigator.pushNamed(
+                                  //     context, AppRoutes.detailMovie,
+                                  //     arguments: ScreenArguments(
+                                  //         state.favoriteMovie[index].id,
+                                  //         state.favoriteMovie[index].popularity,
+                                  //         state.favoriteMovie[index].title,
+                                  //         state.favoriteMovie[index].overview,
+                                  //         state.favoriteMovie[index].posterPath,
+                                  //         state.favoriteMovie[index].backdropPath,
+                                  //         state.favoriteMovie[index].voteAverage,
+                                  //         result[index].voteCount,
+                                  //         widget.typeMovieOrSerie));
+                                },
+                                child: Stack(
+                                    alignment: AlignmentDirectional.topStart,
+                                    children: [
+                                      SizedBox(
+                                        height: 140,
+                                        child: Image.file(
+                                          File(state.favoriteMovie[index]
+                                              .postPathLocal),
+                                          fit: BoxFit.fill,
+                                          alignment: Alignment.center,
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => showDialog<String>(
+                                          context: context,
+                                          builder: (BuildContext context) =>
+                                              AlertDialog(
+                                            backgroundColor: Colors.red[50],
+                                            title: const Text('FAVORITOS'),
+                                            content:
+                                                const Text('Deseja Excluir ?'),
+                                            actions: <Widget>[
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    context, 'Cancel'),
+                                                child: const Text('Cancel'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () {
+                                                  context
+                                                      .read<GetFavoriteBloc>()
+                                                      .add(FavoriteDeleteImageEvent(
+                                                          id: state
+                                                              .favoriteMovie[
+                                                                  index]
+                                                              .id,
+                                                          userId: state
+                                                              .favoriteMovie[
+                                                                  index]
+                                                              .userId,
+                                                          fileName: state
+                                                              .favoriteMovie[
+                                                                  index]
+                                                              .postPathLocal));
+                                                  Navigator.pop(context, 'Ok');
+                                                },
+                                                child: const Text('OK'),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        child: Container(
+                                          width: 22,
+                                          height: 22,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                            color: Colors.purple,
+                                          ),
+                                          child: Center(
+                                              child: Icon(Icons.delete,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .secondary,
+                                                  size: 16.0)),
+                                        ),
+                                      ),
+                                    ]),
                               );
                             },
                             separatorBuilder:

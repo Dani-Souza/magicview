@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:magicview/adapter/sharePreferencesAdapter.dart';
 import 'package:magicview/bloc/favorite_bloc/favorite_bloc.dart';
 
 class ImagePosterPage extends StatefulWidget {
@@ -18,7 +17,7 @@ class ImagePosterPage extends StatefulWidget {
 }
 
 class _ImagePosterPageState extends State<ImagePosterPage> {
-  int _favoriteCount = 0;
+  //int _favoriteCount = 0;
 
   @override
   Widget build(BuildContext context) {

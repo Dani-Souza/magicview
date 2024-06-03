@@ -39,57 +39,63 @@ class _ListFavoritesByUserIdPageState extends State<ListFavoritesByUserIdPage> {
           selectedIndex: _selectedIndex, onItemTapped: _onItemTapped),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: BlocBuilder<GetFavoriteByUserIdBloc,
-              GetFavoriteByUserIdStateBloc>(builder: (context, state) {
-            if (state is GetFavoriteByIdUserLoadingState) {
-              return const CircularProgressIndicator();
-            }
-            if (state is GetFavoriteByIdUserErroState) {
-              return Text(state.message);
-            }
-            if (state is GetFavoriteByIdUserLoadadeState) {
-              return Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+          child: Column(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child:
+                    MyTextTitle(message: "<< MAGICVIEW - Lista de Figurinhas"),
+              ),
+              BlocBuilder<GetFavoriteByUserIdBloc,
+                  GetFavoriteByUserIdStateBloc>(builder: (context, state) {
+                if (state is GetFavoriteByIdUserLoadingState) {
+                  return const CircularProgressIndicator();
+                }
+                if (state is GetFavoriteByIdUserErroState) {
+                  return Text(state.message);
+                }
+                if (state is GetFavoriteByIdUserLoadadeState) {
+                  return Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
                       children: [
-                        MyTextTitle(message: "MAGICVIEW - Lista de Figurinhas"),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        SizedBox(
+                            height: screenHeight,
+                            child: GridView.count(
+                                addRepaintBoundaries: true,
+                                childAspectRatio: .67,
+                                crossAxisCount: 4,
+                                crossAxisSpacing: 5,
+                                mainAxisSpacing: 5,
+                                padding: const EdgeInsets.fromLTRB(0, 10, 2, 0),
+                                children: List.generate(
+                                    state.favoriteList.length, (index) {
+                                  return Container(
+                                    padding: const EdgeInsets.all(1),
+                                    decoration: BoxDecoration(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary,
+                                        image: DecorationImage(
+                                            image: NetworkImage(state
+                                                .favoriteList[index].urlFile)),
+                                        borderRadius: BorderRadius.circular(5)),
+                                  );
+                                }))),
                       ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                        height: screenHeight,
-                        child: GridView.count(
-                            addRepaintBoundaries: true,
-                            childAspectRatio: .67,
-                            crossAxisCount: 4,
-                            crossAxisSpacing: 5,
-                            mainAxisSpacing: 5,
-                            padding: const EdgeInsets.fromLTRB(0, 10, 2, 0),
-                            children: List.generate(state.favoriteList.length,
-                                (index) {
-                              return Container(
-                                padding: const EdgeInsets.all(1),
-                                decoration: BoxDecoration(
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                    image: DecorationImage(
-                                        image: NetworkImage(
-                                            state.favoriteList[index].urlFile)),
-                                    borderRadius: BorderRadius.circular(5)),
-                              );
-                            }))),
-                  ],
-                ),
-              );
-            } else {
-              return const CircularProgressIndicator();
-            }
-          }),
+                  );
+                } else {
+                  return const CircularProgressIndicator();
+                }
+              }),
+            ],
+          ),
         ),
       ),
     );

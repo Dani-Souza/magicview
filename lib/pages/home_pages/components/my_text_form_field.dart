@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyTextFormField extends StatefulWidget {
+  final String? Function(String?)? validator;
   final TextEditingController textEditingController;
   final String labelText;
   final bool obscureText;
@@ -8,6 +9,7 @@ class MyTextFormField extends StatefulWidget {
 
   const MyTextFormField(
       {super.key,
+      this.validator,
       required this.textEditingController,
       required this.labelText,
       this.obscureText = false,
@@ -23,6 +25,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: TextFormField(
+        validator: widget.validator,
         obscureText: widget.obscureText,
         controller: widget.textEditingController,
         style: TextStyle(

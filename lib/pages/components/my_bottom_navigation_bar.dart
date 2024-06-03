@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
-import 'package:magicview/pages/home_pages/initial_home_page.dart';
-import 'package:magicview/pages/movie_page/movie_popular_page.dart';
-import 'package:magicview/pages/user_page/list_figurinha_page%20copy.dart';
 import 'package:magicview/pages/user_page/list_user_page.dart';
 import 'package:magicview/pages/user_page/my_favorites_page.dart';
 

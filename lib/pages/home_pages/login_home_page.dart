@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:magicview/bloc/add_new_user/add_new_user_bloc.dart';
+import 'package:magicview/app_routes.dart';
+import 'package:magicview/bloc/login_user_bloc/login_user_bloc.dart';
 import 'package:magicview/pages/components/my_text.dart';
 import 'package:magicview/pages/home_pages/components/my_text_form_field.dart';
-import 'package:magicview/pages/home_pages/login_home_page.dart';
+import 'package:magicview/pages/home_pages/homepage.dart';
 
-class AddUserPage extends StatefulWidget {
-  const AddUserPage({super.key});
+class LoginHomePage extends StatefulWidget {
+  const LoginHomePage({super.key});
 
   @override
-  State<AddUserPage> createState() => _AddUserPageState();
+  State<LoginHomePage> createState() => _LoginHomePageState();
 }
 
-class _AddUserPageState extends State<AddUserPage> {
-  final TextEditingController nickEditingController = TextEditingController();
+class _LoginHomePageState extends State<LoginHomePage> {
   final TextEditingController emailEditingController = TextEditingController();
   final TextEditingController passwordEditingController =
       TextEditingController();
@@ -25,23 +24,22 @@ class _AddUserPageState extends State<AddUserPage> {
     return Scaffold(
       backgroundColor: const Color(0xff21005D),
       body: SafeArea(
-          child: BlocListener<AddNewUserBloc, AddNewUserStateBloc>(
+          child: BlocListener<LoginUserBloc, LoginUserStateBloc>(
         listener: (context, state) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: MyText(
-              title: state is AddNewUserErrorState
-                  ? state.message
-                  : " Cadastrando ...",
+              title:
+                  state is LoginUserErrorState ? state.message : " Logando ...",
               fontSize: 14,
             ),
             backgroundColor: Theme.of(context).colorScheme.primary,
             behavior: SnackBarBehavior.floating,
           ));
         },
-        child: BlocBuilder<AddNewUserBloc, AddNewUserStateBloc>(
+        child: BlocBuilder<LoginUserBloc, LoginUserStateBloc>(
           builder: (context, state) {
-            if (state is AddNewUserLoadedState) {
-              return const LoginHomePage();
+            if (state is LoginUserSuccessState) {
+              return const HomePage();
             }
 
             return SingleChildScrollView(
@@ -68,21 +66,7 @@ class _AddUserPageState extends State<AddUserPage> {
                         MyTextFormField(
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor digite sua Nick Máximo 10 letras';
-                            }
-                            if (value.length > 10) {
-                              return 'Tamanho máximo 10 caracteres';
-                            }
-                            return null;
-                          },
-                          textEditingController: nickEditingController,
-                          labelText: "Nick",
-                          icon: Icons.person_4,
-                        ),
-                        MyTextFormField(
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Por favor digite seu e-mail';
+                              return 'Por favor digite sua E-mail';
                             }
                             return null;
                           },
@@ -107,16 +91,28 @@ class _AddUserPageState extends State<AddUserPage> {
                         ElevatedButton(
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
-                                context.read<AddNewUserBloc>().add(
-                                    AddNewUserSubmitEvent(
-                                        nick: nickEditingController.text,
+                                context.read<LoginUserBloc>().add(
+                                    LoginUserEventSubmit(
                                         email: emailEditingController.text,
                                         password:
                                             passwordEditingController.text));
                               }
                             },
                             child: const Text(
-                              "CADASTRAR",
+                              "ACESSAR",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 16),
+                            )),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.addNewUser);
+                            },
+                            child: const Text(
+                              "CRIAR CONTA",
                               style:
                                   TextStyle(color: Colors.black, fontSize: 16),
                             )),
@@ -129,6 +125,8 @@ class _AddUserPageState extends State<AddUserPage> {
           },
         ),
       )),
+
+      //<- place where the image appears
     );
   }
 }

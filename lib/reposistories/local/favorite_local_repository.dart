@@ -19,13 +19,35 @@ class FavoriteLocalRepository {
     return box.get(id);
   }
 
-  Future<bool> existFavorite(int id) async {
+  Future<FavoriteMovie?> getByIdAndUserId(int id, String userId) async {
     var box = await Hive.openBox<FavoriteMovie>(favoriteHiveBox);
-    return box.values.contains(id);
+    for (var movie in box.values) {
+      if (movie.id == id && movie.userId == userId) {
+        return movie;
+      }
+    }
+    return null;
   }
 
-  Future<void> deleteFavorite(int id) async {
+  Future<bool> existFavorite(int id, String userId) async {
     var box = await Hive.openBox<FavoriteMovie>(favoriteHiveBox);
-    await box.delete(id);
+    for (var movie in box.values) {
+      if (movie.id == id && movie.userId == userId) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  Future<void> deleteFavorite(int id, String userId) async {
+    var box = await Hive.openBox<FavoriteMovie>(favoriteHiveBox);
+    final key = box.keys.firstWhere((k) {
+      final item = box.get(k) as FavoriteMovie;
+      return item.id == id && item.userId == userId;
+    }, orElse: () => null);
+
+    if (key != null) {
+      await box.delete(key);
+    }
   }
 }
