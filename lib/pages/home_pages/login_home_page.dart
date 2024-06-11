@@ -29,7 +29,7 @@ class _LoginHomePageState extends State<LoginHomePage> {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: MyText(
               title:
-                  state is LoginUserErrorState ? state.message : " Logando ...",
+                  state is LoginUserErrorState ? state.message : "Logando ...",
               fontSize: 14,
             ),
             backgroundColor: Theme.of(context).colorScheme.primary,
@@ -65,7 +65,9 @@ class _LoginHomePageState extends State<LoginHomePage> {
                         ),
                         MyTextFormField(
                           validator: (value) {
-                            if (value == null || value.isEmpty) {
+                            if (value == null ||
+                                value.isEmpty ||
+                                value.contains("@")) {
                               return 'Por favor digite sua E-mail';
                             }
                             return null;

@@ -12,6 +12,7 @@ import 'package:magicview/bloc/get_users/get_user_bloc.dart';
 import 'package:magicview/bloc/login_user_bloc/login_user_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/entities/results.dart';
+import 'package:magicview/pages/login_page/login_page.dart';
 import 'package:magicview/pages/movie_detail/datail_movie_page.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
@@ -30,11 +31,13 @@ import 'package:magicview/utility/hive_initialize.dart';
 
 void main() async {
   HiveInitialize.initializeHive();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final loginUserBloc =
+      LoginUserBloc(FavoriteRespositoryImpl(), SharePrefrencesAdapter());
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -46,6 +49,10 @@ class MyApp extends StatelessWidget {
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
           ),
           BlocProvider(
+              create: (context) => LoginUserBloc(
+                  FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
+              child: LoginPage()),
+          BlocProvider(
             create: (context) => GetFavoriteByUserIdBloc(
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
           ),
@@ -54,10 +61,6 @@ class MyApp extends StatelessWidget {
                   FavoriteRespositoryImpl(), SharePrefrencesAdapter())
                 ..add(GetUserEvent()),
               child: const ListUserPage()),
-          BlocProvider(
-              create: (context) => LoginUserBloc(
-                  FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
-              child: const LoginHomePage()),
           BlocProvider(
             create: (context) => AddNewUserBloc(
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
@@ -113,7 +116,7 @@ class MyApp extends StatelessWidget {
             ),
             initialRoute: AppRoutes.initial,
             routes: {
-              AppRoutes.initial: (context) => const LoginHomePage(),
+              AppRoutes.initial: (context) => LoginPage(),
               //AppRoutes.initial: (context) => const ListUserPage(),
               AppRoutes.homePage: (context) => const HomePage(),
               AppRoutes.detailMovie: (context) => DetailMovePage(
