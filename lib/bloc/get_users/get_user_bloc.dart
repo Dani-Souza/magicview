@@ -25,7 +25,7 @@ class GetUserBloc extends Bloc<GetUserEventBloc, GetUserStateBloc> {
       //Map<String, dynamic> user = await sharePrefrencesAdapter.get("login");
 
       var token = await sharePrefrencesAdapter.getToken();
-      Map<String, dynamic> result = await favoriteRespositoryImpl.get(
+      Map<String, dynamic> result = await favoriteRespositoryImpl.getUser(
         url: Constants.URL_API_FAVORITE,
         endPoint: 'auth',
         queryParament: {'pagenumber': '1'},

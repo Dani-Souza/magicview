@@ -18,31 +18,35 @@ class MyBottonNavigationBar extends StatefulWidget {
 
 class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
   int _selectedIndex = 0;
-
+  final List<Widget> pages = [
+    HomePage(),
+    ListUserPage(),
+    MyFavoritesPage(),
+  ];
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      switch (index) {
-        case 0:
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
-          );
-          break;
-        case 1:
-          context.read<GetUserBloc>().add(GetUserEvent());
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const ListUserPage()),
-          );
-          break;
-        case 2:
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const MyFavoritesPage()),
-          );
-          break;
-      }
+      // switch (index) {
+      //   case 0:
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(builder: (context) => const HomePage()),
+      //     );
+      //     break;
+      //   case 1:
+      //     context.read<GetUserBloc>().add(GetUserEvent());
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(builder: (context) => const ListUserPage()),
+      //     );
+      //     break;
+      //   case 2:
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(builder: (context) => const MyFavoritesPage()),
+      //     );
+      //     break;
+      // }
     });
   }
 

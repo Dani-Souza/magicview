@@ -12,12 +12,12 @@ import 'package:magicview/bloc/get_users/get_user_bloc.dart';
 import 'package:magicview/bloc/login_user_bloc/login_user_bloc.dart';
 import 'package:magicview/bloc/movie_popular_bloc/movie_popular_bloc.dart';
 import 'package:magicview/entities/results.dart';
+import 'package:magicview/pages/login_page/login_page.dart';
 import 'package:magicview/pages/movie_detail/datail_movie_page.dart';
 import 'package:magicview/bloc/movies_genres_popular_page.dart/movie_genres_popular_bloc.dart';
 import 'package:magicview/bloc/serie_popular_bloc/serie_popular_bloc.dart';
 import 'package:magicview/pages/genres_page/genres_page.dart';
 import 'package:magicview/pages/home_pages/homepage.dart';
-import 'package:magicview/pages/home_pages/login_home_page.dart';
 import 'package:magicview/pages/movie_page/movie_popular_page.dart';
 import 'package:magicview/pages/serie_page/serie_popular_page.dart';
 import 'package:magicview/pages/user_page/add_user_page.dart';
@@ -25,16 +25,18 @@ import 'package:magicview/pages/user_page/list_user_page.dart';
 import 'package:magicview/reposistories/genres_respository.dart';
 import 'package:magicview/reposistories/local/favorite_local_repository.dart';
 import 'package:magicview/reposistories/remote/favorite_repositoy_impl.dart';
-import 'package:magicview/utility/create_image.dart';
 import 'package:magicview/utility/hive_initialize.dart';
+import 'package:magicview/utility/local_create_image.dart';
 
 void main() async {
   HiveInitialize.initializeHive();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final loginUserBloc =
+      LoginUserBloc(FavoriteRespositoryImpl(), SharePrefrencesAdapter());
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -46,6 +48,12 @@ class MyApp extends StatelessWidget {
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
           ),
           BlocProvider(
+              create: (context) => LoginUserBloc(
+                  FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
+              child: LoginPage(
+                loginUserBloc: loginUserBloc,
+              )),
+          BlocProvider(
             create: (context) => GetFavoriteByUserIdBloc(
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
           ),
@@ -54,10 +62,6 @@ class MyApp extends StatelessWidget {
                   FavoriteRespositoryImpl(), SharePrefrencesAdapter())
                 ..add(GetUserEvent()),
               child: const ListUserPage()),
-          BlocProvider(
-              create: (context) => LoginUserBloc(
-                  FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
-              child: const LoginHomePage()),
           BlocProvider(
             create: (context) => AddNewUserBloc(
                 FavoriteRespositoryImpl(), SharePrefrencesAdapter()),
@@ -88,14 +92,14 @@ class MyApp extends StatelessWidget {
               )),
           BlocProvider(
             create: (context) => FavoriteBloc(
-                ImageCreate(),
+                LocalImageCreate(),
                 FavoriteLocalRepository(),
                 FavoriteRespositoryImpl(),
                 SharePrefrencesAdapter()),
           ),
           BlocProvider(
             create: (context) => GetFavoriteBloc(FavoriteLocalRepository(),
-                SharePrefrencesAdapter(), ImageCreate())
+                SharePrefrencesAdapter(), LocalImageCreate())
               ..add(GetFavoriteImageSaveLocal()),
           )
         ],
@@ -113,7 +117,9 @@ class MyApp extends StatelessWidget {
             ),
             initialRoute: AppRoutes.initial,
             routes: {
-              AppRoutes.initial: (context) => const LoginHomePage(),
+              AppRoutes.initial: (context) => LoginPage(
+                    loginUserBloc: loginUserBloc,
+                  ),
               //AppRoutes.initial: (context) => const ListUserPage(),
               AppRoutes.homePage: (context) => const HomePage(),
               AppRoutes.detailMovie: (context) => DetailMovePage(

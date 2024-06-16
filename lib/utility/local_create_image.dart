@@ -7,7 +7,7 @@ import 'dart:ui' as ui;
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 
-class ImageCreate {
+class LocalImageCreate {
   Future<String> takePicture(GlobalKey genKey) async {
     DateTime date = DateTime.now();
     String fileName = DateFormat('ddMMyyyyhhmmss').format(date);
