@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magicview/adapter/sharePreferencesAdapter.dart';
 import 'package:magicview/entities/favorite_movie.dart';
 import 'package:magicview/reposistories/local/favorite_local_repository.dart';
-import 'package:magicview/utility/create_image.dart';
+import 'package:magicview/utility/local_create_image.dart';
 
 part 'get_favorite_event_bloc.dart';
 part 'get_favorite_state_bloc.dart';
@@ -14,7 +14,7 @@ part 'get_favorite_state_bloc.dart';
 class GetFavoriteBloc extends Bloc<GetFavoriteEventBloc, GetFavoriteStateBloc> {
   FavoriteLocalRepository favoriteLocalRepository;
   SharePrefrencesAdapter sharePrefrencesAdapter;
-  ImageCreate imageCreate;
+  LocalImageCreate imageCreate;
   GetFavoriteBloc(this.favoriteLocalRepository, this.sharePrefrencesAdapter,
       this.imageCreate)
       : super(GetFavoriteLoandingStateLocalSavedBloc()) {

@@ -10,9 +10,9 @@ part 'login_user_event_bloc.dart';
 part 'login_user_state_bloc.dart';
 
 class LoginUserBloc extends Bloc<LoginUserEventBloc, LoginUserStateBloc> {
-  final FavoriteRespositoryImpl favoriteRespositoryImple;
+  final FavoriteRespositoryImpl favoriteRespositoryImpl;
   final SharePrefrencesAdapter sharePrefrencesAdapter;
-  LoginUserBloc(this.favoriteRespositoryImple, this.sharePrefrencesAdapter)
+  LoginUserBloc(this.favoriteRespositoryImpl, this.sharePrefrencesAdapter)
       : super(LoginUserInitializeState()) {
     on<LoginUserEventSubmit>(_onSubmitLogin);
   }
@@ -21,11 +21,11 @@ class LoginUserBloc extends Bloc<LoginUserEventBloc, LoginUserStateBloc> {
       LoginUserEventSubmit event, Emitter<LoginUserStateBloc> emit) async {
     emit(LoginUserLoadingState());
     try {
-      final login = await favoriteRespositoryImple.login(
+      final login = await favoriteRespositoryImpl.login(
           url: Constants.URL_API_FAVORITE,
           endPoint: "auth/login",
           body: {'email': event.email, "password": event.password});
-      print(login['user']);
+      // print(login['user']);
       await sharePrefrencesAdapter.set("login", login['user']);
       await sharePrefrencesAdapter.saveToken(login['token']);
       emit(LoginUserSuccessState(hasLoged: true));

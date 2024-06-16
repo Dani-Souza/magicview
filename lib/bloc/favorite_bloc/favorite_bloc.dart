@@ -11,18 +11,19 @@ import 'package:magicview/entities/screen_arguments.dart';
 import 'package:magicview/reposistories/local/favorite_local_repository.dart';
 import 'package:magicview/reposistories/remote/favorite_repositoy_impl.dart';
 import 'package:magicview/utility/constants.dart';
-import 'package:magicview/utility/create_image.dart';
+
+import 'package:magicview/utility/local_create_image.dart';
 
 part 'favorite_event_bloc.dart';
 part 'favorite_state_bloc.dart';
 
 class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
-  ImageCreate imageCreate;
+  LocalImageCreate localImageCreate;
   FavoriteLocalRepository favoriteLocalRepository;
   FavoriteRespositoryImpl favoriteRespositoryImpl;
   SharePrefrencesAdapter sharePrefrencesAdapter;
 
-  FavoriteBloc(this.imageCreate, this.favoriteLocalRepository,
+  FavoriteBloc(this.localImageCreate, this.favoriteLocalRepository,
       this.favoriteRespositoryImpl, this.sharePrefrencesAdapter)
       : super(FavoriteInitializeState()) {
     on<FavoriteShowImageSaved>(_onFavoritoSaved);
@@ -47,7 +48,7 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
       emit(FavoriteAddNickAndNumberState(numberFavorite: count, nick: nick));
       await Future.delayed(const Duration(seconds: 2));
 
-      var newImage = await imageCreate.takePicture(event.genKey);
+      var newImage = await localImageCreate.takePicture(event.genKey);
       var fileUpload = File(newImage);
       emit(FavoriteUploadingState());
       await favoriteRespositoryImpl.upload(
@@ -86,7 +87,7 @@ class FavoriteBloc extends Bloc<FavoriteEventBloc, FavoriteStateBloc> {
     try {
       emit(FavoriteInitializeState());
       final favoriteMovie = await favoriteLocalRepository.getByIdAndUserId(
-          event.id, event.userId);
+          event.movieId, event.userId);
       if (favoriteMovie!.id > 0) {
         emit(FavoriteCreateImageSate(fileName: favoriteMovie.postPathLocal));
       } else {
