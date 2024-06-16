@@ -32,7 +32,7 @@ class _DetailMovePageState extends State<DetailMovePage> {
         ModalRoute.of(context)!.settings.arguments as ScreenArguments;
     context
         .read<FavoriteBloc>()
-        .add(FavoriteShowImageSaved(id: argMovies.id, argMovies.userId));
+        .add(FavoriteShowImageSaved(movieId: argMovies.id, argMovies.userId));
 
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;

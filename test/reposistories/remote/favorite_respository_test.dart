@@ -3,7 +3,7 @@ import 'package:magicview/adapter/sharePreferencesAdapter.dart';
 import 'package:magicview/bloc/get_users/get_user_bloc.dart';
 import 'package:magicview/reposistories/remote/favorite_repositoy_impl.dart';
 import 'package:magicview/reposistories/remote/favorite_respository.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 
 class FavoriteRepositoryMock extends Mock implements FavoriteRepository {
   getStub(
@@ -18,7 +18,7 @@ class FavoriteRepositoryMock extends Mock implements FavoriteRepository {
           endPoint: endPoint,
           queryParament: queryParament,
           headers: headers,
-          body: body)).thenReturn(() => responses);
+          body: body)).thenAnswer((_) async => responses);
 }
 
 void main() {

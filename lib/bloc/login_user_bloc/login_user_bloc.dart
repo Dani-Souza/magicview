@@ -25,7 +25,7 @@ class LoginUserBloc extends Bloc<LoginUserEventBloc, LoginUserStateBloc> {
           url: Constants.URL_API_FAVORITE,
           endPoint: "auth/login",
           body: {'email': event.email, "password": event.password});
-      print(login['user']);
+      // print(login['user']);
       await sharePrefrencesAdapter.set("login", login['user']);
       await sharePrefrencesAdapter.saveToken(login['token']);
       emit(LoginUserSuccessState(hasLoged: true));

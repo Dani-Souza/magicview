@@ -1,48 +1,41 @@
+import 'dart:io';
+
+import 'package:bloc_test/bloc_test.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:magicview/adapter/sharePreferencesAdapter.dart';
+import 'package:magicview/bloc/login_user_bloc/login_user_bloc.dart';
 import 'package:magicview/pages/home_pages/components/my_text_form_field.dart';
 import 'package:magicview/pages/login_page/login_page.dart';
-import 'package:magicview/reposistories/remote/favorite_repositoy_impl.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 
-class FavoriteRespositoryMock extends Mock implements FavoriteRespositoryImpl {
-  loginSut(
-          String url,
-          String endPoint,
-          Map<String, String> queryParament,
-          Map<String, String> headers,
-          Map<String, String> body,
-          Future<Map<String, dynamic>> responses) =>
-      when(() => login(url: url, endPoint: endPoint, body: body))
-          .thenReturn(() async => responses);
-}
-
-// class LoginUserBlocMock extends MockBloc<LoginUserEventBloc, LoginUserStateBloc>
-//     implements LoginUserBloc {}
-
-class SharePrefrencesAdapterMock extends Mock
-    implements SharePrefrencesAdapter {}
+class LoginUserBlocMock extends MockBloc<LoginUserEventBloc, LoginUserStateBloc>
+    implements LoginUserBloc {}
 
 void main() {
-  // late LoginUserBlocMock sut;
-  late FavoriteRespositoryMock favoriteRepositoryImplMock;
-  late SharePrefrencesAdapterMock sharePrefrencesAdapterMock;
-  Widget makeSut() => const MaterialApp(home: LoginPage());
+  late LoginUserBlocMock sut;
+
+  setUp(() {
+    sut = LoginUserBlocMock();
+    // HttpOverrides.global = null;
+  });
+
+  Widget _makeTestableWidget(Widget body) {
+    return BlocProvider<LoginUserBloc>(
+      create: (context) => sut,
+      child: MaterialApp(home: body),
+    );
+  }
+
   final email = faker.internet.email();
   final password = faker.internet.password();
 
-  // final url = "62.171.186.45:8080";
-  // final endPoint = "auth";
-
-  setUp(() {
-    favoriteRepositoryImplMock = FavoriteRespositoryMock();
-    sharePrefrencesAdapterMock = SharePrefrencesAdapterMock();
-  });
-
   testWidgets('Verify all components', (tester) async {
-    await tester.pumpWidget(makeSut());
+    when(() => sut.state).thenReturn(LoginUserInitializeState());
+    await tester.pumpWidget(_makeTestableWidget(LoginPage(
+      loginUserBloc: sut,
+    )));
 
     expect(find.byKey(const Key("button-login")), findsOneWidget);
     expect(find.byType(MyTextFormField), findsNWidgets(2));
@@ -51,7 +44,10 @@ void main() {
 
   testWidgets("Check if the email and password fields display an error message",
       (tester) async {
-    await tester.pumpWidget(makeSut());
+    when(() => sut.state).thenReturn(LoginUserInitializeState());
+    await tester.pumpWidget(_makeTestableWidget(LoginPage(
+      loginUserBloc: sut,
+    )));
     final buttonFinder = find.byKey(const Key("button-login"));
     await tester.tap(buttonFinder);
 
@@ -60,8 +56,11 @@ void main() {
     expect(find.text("Por favor digite sua senha"), findsOneWidget);
   });
 
-  testWidgets("Login", (tester) async {
-    await tester.pumpWidget(makeSut());
+  testWidgets("Fill in email and password fields", (tester) async {
+    when(() => sut.state).thenReturn(LoginUserLoadingState());
+    await tester.pumpWidget(_makeTestableWidget(LoginPage(
+      loginUserBloc: sut,
+    )));
 
     final textFormFieldFinder = find.byType(MyTextFormField);
 
@@ -72,5 +71,12 @@ void main() {
 
     expect(find.text(email), findsOneWidget);
     expect(find.text(password), findsOneWidget);
+
+    final buttonFinder = find.byKey(const Key("button-login"));
+    await tester.tap(buttonFinder);
+    // await tester.pumpAndSettle();
+    // await tester.pump(Duration(seconds: 2));
+
+    // expect(find.text('Carregando'), findsOneWidget);
   });
 }
