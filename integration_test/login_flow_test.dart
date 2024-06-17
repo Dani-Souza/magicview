@@ -11,7 +11,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
-  testWidgets('Should increment counter', (tester) async {
+  testWidgets('Test create favorite', (tester) async {
     HiveInitialize.initializeHive();
 
     await tester.pumpWidget(
