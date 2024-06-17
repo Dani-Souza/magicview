@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:magicview/App/shared/auth/validators/email_validator.dart';
+import 'package:magicview/App/shared/auth/validators/password_validator.dart';
 import 'package:magicview/app_routes.dart';
 import 'package:magicview/bloc/login_user_bloc/login_user_bloc.dart';
 import 'package:magicview/pages/components/my_text.dart';
@@ -19,7 +21,8 @@ class _LoginPageState extends State<LoginPage> {
       emailController.text.isNotEmpty && emailController.text.contains("@");
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
-
+  final EmailValidator _emailValidator = EmailValidator();
+  final PasswordValidator _passwordValidator = PasswordValidator();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
@@ -77,12 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         MyTextFormField(
                           validator: (value) {
-                            if (value == null ||
-                                value.isEmpty ||
-                                !value.contains("@")) {
-                              return 'Por favor digite seu E-mail';
-                            }
-                            return null;
+                            return _emailValidator.Validate(email: value);
                           },
                           textEditingController: emailController,
                           labelText: "E-mail",
@@ -90,10 +88,8 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         MyTextFormField(
                             validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor digite sua senha';
-                              }
-                              return null;
+                              return _passwordValidator.validate(
+                                  password: value);
                             },
                             textEditingController: passwordController,
                             labelText: "Senha",
@@ -107,48 +103,66 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Container(
                           padding: const EdgeInsets.all(16),
-                          child: Row(
+                          child: Column(
                             children: [
-                              Expanded(
-                                child: ElevatedButton(
-                                    key: const Key("button-login"),
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Theme.of(context)
-                                            .colorScheme
-                                            .secondary),
-                                    onPressed: () {
-                                      if (formKey.currentState!.validate()) {
-                                        if (_isEmailValid &&
-                                            passwordController
-                                                .text.isNotEmpty) {
-                                          widget.loginUserBloc.add(
-                                              LoginUserEventSubmit(
-                                                  email: emailController.text,
-                                                  password:
-                                                      passwordController.text));
-                                        }
-                                      }
-                                    },
-                                    child: const Text(
-                                      'Login',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 16),
-                                    )),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: ElevatedButton(
+                                        key: const Key("button-login"),
+                                        style: ElevatedButton.styleFrom(
+                                            backgroundColor: Theme.of(context)
+                                                .colorScheme
+                                                .secondary),
+                                        onPressed: () {
+                                          if (formKey.currentState!
+                                              .validate()) {
+                                            if (_isEmailValid &&
+                                                passwordController
+                                                    .text.isNotEmpty) {
+                                              widget.loginUserBloc.add(
+                                                  LoginUserEventSubmit(
+                                                      email:
+                                                          emailController.text,
+                                                      password:
+                                                          passwordController
+                                                              .text));
+                                            }
+                                          }
+                                        },
+                                        child: const Text(
+                                          'Login',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16),
+                                        )),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                ],
                               ),
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      backgroundColor: Theme.of(context)
-                                          .colorScheme
-                                          .secondary),
-                                  onPressed: () {
-                                    Navigator.pushNamed(
-                                        context, AppRoutes.addNewUser);
-                                  },
-                                  child: const Text(
-                                    "CRIAR CONTA",
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 16),
-                                  )),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            backgroundColor: Theme.of(context)
+                                                .colorScheme
+                                                .secondary),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, AppRoutes.addNewUser);
+                                        },
+                                        child: const Text(
+                                          "CRIAR CONTA",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16),
+                                        )),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
