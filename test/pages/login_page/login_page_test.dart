@@ -74,9 +74,5 @@ void main() {
 
     final buttonFinder = find.byKey(const Key("button-login"));
     await tester.tap(buttonFinder);
-    // await tester.pumpAndSettle();
-    // await tester.pump(Duration(seconds: 2));
-
-    // expect(find.text('Carregando'), findsOneWidget);
   });
 }
