@@ -26,27 +26,27 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      // switch (index) {
-      //   case 0:
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(builder: (context) => const HomePage()),
-      //     );
-      //     break;
-      //   case 1:
-      //     context.read<GetUserBloc>().add(GetUserEvent());
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(builder: (context) => const ListUserPage()),
-      //     );
-      //     break;
-      //   case 2:
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(builder: (context) => const MyFavoritesPage()),
-      //     );
-      //     break;
-      // }
+      switch (index) {
+        case 0:
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+          break;
+        case 1:
+          context.read<GetUserBloc>().add(GetUserEvent());
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ListUserPage()),
+          );
+          break;
+        case 2:
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MyFavoritesPage()),
+          );
+          break;
+      }
     });
   }
 

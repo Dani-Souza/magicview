@@ -9,11 +9,11 @@ import 'package:magicview/utility/hive_initialize.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
   testWidgets('Should increment counter', (tester) async {
     HiveInitialize.initializeHive();
-    final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-    binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
+
     await tester.pumpWidget(
       app.MyApp(),
     );
@@ -25,13 +25,13 @@ void main() {
     final buttonFinder = find.byKey(const Key("button-login"));
     await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.tap(buttonFinder, warnIfMissed: true);
-    await tester.pumpAndSettle();
+    // await tester.pumpAndSettle();
 
-    await Future.delayed(Duration(seconds: 5));
-    await tester.pumpAndSettle(Duration(seconds: 5));
+    // await Future.delayed(Duration(seconds: 5));
+    await tester.pumpAndSettle(Duration(seconds: 10));
 
     expect(find.text('MAGICVIEW'), findsOneWidget);
-    await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 10));
 
     final moviePopular = find.text('Movie Populares');
     final seriePopular = find.text('Série Populares');
@@ -44,6 +44,6 @@ void main() {
     await tester.pumpAndSettle(Duration(seconds: 10));
 
     expect(find.byType(ShowImageFavorite), findsOneWidget);
-    Future.delayed(Duration(seconds: 10));
+    Future.delayed(Duration(seconds: 15));
   });
 }
