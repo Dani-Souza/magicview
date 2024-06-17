@@ -18,7 +18,11 @@ class MyBottonNavigationBar extends StatefulWidget {
 
 class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
   int _selectedIndex = 0;
-
+  final List<Widget> pages = [
+    HomePage(),
+    ListUserPage(),
+    MyFavoritesPage(),
+  ];
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
