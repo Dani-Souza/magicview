@@ -21,10 +21,10 @@ void main() {
 
     users = [
       const User(
-        email: 'Lulua@gmail.com',
+        email: 'pontocom@gmail.com',
         id: '2',
-        nick: 'Lua',
-        password: '123',
+        nick: 'PontoCom',
+        password: '123456',
       ),
     ];
   });

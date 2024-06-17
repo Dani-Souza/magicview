@@ -51,7 +51,8 @@ void main() {
     final buttonFinder = find.byKey(const Key("button-login"));
     await tester.tap(buttonFinder);
 
-    await tester.pump();
+    //await tester.pump();
+    await tester.pumpAndSettle();
     expect(find.text("Por favor digite seu E-mail"), findsOneWidget);
     expect(find.text("Por favor digite sua senha"), findsOneWidget);
   });
